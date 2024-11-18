@@ -602,29 +602,29 @@
         },
         {
             "titolo": "Accostiamoci tutti all'altar",
-            "autore": "autore 66",
+            "autore": "Francisco Palazòn, Emilio Pascual",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
-            "ascolta": "link66.html",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=fenZYuJC5jg",
+            "download_link": "../db/canti/Accostiamoci tutti all altar.pdf",
             "testo": ""
         },
         {
             "titolo": "Regina caeli",
-            "autore": "autore 67",
+            "autore": "Gregoriano",
             "tipologia": "Finale",
             "tempo": "Pasqua",
-            "ascolta": "link67.html",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=JGS5v-M5hc0",
+            "download_link": "../db/canti/regina_caeli.pdf",
             "testo": ""
         },
         {
             "titolo": "Sei luce splendida",
-            "autore": "autore 68",
+            "autore": "Daniele Semprini",
             "tipologia": "Accensione candela",
             "tempo": "Avvento",
-            "ascolta": "link68.html",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=SSs7W-tGHGw",
+            "download_link": "../db/canti/Sei luce splendida.pdf",
             "testo": ""
         },
         {
@@ -632,7 +632,8 @@
             "autore": "autore 43",
             "tipologia": "Offertorio",
             "tempo": "Qualsiasi",
-            "download": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=ckeCH4Wclpw",
+            "download": "../db/canti/accogliinostridonispartito.pdf",
             "testo": ""
         },
         {
@@ -645,90 +646,101 @@
         },
         {
             "titolo": "Tu quando verrai",
-            "autore": "autore 70",
+            "autore": "",
             "tipologia": "Ingresso, Offertorio, Comunione",
             "tempo": "Avvento",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=TacRTZTc1ok",
+            "download_link": "../db/canti/Tuquandoverrai.pdf",
             "testo": ""
         },
         {
             "titolo": "Astro del ciel",
-            "autore": "autore 71",
+            "autore": "Franz Xaver Gruber",
             "tipologia": "Offertorio, Comunione",
             "tempo": "Natale",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=MKrlqfQUORU",
+            "download_link": "../db/canti/astro del ciel.pdf",
             "testo": ""
         },
         {
             "titolo": "Andrò a vederla un dì",
-            "autore": "autore 72",
+            "autore": "",
             "tipologia": "Finale",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=lnPJE8bCA6A",
+            "download_link": "../db/canti/Andro a vederla un di.pdf",
             "testo": ""
         },
         {
             "titolo": "Inni e canti",
-            "autore": "autore 73",
+            "autore": "",
             "tipologia": "",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=8ZkJIVWgGSY",
+            "download_link": "../db/canti/inni_e_canti.pdf",
             "testo": ""
         },
         {
             "titolo": "Fratello sole, sorella luna",
-            "autore": "autore 74",
+            "autore": "Ortolani",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=aA-ow0axmBk",
+            "download_link": "../db/canti/fratello sole, sorella luna.pdf",
             "testo": ""
         },
         {
             "titolo": "Il Signore è la mia salvezza",
-            "autore": "autore 75",
+            "autore": "Belloli",
             "tipologia": "Ingresso",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=JOexOb3rBg0&t=72s",
+            "download_link": "../db/canti/il signore è la mia salvezza.pdf",
             "testo": ""
         },
         {
             "titolo": "Dell'aurora Tu sorgi più bella",
-            "autore": "autore 76",
+            "autore": "Compagnia Aquero",
             "tipologia": "Finale",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=VyPcLu0RCmo",
+            "download_link": "../db/canti/Dell'aurora tu sorgi piu bella.pdf",
             "testo": ""
         },
         {
             "titolo": "T'adoriam, Ostia divina",
-            "autore": "autore 77",
+            "autore": "Caruana",
             "tipologia": "",
-            "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "tempo": "Eucaristico",
+            "ascolta": "https://www.youtube.com/watch?v=N_uf3gCcCAs",
+            "download_link": "../db/canti/t'adoriam ostia divina.pdf",
             "testo": ""
         },
         {
             "titolo": "Mira il tuo popolo",
-            "autore": "autore 78",
+            "autore": "Picchi",
             "tipologia": "Finale",
             "tempo": "Mariano",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=scymHbbXB3U",
+            "download_link": "../db/canti/mira il tuo popolo.pdf",
             "testo": ""
         },
         {
             "titolo": "Il signore è vicino",
-            "autore": "autore 79",
+            "autore": "Daniele Semprini",
             "tipologia": "Ingresso",
             "tempo": "Avvento",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=u8CVWWGWdPk",
+            "download_link": "../db/canti/Il Signore è vicino.pdf",
             "testo": ""
         },
         {
             "titolo": "Cielo nuovo",
-            "autore": "autore 80",
-            "tipologia": "Finale",
+            "autore": "Giuseppe Libero",
+            "tipologia": "Offertorio, Finale",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "ascolta": "https://www.youtube.com/watch?v=NXMC6h-aFkI",
+            "download_link": "../db/canti/cielonuovo.pdf",
             "testo": ""
         },
         {
