@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supporto</title>
+    <script src="../javascript/javascript.js"></script>
+    <script src="../javascript/js_global_search.js"></script>
+    <link rel="stylesheet" href="../styles/style_index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .box .text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 0 0 8px 8px;
+        }
+
+        @media (max-width: 768px) {
+            #container {
+                flex-direction: column;
+                margin-top: 480px;
+            }
+
+            .row {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+            }
+
+            .main-content {
+                margin-top: 60px;
+            }
+        }
+
+        .section {
+            width: 100%;
+            text-align: center;
+            max-width: 1000px;
+            margin-bottom: 30px;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(122, 122, 122, 0.2);
+        }
+
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin-bottom: 20px;
+        }
+
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .dark-theme a {
+            color: #4da6ff;
+        }
+
+        .dark-theme a:hover {
+            color: #1a8cff;
+            text-decoration: underline;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+            /* Added max-width for better proportions */
+            width: 100%;
+            /* Full width for smaller screens */
+            margin: 0 auto;
+            /* Center the form */
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            /* Increased font size for better visibility */
+        }
+
+        form textarea {
+            width: 100%;
+            height: 150px;
+            /* Adjusted height for better proportions */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            /* Increased font size for better visibility */
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2196F3;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            /* Increased font size for better visibility */
+        }
+
+        form button:hover {
+            background-color: #1a8cff;
+        }
+
+        .social-share {
+            text-align: center;
+        }
+
+        .social-share h4 {
+            margin-bottom: 10px;
+        }
+
+        .social-button {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 24px;
+            padding: 10px;
+            color: #333333;
+            /* colore scuro per il tema chiaro */
+            transition: color 0.3s ease;
+        }
+
+        .social-button:hover {
+            color: wheat;
+        }
+
+        .dark-theme .social-button:hover {
+            color: wheat;
+        }
+
+        .social-button i {
+            vertical-align: middle;
+        }
+    </style>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const themeToggleSwitch = document.getElementById('theme-toggle');
+
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggleSwitch.checked = true;
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggleSwitch.checked = false;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const theme = localStorage.getItem("theme-navbar")
+            if (!theme) {
+                setNavbarColor("ordinario")
+            }
+            else {
+                setNavbarColor(theme);
+            }
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggleSwitch = document.getElementById('theme-toggle');
+
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeToggleSwitch.checked = true;
+            } else {
+                themeToggleSwitch.checked = false;
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="navbar" id="myNavbar">
+            <h1>Supporto</h1>
+            <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+            <div class="navbar-buttons">
+                <button onclick="location.href='../index.html'">Home</button>
+                <button onclick="location.href='elenco_canti.html'">Elenco canti</button>
+                <button onclick="location.href='spartiti_salmi.html'">Spartiti salmi</button>
+                <button onclick="location.href='anno_liturgico.html'">Anno liturgico</button>
+                <button onclick="location.href='eventi_speciali.html'">Eventi speciali</button>
+                <button onclick="location.href='imp_supporto.html'">Impostazioni/Supporto</button>
+            </div>
+            <input type="text" id="global_search" onkeyup="searchCanti(event, 'supporto')" placeholder="Cerca...">
+        </div>
+
+        <div class="main-content" id="main-content">
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 10px; position: relative; top: -2px;">Attiva il tema scuro:</p>
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme-toggle" onclick="toggleTheme()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="section">
+                <h3>Contatti</h3>
+                <p>Per qualsiasi richiesta di supporto, suggerimenti o segnalazioni di problemi, puoi creare un'issue
+                    nella repository <a href="https://github.com/mrparsing/proposta_canti/issues"
+                        target="_blank">GitHub</a> o inviare un messaggio compilando il form.</p>
+                <form action="https://formspree.io/f/xgveegyl" method="POST">
+                    <input type="email" name="email" placeholder="La tua email" required>
+                    <textarea name="message" placeholder="Il tuo messaggio" required></textarea>
+                    <button type="submit">Invia</button>
+                </form>
+            </div>
+
+            <div class="social-share">
+                <h4>Condividi sui social:</h4>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://https://propostacanti.web.app"
+                    target="_blank" class="social-button" title="Condividi su Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=https://propostacanti.web.app&text=Guarda questo!"
+                    target="_blank" class="social-button" title="Condividi su Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?text=Guarda questo: https://propostacanti.web.app"
+                    target="_blank" class="social-button" title="Condividi su WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://propostacanti.web.app&title=Guarda%20questo!"
+                    target="_blank" class="social-button" title="Condividi su LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style_index.css">
+    <script src="javascript/theme.js"></script>
+    <script src="javascript/js_global_search.js"></script>
+    <script src="javascript/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <meta name="description"
+        content="Proposta Canti per celebrazioni liturgiche: antifone, canti di ingresso, salmi responsoriali, letture liturgiche, e altro. Tutto per preparare le celebrazioni liturgiche.">
+    <meta name="keywords"
+        content="canti liturgici, celebrazioni liturgiche, tempo ordinario, avvento, quaresima, antifone, letture, salmi responsoriali, anno liturgico, spartiti salmi, domenica, tempo ordinario">
+    <meta name="description"
+        content="Proposta di canti per le celebrazioni liturgiche della prossima domenica. Scopri canti d'ingresso, salmi, letture e antifone per le domeniche del tempo ordinario e altre celebrazioni.">
+    <meta name="keywords"
+        content="proposta canti, canti liturgici, prossima domenica, domenica prossima, tempo ordinario, celebrazioni liturgiche, anno liturgico, domenica liturgia, letture domenicali, salmi responsoriali">
+    <title>Proposta Canti</title>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Proposta Canti per la ${numero}° domenica",
+          "description": "Proposta canti per la ${numero}° domenica - anno ${anno} del tempo di ${festivita}.",
+          "url": "https://propostacanti.web.app/celebrazioni.html?numero=${numero}&anno=${anno}&festivita=${festivita}"
+        }
+        </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const theme = localStorage.getItem("theme-navbar")
+            setNavbarColor(theme);
+            setDarkTheme();
+
+            document.getElementById('download').addEventListener('click', () => {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+
+                const element = document.querySelector('.responsive-container');
+                const textContent = element.innerText || element.textContent;
+
+                const maxWidth = 190; // Larghezza massima per il testo
+                const marginTop = 10; // Margine superiore
+                const marginBottom = 10; // Margine inferiore
+                const lineHeight = 10; // Altezza delle righe
+
+                // Modifica del font e della dimensione del testo
+                doc.setFont('helvetica', 'bold'); // Puoi usare 'normal', 'bold', 'italic'
+                doc.setFontSize(12); // Imposta la dimensione del testo
+
+                // Imposta il colore del testo (RGB)
+
+                const lines = doc.splitTextToSize(textContent, maxWidth);
+                const linesPerPage = Math.floor((doc.internal.pageSize.height - marginTop - marginBottom) / lineHeight);
+                let yPosition = marginTop;
+
+                for (let i = 0; i < lines.length; i++) {
+                    if (i > 0 && i % linesPerPage === 0) {
+                        doc.addPage();
+                        yPosition = marginTop;
+                    }
+
+                    // Aggiunge il testo con un allineamento centrato (opzionale)
+                    const textWidth = doc.getStringUnitWidth(lines[i]) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+                    const xPosition = (doc.internal.pageSize.width - textWidth) / 2; // Centra il testo
+
+                    // Aggiungi la riga corrente al PDF
+                    doc.text(lines[i], xPosition, yPosition);
+
+                    yPosition += lineHeight;
+                }
+
+                // Salva il PDF
+                doc.save('foglietto_messa.pdf');
+            });
+
+        });
+
+        function getQueryParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const numero = urlParams.get('numero');
+            const anno = urlParams.get('anno');
+            const festivita = urlParams.get('festivita');
+            return { numero, anno, festivita };
+        }
+
+        function populatePage(data, numero, anno) {
+            const celebrazione = data.celebrazioni.find(celebra => celebra.numero == numero);
+            let number_cast = Number(numero)
+            console.log(typeof Number(numero) === 'number');
+
+            if (celebrazione) {
+                if (typeof Number(numero) === 'number' && !isNaN(Number(numero))) {
+                    document.title = `Proposta Canti - ${convertiInRomano(numero)} DOMENICA DEL TEMPO ORDINARIO - ANNO ${anno}`;
+                    const metaDescription = document.createElement('meta');
+                    metaDescription.name = "description";
+                    metaDescription.content = `Scopri la proposta canti per la ${convertiInRomano(numero)} domenica del tempo ordinario - ${anno}. Suggerimenti per Ingresso, Offertorio, Comunione e canto finale.`;
+                    document.head.appendChild(metaDescription);
+
+                    document.getElementById('title').innerHTML = `${convertiInRomano(numero)} DOMENICA DEL TEMPO ORDINARIO - ANNO ${anno}`;
+
+                } else {
+                    document.title = `Proposta Canti - ${numero} - ANNO ${anno}`;
+                    const metaDescription = document.createElement('meta');
+                    metaDescription.name = "description";
+                    metaDescription.content = `Scopri la proposta canti per ${numero} - anno ${anno}. Suggerimenti per Ingresso, Offertorio, Comunione e canto finale.`;
+                    document.head.appendChild(metaDescription);
+
+                    document.getElementById('title').innerHTML = `${numero} - ANNO ${anno}`;
+
+                }
+                const colore = celebrazione.colore;
+                document.querySelector("#myNavbar").setAttribute("style", `background-color: ${colore};`);
+                document.querySelector('#antifona-ingresso').innerHTML = celebrazione.antifona_ingresso;
+                document.querySelector('#canto-ingresso').innerHTML = celebrazione.canto_ingresso || "";
+                document.querySelector('#atto-penitenziale').innerHTML = celebrazione.atto_penitenziale;
+                document.querySelector('#tropo-1').innerHTML = celebrazione.tropo_1;
+                document.querySelector('#tropo-2').innerHTML = celebrazione.tropo_2;
+                document.querySelector('#tropo-3').innerHTML = celebrazione.tropo_3;
+                document.querySelector('#prima-lettura').innerHTML = celebrazione.prima_lettura_testo;
+                document.querySelector('#salmo').innerHTML = celebrazione.salmo_testo;
+
+                const link_salmo = celebrazione.salmo_link;
+                if (link_salmo) {
+                    document.getElementById('link_salmo').setAttribute('href', link_salmo);
+                } else {
+                    document.getElementById('link_salmo').style.display = 'none';
+                }
+
+                const link_salmo2 = celebrazione.salmo_link2;
+                if (link_salmo2) {
+                    document.getElementById('link_salmo2').setAttribute('href', link_salmo2);
+                } else {
+                    document.getElementById('link_salmo2').style.display = 'none';
+                }
+
+                document.querySelector('#seconda-lettura').innerHTML = celebrazione.seconda_lettura_testo;
+                document.querySelector('#acclamazione-al-vangelo').innerHTML = celebrazione.acclamazione_al_vangelo;
+                document.querySelector('#vangelo').innerHTML = celebrazione.vangelo;
+                document.querySelector('#canto-offertorio').innerHTML = celebrazione.canto_offertorio;
+                document.querySelector('#canto-comunione').innerHTML = celebrazione.canto_comunione;
+                document.querySelector('#antifona-alla-comunione').innerHTML = celebrazione.antifona_alla_comunione;
+            } else {
+                document.body.innerHTML = `<p class="error">Errore: Celebrazione non trovata per numero ${numero} e anno ${anno}.</p>`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const { numero, anno, festivita } = getQueryParams();
+            let jsonFile = "";
+            if (festivita === "ordinario") {
+                jsonFile = `db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
+            } else if (festivita === "natale") {
+                // gestisci natale
+            } else if (festivita === "avvento") {
+                jsonFile = `db/tempi_liturgici/avvento/celebrazioni_anno_${anno.toLowerCase()}.json`;
+            } else if (festivita === "quaresima") {
+                jsonFile = `db/tempi_liturgici/quaresima/celebrazioni_anno_${anno.toLowerCase()}.json`;
+            }
+            console.log(jsonFile);
+            fetch(jsonFile)
+                .then(response => response.json())
+                .then(data => {
+                    populatePage(data, numero, anno);
+                })
+                .catch(error => {
+                    console.error('Errore nel caricamento del JSON:', error);
+                    document.body.innerHTML = `<p class="error">Si è verificato un errore durante il caricamento delle informazioni. Riprova più tardi.</p>`;
+                });
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <div class="navbar" id="myNavbar">
+        <h1>Proposta canti</h1>
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <div class="navbar-buttons">
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='nav-bar/elenco_canti.html'">Elenco canti</button>
+            <button onclick="location.href='nav-bar/spartiti_salmi.html'">Spartiti salmi</button>
+            <button onclick="location.href='nav-bar/anno_liturgico.html'">Anni liturgici</button>
+            <button onclick="location.href='nav-bar/salmi_eventi_speciali.html'">Eventi speciali</button>
+            <button onclick="location.href='nav-bar/imp_supporto.html'">Impostazioni/Supporto</button>
+        </div>
+        <input type="text" id="global_search" onkeyup="searchCanti(event, 'celebrazioni')" placeholder="Cerca...">
+    </div>
+    <button id="download">Scarica in pdf</button>
+    <div class="responsive-container">
+        <h1 id="title"></h1>
+
+        <h2>Antifona d'ingresso</h2>
+        <p id="antifona-ingresso"></p>
+
+        <h3>Canto d'ingresso</h3>
+        <p id="canto-ingresso"></p>
+
+        <h2>Atto Penitenziale</h2>
+        <p id="atto-penitenziale"></p>
+
+        <p id="tropo-1"></p>
+        <p id="tropo-2"></p>
+        <p id="tropo-3"></p>
+
+        <h2>Prima Lettura</h2>
+        <p id="prima-lettura"></p>
+
+        <h2>Salmo Responsoriale</h2>
+        <p><a id="link_salmo" href="" download>Salmo Responsoriale</a></p>
+        <p><a id="link_salmo2" href="" download>Salmo Responsoriale (2)</a></p>
+        <p id="salmo"></p>
+
+        <h2>Seconda Lettura</h2>
+        <p id="seconda-lettura"></p>
+
+        <h2>Acclamazione al Vangelo</h2>
+        <p id="acclamazione-al-vangelo"></p>
+
+        <h2>Vangelo</h2>
+        <p id="vangelo"></p>
+
+        <h3>Canto d'offertorio</h3>
+        <p id="canto-offertorio"></p>
+
+        <h3>Canto di comunione</h3>
+        <p id="canto-comunione"></p>
+
+        <h2>Antifona alla Comunione</h2>
+        <p id="antifona-alla-comunione"></p>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('myNavbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

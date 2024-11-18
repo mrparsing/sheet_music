@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testo</title>
+    <script src="../javascript/javascript.js"></script>
+    <script src="../javascript/js_global_search.js"></script>
+    <link rel="stylesheet" href="../styles/style_index.css">
+
+    <script>
+        function getQueryParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const titolo = urlParams.get('titolo');
+            
+            return titolo;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const theme = localStorage.getItem("theme-navbar")
+            if (!theme) {
+                setNavbarColor("ordinario")
+            }
+            else {
+                setNavbarColor(theme);
+            }
+            setDarkTheme();
+
+            const titolo = getQueryParams()
+            if (titolo) {
+                document.getElementById('titolo').innerText = titolo;
+            }
+
+            fetch('../db/canti.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (Array.isArray(data.canti)) {
+
+                        data.canti.forEach(canto => {
+                            if (canto.titolo.toLowerCase() === titolo.toLowerCase()) {
+                                document.getElementById('titolo').innerText = canto.titolo;
+
+                                // Controllo che l'elemento "info-canto" esista prima di modificarlo
+                                const infoCantoElement = document.getElementById('info-canto');
+                                if (infoCantoElement) {
+                                    infoCantoElement.innerHTML = `
+                                ${canto.autore} - ${canto.tipologia} - ${canto.tempo || ''} - 
+                                <a href="${canto.ascolta}" target="_blank">Ascolta</a> - 
+                                <a href="${canto.download_link}" target="_blank">Scarica PDF</a>
+                            `;
+                                }
+
+                                const testoElement = document.getElementById('testo-canto');
+                                if (testoElement) {
+                                    testoElement.innerHTML = canto.testo || "Testo non disponibile.";
+                                }
+                            }
+                        });
+                    } else {
+                        console.error('Il file JSON non è strutturato come previsto:', data);
+                    }
+                })
+                .catch(error => console.error('Errore nel caricamento del file JSON:', error));
+        });    </script>
+
+    <style>
+        .testo {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .testo h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #info-canto {
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        #testo {
+            font-size: 18px;
+            color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 100%;
+            white-space: pre-line;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="navbar" id="myNavbar">
+            <h1>Testo</h1>
+            <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+            <div class="navbar-buttons">
+                <button onclick="location.href='../index.html'">Home</button>
+                <button onclick="location.href='elenco_canti.html'">Elenco canti</button>
+                <button onclick="location.href='spartiti_salmi.html'">Spartiti salmi</button>
+                <button onclick="location.href='anno_liturgico.html'">Anno liturgico</button>
+                <button onclick="location.href='eventi_speciali.html'">Eventi speciali</button>
+                <button onclick="location.href='imp_supporto.html'">Impostazioni/Supporto</button>
+            </div>
+            <input type="text" id="global_search" onkeyup="searchCanti(event, 'testo_canti')" placeholder="Cerca...">
+        </div>
+    </div>
+
+    <div class="testo">
+        <h1 id="titolo"></h1>
+        <p id="info-canto"></p>
+        <p id="testo-canto"></p>
+    </div>
+
+</body>
+
+</html>

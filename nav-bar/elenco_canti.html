@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elenco canti</title>
+    <script src="../javascript/js_global_search.js"></script>
+    <link rel="stylesheet" href="../styles/style_index.css">
+    <link rel="stylesheet" href="../styles/style_lista.css">
+
+    <script>
+        function button_filter_desktop(button, pixel) {
+            const filtersMenu = document.getElementById('filtersMenu');
+            const toggleButton = document.getElementById(button);
+            const mainContent = document.getElementById('list');
+
+            filtersMenu.classList.toggle('show');
+
+            if (filtersMenu.classList.contains('show')) {
+                toggleButton.textContent = 'Nascondi filtri';
+                mainContent.style.marginTop = `${filtersMenu.offsetHeight + pixel}px`;
+            } else {
+                toggleButton.textContent = 'Mostra filtri';
+                mainContent.style.marginTop = '0';
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="navbar" id="myNavbar">
+            <h1>Elenco canti</h1>
+            <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+            <div class="navbar-buttons">
+                <button onclick="location.href='../index.html'">Home</button>
+                <button onclick="location.href='elenco_canti.html'">Elenco canti</button>
+                <button onclick="location.href='spartiti_salmi.html'">Spartiti salmi</button>
+                <button onclick="location.href='anno_liturgico.html'">Anno liturgico</button>
+                <button onclick="location.href='eventi_speciali.html'">Eventi speciali</button>
+                <button onclick="location.href='imp_supporto.html'">Impostazioni/Supporto</button>
+            </div>
+            <input type="text" id="global_search" onkeyup="searchCanti(event, 'elenco_canti')" placeholder="Cerca...">
+        </div>
+
+        <div class="main-content" id="main-content">
+            <!-- Barra di ricerca -->
+            <div class="search_bar_filtri">
+                <button id="filter_button_desktop" onclick="button_filter_desktop('filter_button_desktop', 0)">Mostra
+                    filtri</button>
+                <input type="text" id="searchInput" placeholder="Cerca canti..." onkeyup="filter_search_bar()">
+            </div>
+
+            <!-- Contenitore filtri -->
+            <div class="filters-container-wrapper">
+                <button id="toggle-filters-btn" onclick="button_filter_desktop('toggle-filters-btn', 40)">Mostra
+                    filtri</button>
+                <div class="filters-container" id="filtersMenu">
+                    <label for="authorInput">Autore:</label>
+                    <input type="text" id="authorInput" placeholder="Cerca per autore..."
+                        onkeyup="filter_search_bar_2()">
+
+                    <label for="typeSelect">Tipologia:</label>
+                    <select id="typeSelect" onchange="filter_search_bar_2()">
+                        <option value="">Tutti</option>
+                        <option value="Ingresso">Ingresso</option>
+                        <option value="Alleluia">Alleluia</option>
+                        <option value="Offertorio">Offertorio</option>
+                        <option value="Comunione">Comunione</option>
+                        <option value="Finale">Finale</option>
+                    </select>
+
+                    <label for="tempoSelect">Tempo:</label>
+                    <select id="tempoSelect" onchange="filter_search_bar_2()">
+                        <option value="">Tutti</option>
+                        <option value="Qualsiasi">Qualsiasi</option>
+                        <option value="Pasqua">Pasqua</option>
+                        <option value="Quaresima">Quaresima</option>
+                        <option value="Natale">Natale</option>
+                        <option value="Avvento">Avvento</option>
+                    </select>
+
+                    <button id="resetFiltersBtn" onclick="resetFilters()">Elimina filtri</button>
+                </div>
+            </div>
+
+            <!-- Elenco canti -->
+            <ul id="list"></ul>
+        </div>
+    </div>
+
+    <!-- Collegamento al file JavaScript -->
+    <script src="../javascript/javascript.js"></script>
+    <script src="../javascript/js_elenco_canti.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const theme = localStorage.getItem("theme-navbar")
+            if (!theme) {
+                setNavbarColor("ordinario")
+            }
+            else {
+                setNavbarColor(theme);
+            }
+            setDarkTheme()
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canti e Liturgia - Guida alla Scelta dei Canti Liturgici</title>
+
+    <!-- Meta Description for SEO -->
+    <meta name="description"
+        content="Canti e Liturgia - Guida per la scelta dei canti liturgici. Proposta canti liturgici per ogni celebrazione dell'anno: domenica prossima, Avvento, Natale, Quaresima, Pasqua e Tempo Ordinario. Scegli i canti più adatti per la Liturgia Eucaristica e della Parola.">
+
+    <!-- Meta Keywords for SEO -->
+    <meta name="keywords" content="canti liturgici, proposta canti, proposta canti domenica prossima, celebrazioni religiose, musicisti, anima liturgico-musicale, calendario liturgico, 
+        domenica, domenica prossima, natale, avvento, ordinario, pasqua, tempo ordinario, messa, liturgia della Parola, liturgia eucaristica,
+        preghiera, comunione, offertorio, gloria, alleluia, salmo responsoriale, coro, organo, armonizzazioni, assemblea,
+        liturgico-musicale, adorazione, solennità, ingresso, antifone, benedizione, canto finale, salmo, vangelo, triduo, immacolata,
+        pentecoste, anno liturgico, maria, festa, preparatorio, corale, rito, responsoriale, pentecoste, cantore, magnificat, rito di comunione,
+        mistero della fede, celebrazione eucaristica">
+    <link rel="canonical" href="https://cantusacri.web.app">
+    <!-- Author Tag -->
+    <meta name="author" content="Canti e Liturgia Team">
+
+    <!-- Open Graph Meta Tags for social media sharing -->
+    <meta property="og:title" content="Canti e Liturgia - Guida alla Scelta dei Canti Liturgici">
+    <meta property="og:description"
+        content="Proposta canti liturgici per ogni domenica e solennità dell'anno liturgico.">
+    <meta property="og:image" content="styles/img/sfondo.png">
+    <meta property="og:url" content="https://propostacanti.web.app">
+    <meta property="og:type" content="website">
+    <meta name="google-site-verification" content="F-tZrF53BS0YnRte71tcyRU3MdrqNGQIyUUFKWfzRHg" />
+    <script src="javascript/javascript.js"></script>
+    <script src="javascript/js_global_search.js"></script>
+    <link rel="stylesheet" href="styles/style_index.css">
+    <link rel="manifest" href="manifest.json">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2J3NXSXK3Y"></script>
+
+    <script>
+        const currentVersion = '1.0.1';
+
+        document.addEventListener('DOMContentLoaded', function () {
+            avvia_index();
+
+            const savedVersion = localStorage.getItem('appVersion');
+            if (savedVersion !== currentVersion) {
+                showUpdateBanner(); // Mostra il banner solo se la versione è cambiata
+                localStorage.setItem('appVersion', currentVersion);
+            }
+
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.addEventListener('message', function (event) {
+                    if (event.data.type === 'UPDATE_AVAILABLE') {
+                        showUpdateBanner(); // Mostra il banner quando un aggiornamento è disponibile
+                    }
+                });
+            }
+        });
+
+        function showUpdateBanner() {
+            const updateBanner = document.getElementById('updateBanner');
+            if (updateBanner) {
+                updateBanner.classList.add('show'); // Aggiungi la classe per l'animazione
+                document.getElementById('closeBanner').onclick = function () {
+                    updateBanner.classList.remove('show'); // Rimuovi la classe per chiudere l'alert
+                };
+            }
+        }
+
+        // Registrazione del Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('sw.js').then(function (registration) {
+                    console.log('ServiceWorker registrato con successo:', registration);
+
+                    registration.onupdatefound = function () {
+                        const newWorker = registration.installing;
+                        newWorker.onstatechange = function () {
+                            if (newWorker.state === 'installed') {
+                                if (navigator.serviceWorker.controller) {
+                                    newWorker.postMessage({ type: 'UPDATE_AVAILABLE' });
+                                }
+                            }
+                        };
+                    };
+
+                    // Controlla aggiornamenti ogni 10 secondi
+                    setInterval(() => {
+                        registration.update().then(() => {
+                            if (registration.waiting) {
+                                registration.waiting.postMessage({ type: 'UPDATE_AVAILABLE' });
+                            }
+                        });
+                    }, 10000);
+                }).catch(function (error) {
+                    console.error('Registrazione del ServiceWorker fallita:', error);
+                });
+            });
+        }
+
+        // Inizializzazione di Google Analytics
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2J3NXSXK3Y');
+    </script>
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="navbar" id="myNavbar">
+            <h1>Proposta canti</h1>
+            <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+            <div class="navbar-buttons">
+                <button onclick="location.href='index.html'">Home</button>
+                <button onclick="location.href='nav-bar/elenco_canti.html'">Elenco canti</button>
+                <button onclick="location.href='nav-bar/spartiti_salmi.html'">Spartiti salmi</button>
+                <button onclick="location.href='nav-bar/anno_liturgico.html'">Anno liturgico</button>
+                <button onclick="location.href='nav-bar/eventi_speciali.html'">Eventi speciali</button>
+                <button onclick="location.href='nav-bar/imp_supporto.html'">Impostazioni/Supporto</button>
+            </div>
+            <input type="text" id="global_search" onkeyup="searchCanti(event, 'index')" placeholder="Cerca...">
+        </div>
+        <div class="header">
+            <div class="header-content">
+                <h1>Proposta Canti</h1>
+                <p class="subtitle">La guida per la scelta dei canti liturgici per ogni celebrazione dell'anno.</p>
+            </div>
+        </div>
+
+        <div class="main-content" id="main-content">
+            <div class="slogan-div">
+                <p>Questo è uno strumento pensato per supportare la scelta dei canti liturgici più adatti in base al
+                    calendario liturgico. Questa proposta di canti vuole essere una traccia offerta a tutti gli
+                    animatori liturgico-musicali per la scelta delle parti canore per l’Ingresso, l’Offertorio, la
+                    Comunione e il
+                    Congedo, in modo che siano pertinenti ai testi proposti dal Messale e alla Parola di Dio proclamata.
+                </p>
+                <p>Il sito fornisce suggerimenti sui canti da proporre per le varie domeniche e festività dell’anno
+                    liturgico, rispettando le stagioni liturgiche come l’<b>Avvento</b>, il <b>Natale</b>, la
+                    <b>Quaresima</b> e il <b>Tempo Ordinario</b>. Grazie a questo strumento, sarà possibile pianificare
+                    con maggiore facilità i canti più appropriati per la celebrazione eucaristica, tenendo conto delle
+                    letture del giorno, dei temi liturgici e della tradizione musicale religiosa.
+                </p>
+
+                <p>Inoltre, sul sito è possibile trovare un <b>elenco dettagliato dei canti</b> suggeriti,
+                    <b>spartiti per i salmi responsoriali</b> e materiale per
+                    <b>eventi liturgici speciali</b>. Questo servizio è utile sia per i musicisti che per i
+                    responsabili della liturgia, fornendo una guida rapida
+                    e facile da utilizzare per preparare le celebrazioni in modo adeguato e spiritualmente
+                    coinvolgente.
+                </p>
+
+
+            </div>
+
+            <div class="prossime-celebrazioni-div">
+                <h2>Prossime celebrazioni</h2>
+                <ul id="celebrazioneList">
+                    <!-- Le celebrazioni verranno aggiunte qui -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyCaBcrvK2Yf7dULDKaB2Zuxp2DH1ZVeeLo",
+        authDomain: "cantusacri.firebaseapp.com",
+        projectId: "cantusacri",
+        storageBucket: "cantusacri.firebasestorage.app",
+        messagingSenderId: "137933903515",
+        appId: "1:137933903515:web:5c7f3fa951c19a0bdf983e",
+        measurementId: "G-W9F8MB0G57"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
+</body>
+
+</html>

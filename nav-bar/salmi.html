@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrazioni</title>
+    <script src="../javascript/javascript.js"></script>
+    <script src="../javascript/js_global_search.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const theme = localStorage.getItem("theme-navbar")
+            if (!theme) {
+                setNavbarColor("ordinario")
+            }
+            else {
+                setNavbarColor(theme);
+            }
+            setDarkTheme()
+        });
+    </script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="navbar" id="myNavbar">
+            <h1>Salmi</h1>
+            <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+            <div class="navbar-buttons">
+                <button onclick="location.href='../index.html'">Home</button>
+                <button onclick="location.href='elenco_canti.html'">Elenco canti</button>
+                <button onclick="location.href='spartiti_salmi.html'">Spartiti salmi</button>
+                <button onclick="location.href='anno_liturgico.html'">Anno liturgico</button>
+                <button onclick="location.href='eventi_speciali.html'">Eventi speciali</button>
+                <button onclick="location.href='imp_supporto.html'">Impostazioni/Supporto</button>
+            </div>
+            <input type="text" id="global_search" onkeyup="searchCanti(event, 'salmi')" placeholder="Cerca...">
+        </div>
+
+        <div class="main-content" id="main-content">
+            <input type="text" id="searchInput" placeholder="Cerca salmi..." onkeyup="filter_search_bar()">
+
+            <ul id="list">
+                <!-- Gli elementi verranno generati dinamicamente qui -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Funzione che filtra gli elementi della lista basata sul testo inserito nella barra di ricerca
+        function filter_search_bar() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const listItems = document.querySelectorAll('#list li a');
+
+            listItems.forEach(function (item) {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    item.parentElement.style.display = ""; // Mostra l'elemento
+                } else {
+                    item.parentElement.style.display = "none"; // Nascondi l'elemento
+                }
+            });
+        }
+
+        function getQueryParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('anno');
+        }
+
+        function caricaSalmi(salmi) {
+            const list = document.getElementById('list');
+            list.innerHTML = '';
+
+            const anno = getQueryParams();
+            const salmiFiltrati = salmi.filter(salmo => salmo.anno === anno);
+
+            salmiFiltrati.forEach(function (salmo) {
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = salmo.download_link;
+                link.innerHTML = `${salmo.titolo} - ${salmo.autore}`;
+                li.appendChild(link);
+                list.appendChild(li);
+            });
+        }
+
+        function caricaJsonSalmi() {
+            const jsonFile = `../db/salmi/elenco_salmi.json`;
+
+            fetch(jsonFile)
+                .then(response => response.json())
+                .then(data => {
+                    caricaSalmi(data.salmi);
+                })
+                .catch(error => {
+                    console.error('Errore durante il caricamento dei dati:', error);
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            caricaJsonSalmi();
+        });
+    </script>
+</body>
+<link rel="stylesheet" href="../styles/style_index.css">
+<link rel="stylesheet" href="../styles/style_lista.css">
+
+</html>

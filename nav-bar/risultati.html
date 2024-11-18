@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultati ricerca</title>
+    <script src="../javascript/javascript.js"></script>
+    <script src="../javascript/js_global_search.js"></script>
+    <link rel="stylesheet" href="../styles/style_index.css">
+
+    <style>
+        /* Stile della tabella */
+        #resultsContainer {
+            overflow-x: auto;
+            /* Permette lo scroll orizzontale */
+            margin: 20px auto;
+            /* Centratura del contenitore */
+            width: 90%;
+        }
+
+        #resultsTable {
+            width: 100%;
+            /* La tabella occupa il 100% del contenitore */
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        .dark-theme #resultsTable {
+            background-color: #212121;
+            color: white;
+        }
+
+        /* Header della tabella */
+        #resultsTable thead tr {
+            background-color: #4CAF50;
+            color: white;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        /* Stile delle celle della tabella */
+        #resultsTable th,
+        #resultsTable td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        /* Righe della tabella alternate */
+        #resultsTable tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #resultsTable tbody tr:nth-child(odd) {
+            background-color: #e9e9e9;
+        }
+
+        /* Hover effetto */
+        #resultsTable tbody tr:hover {
+            background-color: #d1e7dd;
+        }
+
+        /* Stile dei link */
+        #resultsTable a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #resultsTable a:hover {
+            text-decoration: underline;
+        }
+
+        /* Messaggio quando nessun risultato è presente */
+        #resultsTable td[colspan="4"],
+        #resultsTable td[colspan="3"] {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Media query per schermi piccoli */
+        @media (max-width: 600px) {
+
+            #resultsTable th,
+            #resultsTable td {
+                font-size: 14px;
+                /* Riduce la dimensione del font per schermi piccoli */
+                padding: 8px;
+                /* Riduce il padding */
+            }
+        }
+
+        /* Stile righe tabella in modalità scura */
+        .dark-theme #resultsTable tbody tr:nth-child(even) {
+            background-color: #333;
+        }
+
+        .dark-theme #resultsTable tbody tr:nth-child(odd) {
+            background-color: #2a2a2a;
+        }
+
+        .dark-theme #resultsTable tbody tr:hover {
+            background-color: #444;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const theme = localStorage.getItem("theme-navbar")
+            if (!theme) {
+                setNavbarColor("ordinario", "risultati")
+            }
+            else {
+                setNavbarColor(theme, "risultati");
+            }
+            setDarkTheme();
+
+            const searchInput = localStorage.getItem("searchInput");
+            console.log("searchInput", searchInput);
+            if (searchInput) {
+                document.getElementById("global_search").value = searchInput;
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="navbar" id="myNavbar">
+            <h1>Risultati</h1>
+            <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+            <div class="navbar-buttons">
+                <button onclick="location.href='../index.html'">Home</button>
+                <button onclick="location.href='elenco_canti.html'">Elenco canti</button>
+                <button onclick="location.href='spartiti_salmi.html'">Spartiti salmi</button>
+                <button onclick="location.href='anno_liturgico.html'">Anno liturgico</button>
+                <button onclick="location.href='eventi_speciali.html'">Eventi speciali</button>
+                <button onclick="location.href='imp_supporto.html'">Impostazioni/Supporto</button>
+            </div>
+            <input type="text" id="global_search" onkeyup="searchCanti(event, 'risultati')" placeholder="Cerca...">
+        </div>
+    </div>
+
+    <div id="resultsContainer"> <!-- Contenitore per la tabella -->
+        <table id="resultsTable">
+            <thead>
+                <tr id="tableHeader">
+                    <!-- Le intestazioni verranno impostate tramite JavaScript -->
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Recupera i risultati da localStorage
+        const results = JSON.parse(localStorage.getItem("searchResults"));
+        const tipologia = localStorage.getItem("tipologia");
+        const resultsTable = document.getElementById("resultsTable").getElementsByTagName("tbody")[0];
+        const tableHeader = document.getElementById("tableHeader");
+
+        // Imposta le intestazioni della tabella in base alla tipologia
+        if (tipologia === "salmo") {
+            tableHeader.innerHTML = `
+                <th>Titolo</th>
+                <th>Anno</th>
+                <th>Autore</th>
+                <th>Download</th>
+                `;
+            if (results && results.length > 0) {
+                results.forEach(salmo => {
+                    const row = resultsTable.insertRow();
+                    row.innerHTML = `
+                        <td>${salmo.titolo}</td>
+                        <td>${salmo.anno}</td>
+                        <td>${salmo.autore}</td>
+                        <td><a href="${salmo.download_link}">Download</a></td>
+                    `;
+                });
+            } else {
+                resultsTable.innerHTML = "<tr><td colspan='4'>Nessun risultato trovato.</td></tr>";
+            }
+        } else if (tipologia === "messa") {
+            tableHeader.innerHTML = `
+                <th>Titolo</th>
+                <th>Numero</th>
+                <th>Anno</th>
+            `;
+            if (results && results.length > 0) {
+                results.forEach(messa => {
+                    const row = resultsTable.insertRow();
+                    const fest = messa.title.includes("ordinario") ? "ordinario" :
+                        messa.title.includes("avvento") ? "avvento" :
+                            messa.title.includes("quaresima") ? "quaresima" : "";
+
+                    // Imposta l'URL di destinazione per la riga
+                    const url = `../celebrazioni.html?numero=${messa.numero}&anno=${messa.anno}&festivita=${fest}`;
+
+                    // Aggiungi l'evento di click alla riga per reindirizzare alla pagina
+                    row.addEventListener('click', () => {
+                        window.location.href = url;
+                    });
+
+                    // Stile per mostrare il puntatore come un link
+                    row.style.cursor = 'pointer';
+
+                    row.innerHTML = `
+            <td>${messa.title}</td>
+            <td>${messa.numero}</td>
+            <td>${messa.anno}</td>
+            `;
+                });
+            } else {
+                resultsTable.innerHTML = "<tr><td colspan='3'>Nessun risultato trovato.</td></tr>";
+            }
+        } else {
+            if (results && results.length > 0) {
+                tableHeader.innerHTML = `
+                <th>Titolo</th>
+                <th>Autore</th>
+                <th>Tipologia</th>
+                <th>Tempo</th>
+                <th>Ascolto</th>
+                <th>Spartito</th>
+                <th>Testo</th>
+            `;
+                results.forEach(canto => {
+                    const row = resultsTable.insertRow();
+
+                    if (canto.download_link === "-") {
+                        row.innerHTML = `
+            <td>${canto.titolo}</td>
+            <td>${canto.autore}</td>
+            <td>${canto.tipologia}</td>
+            <td>${canto.tempo}</td>
+            <td><a href="${canto.ascolta}">Ascolta</a></td>
+            <td>Spartito non disponibile</td>
+            <td><a href="testo_canti.html?titolo=${canto.titolo}">Testo</a></td>
+            `;
+                    } else {
+                        row.innerHTML = `
+            <td>${canto.titolo}</td>
+            <td>${canto.autore}</td>
+            <td>${canto.tipologia}</td>
+            <td>${canto.tempo}</td>
+            <td><a href="${canto.ascolta}">Ascolta</a></td>
+            <td><a href="${canto.download_link}">Download</a></td>
+            <td><a href="testo_canti.html?titolo=${canto.titolo}">Testo</a></td>
+            `;
+                    }
+
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>
