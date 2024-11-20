@@ -16,13 +16,29 @@ function calcolaPasqua(anno) {
     return new Date(anno, mese - 1, giorno); // Mese è 0-indexed in JS
 }
 
-function tipologia_anno(anno) {
+function tipologia_anno(anno, data) {
+    const domeniche_avvento = calcolaDomenicheAvvento(anno);
+    const primaDomenicaAvvento = domeniche_avvento[0];
+
+    console.log("sdfjnsdfojnsd", data < primaDomenicaAvvento);
     if (anno % 3 === 2) {
-        return "B";
+        if (data < primaDomenicaAvvento) {
+            return "B";
+        } else {
+            return "C";
+        }
     } else if (anno % 3 === 0) {
-        return "C";
+        if (data < primaDomenicaAvvento) {
+            return "C";
+        } else {
+            return "A";
+        }
     } else {
-        return "A";
+        if (data < primaDomenicaAvvento) {
+            return "A";
+        } else {
+            return "B";
+        }
     }
 }
 
@@ -172,12 +188,12 @@ function calcolaFestivita(anno) {
     const festivita = [];
 
     domenicheQuaresima.forEach((domenica, index) => {
-        festivita.push({ anno: tipologia_anno(anno), tipologia: "quaresima", numero: `${index + 1}`, data: domenica });
+        festivita.push({ anno: tipologia_anno(anno, domenica), tipologia: "quaresima", numero: `${index + 1}`, data: domenica });
     });
 
     // Aggiungi Avvento
     domenicheAvvento.forEach((domenica, index) => {
-        festivita.push({ anno: tipologia_anno(anno), tipologia: "avvento", numero: `${index + 1}`, data: domenica });
+        festivita.push({ anno: tipologia_anno(anno, domenica), tipologia: "avvento", numero: `${index + 1}`, data: domenica });
     });
 
     // Novena Immacolata
@@ -194,7 +210,7 @@ function calcolaFestivita(anno) {
         dataNovena.setDate(dataNovena.getDate() + i);
 
         festivita.push({
-            anno: tipologia_anno(anno),
+            anno: tipologia_anno(anno, dataNovena),
             tipologia: "ordinario",
             numero: `Novena Immacolata - Giorno ${i + 1}`,
             data: dataNovena
@@ -202,26 +218,26 @@ function calcolaFestivita(anno) {
     }
 
     const dataSanti = new Date(anno, 10, 1);
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "ordinario", numero: 'Solennità di tutti i Santi', data: dataSanti });
+    festivita.push({ anno: tipologia_anno(anno, dataSanti), tipologia: "ordinario", numero: 'Solennità di tutti i Santi', data: dataSanti });
 
     const cristoRe = new Date(domenicheAvvento[0]);
     cristoRe.setDate(domenicheAvvento[0].getDate() - 7); // Sottrai 3 giorni
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "ordinario", numero: 'Solennità di Cristo Re', data: cristoRe });
+    festivita.push({ anno: tipologia_anno(anno, cristoRe), tipologia: "ordinario", numero: 'Solennità di Cristo Re', data: cristoRe });
 
     // Aggiungi inizio e fine Quaresima
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "quaresima", numero: 'Mercoledì delle Ceneri', data: quaresima.inizioQuaresima });
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "quaresima", numero: 'Domenica delle Palme', data: quaresima.fineQuaresima });
+    festivita.push({ anno: tipologia_anno(anno, quaresima.inizioQuaresima), tipologia: "quaresima", numero: 'Mercoledì delle Ceneri', data: quaresima.inizioQuaresima });
+    festivita.push({ anno: tipologia_anno(anno, quaresima.fineQuaresima), tipologia: "quaresima", numero: 'Domenica delle Palme', data: quaresima.fineQuaresima });
 
     // Aggiungi domeniche del Tempo Ordinario
     domenicheTempoOrdinario.forEach((domenica, index) => {
-        festivita.push({ anno: tipologia_anno(anno), tipologia: "ordinario", numero: `${index + 1}`, data: domenica });
+        festivita.push({ anno: tipologia_anno(anno, domenica), tipologia: "ordinario", numero: `${index + 1}`, data: domenica });
     });
 
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "natale", numero: "Vigilia di Natale", data: new Date(anno, 11, 24) })
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "natale", numero: "Natale", data: new Date(anno, 11, 25) })
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "natale", numero: "Santo Stefano", data: new Date(anno, 11, 26) })
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "natale", numero: "Maria Santissima Madre di Dio", data: new Date(anno + 1, 0, 1) })
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "natale", numero: "Epifania", data: new Date(anno + 1, 0, 6) })
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 24)), tipologia: "natale", numero: "Vigilia di Natale", data: new Date(anno, 11, 24) })
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 25)), tipologia: "natale", numero: "Natale", data: new Date(anno, 11, 25) })
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 26)), tipologia: "natale", numero: "Santo Stefano", data: new Date(anno, 11, 26) })
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno + 1, 0, 1)), tipologia: "natale", numero: "Maria Santissima Madre di Dio", data: new Date(anno + 1, 0, 1) })
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno + 1, 0, 6)), tipologia: "natale", numero: "Epifania", data: new Date(anno + 1, 0, 6) })
 
 
     // Aggiungi Pasqua
@@ -234,10 +250,10 @@ function calcolaFestivita(anno) {
     const sabatoSanto = new Date(pasqua);
     sabatoSanto.setDate(pasqua.getDate() - 1); // Sottrai 1 giorni
 
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "pasqua", numero: 'Giovedì Santo', data: giovediSanto });
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "pasqua", numero: 'Venerdì Santo', data: venerdiSanto });
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "pasqua", numero: 'Sabato Santo', data: sabatoSanto });
-    festivita.push({ anno: tipologia_anno(anno), tipologia: "pasqua", numero: 'Pasqua', data: pasqua });
+    festivita.push({ anno: tipologia_anno(anno, giovediSanto), tipologia: "pasqua", numero: 'Giovedì Santo', data: giovediSanto });
+    festivita.push({ anno: tipologia_anno(anno, venerdiSanto), tipologia: "pasqua", numero: 'Venerdì Santo', data: venerdiSanto });
+    festivita.push({ anno: tipologia_anno(anno, sabatoSanto), tipologia: "pasqua", numero: 'Sabato Santo', data: sabatoSanto });
+    festivita.push({ anno: tipologia_anno(anno, pasqua), tipologia: "pasqua", numero: 'Pasqua', data: pasqua });
 
     festivita.sort((a, b) => a.data - b.data);
 

@@ -64,7 +64,7 @@ async function searchCanti(event, page) {
             } catch (error) {
                 console.error("Errore nel caricamento del file JSON:", error);
             }
-        } else if (input.includes("messa") || input.includes("celebrazione") || input.includes("domenica")) {
+        } else if (input.includes("messa") || input.includes("celebrazione") || input.includes("domenica") || input.includes("solennità")) {
             const jsonPaths = {
                 "ordinario": "db/tempi_liturgici/tempo_ordinario/*.json",
                 "avvento": "db/tempi_liturgici/avvento/*.json",

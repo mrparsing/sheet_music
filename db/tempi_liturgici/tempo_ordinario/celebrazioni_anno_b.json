@@ -19,7 +19,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "II domenica tempo ordinario - B",
@@ -40,7 +41,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "III domenica tempo ordinario - B",
@@ -61,7 +63,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "IV domenica tempo ordinario - B",
@@ -82,7 +85,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "V domenica tempo ordinario - B",
@@ -103,7 +107,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "VI domenica tempo ordinario - B",
@@ -124,7 +129,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "VII domenica tempo ordinario - B",
@@ -145,7 +151,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "VIII domenica tempo ordinario - B",
@@ -166,7 +173,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "IX domenica tempo ordinario - B",
@@ -187,7 +195,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "X domenica tempo ordinario - B",
@@ -208,7 +217,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XI domenica tempo ordinario - B",
@@ -229,7 +239,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XII domenica tempo ordinario - B",
@@ -250,7 +261,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XIII domenica tempo ordinario - B",
@@ -271,7 +283,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XIV domenica tempo ordinario - B",
@@ -292,7 +305,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XV domenica tempo ordinario - B",
@@ -313,7 +327,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XVI domenica tempo ordinario - B",
@@ -334,7 +349,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XVII domenica tempo ordinario - B",
@@ -355,7 +371,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XVIII domenica tempo ordinario - B",
@@ -376,7 +393,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XIX domenica tempo ordinario - B",
@@ -397,7 +415,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XX domenica tempo ordinario - B",
@@ -418,7 +437,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XXI domenica tempo ordinario - B",
@@ -439,7 +459,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XXII domenica tempo ordinario - B",
@@ -460,7 +481,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XXIII domenica tempo ordinario - B",
@@ -481,7 +503,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XXIV domenica tempo ordinario - B",
@@ -502,7 +525,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XXV domenica tempo ordinario - B",
@@ -523,7 +547,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XXVI domenica tempo ordinario - B",
@@ -544,7 +569,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XXVII domenica tempo ordinario - B",
@@ -565,9 +591,9 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
-
         {
             "title": "XXVIII domenica tempo ordinario - B",
             "numero": 28,
@@ -587,8 +613,10 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
-        },        {
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
+        },
+        {
             "title": "XXIX domenica tempo ordinario - B",
             "numero": 29,
             "anno": "B",
@@ -607,7 +635,8 @@
             "vangelo": "<i>{riferimento del Vangelo}</i><br><br>{testo del Vangelo}",
             "canto_offertorio": "{canto offertorio}",
             "canto_comunione": "{canto comunione}",
-            "antifona_alla_comunione": "{testo dell'antifona alla comunione}"
+            "antifona_alla_comunione": "{testo dell'antifona alla comunione}",
+            "canto_finale": "-"
         },
         {
             "title": "XXX domenica tempo ordinario - B",
@@ -628,7 +657,8 @@
             "vangelo": "<i>Dal Vangelo secondo Marco, Mc 10,46-52</i><br><br>In quel tempo, mentre Gesù partiva da Gèrico insieme ai suoi discepoli e a molta folla, il figlio di Timèo, Bartimèo, che era cieco, sedeva lungo la strada a mendicare. Sentendo che era Gesù Nazareno, cominciò a gridare e a dire: «Figlio di Davide, Gesù, abbi pietà di me!». Molti lo rimproveravano perché tacesse, ma egli gridava ancora più forte: «Figlio di Davide, abbi pietà di me!». Gesù si fermò e disse: «Chiamatelo!». Chiamarono il cieco, dicendogli: «Coraggio! Àlzati, ti chiama!». Egli, gettato via il suo mantello, balzò in piedi e venne da Gesù. Allora Gesù gli disse: «Che cosa vuoi che io faccia per te?». E il cieco gli rispose: «Rabbunì, che io veda di nuovo!». E Gesù gli disse: «Va’, la tua fede ti ha salvato». E subito vide di nuovo e lo seguiva lungo la strada.<br><br>Parola del Signore.",
             "canto_offertorio": "",
             "antifona_alla_comunione": "Esulteremo per la tua vittoria e nel nome del nostro Dio alzeremo i vessilli.",
-            "canto_comunione": ""
+            "canto_comunione": "",
+            "canto_finale": "-"
         },
         {
             "title": "Solennità di tutti i Santi - B",
@@ -649,7 +679,8 @@
             "vangelo": "<i>Dal Vangelo secondo Matteo<br>Mt 5,1-12a</i><br><br>In quel tempo, vedendo le folle, Gesù salì sul monte: si pose a sedere e si avvicinarono a lui i suoi discepoli. Si mise a parlare e insegnava loro dicendo: «Beati i poveri in spirito, perché di essi è il regno dei cieli. Beati quelli che sono nel pianto, perché saranno consolati. Beati i miti, perché avranno in eredità la terra. Beati quelli che hanno fame e sete della giustizia, perché saranno saziati. Beati i misericordiosi, perché troveranno misericordia. Beati i puri di cuore, perché vedranno Dio. Beati gli operatori di pace, perché saranno chiamati figli di Dio. Beati i perseguitati per la giustizia, perché di essi è il regno dei cieli. Beati voi quando vi insulteranno, vi perseguiteranno e, mentendo, diranno ogni sorta di male contro di voi per causa mia. Rallegratevi ed esultate, perché grande è la vostra ricompensa nei cieli».<br><br>Parola del Signore",
             "canto_offertorio": "<a href=\"nav-bar/testo_canti.html?titolo=Dov'è%20carita%20e%20amore\" target=\"_blank\">Dov'è carità e amore</a>",
             "antifona_alla_comunione": "Beati i puri di cuore, perché vedranno Dio.<br>Beati gli operatori di pace,<br>perché saranno chiamati figli di Dio.<br>Beati i perseguitati a causa della giustizia,<br>perché di essi è il regno dei cieli. (Mt 5,8-10).",
-            "canto_comunione": "<a href='nav-bar/testo_canti.html?titolo=Beatitudini' target='_blank'>Beatitudini</a>"
+            "canto_comunione": "<a href='nav-bar/testo_canti.html?titolo=Beatitudini' target='_blank'>Beatitudini</a>",
+            "canto_finale": "-"
         },
         {
             "title": "XXXI domenica tempo ordinario - B",
@@ -670,7 +701,8 @@
             "vangelo": "<i>Dal Vangelo secondo Marco, Mc 12,28b-34</i><br><br>In quel tempo, si avvicinò a Gesù uno degli scribi e gli domandò: «Qual è il primo di tutti i comandamenti?». Gesù rispose: «Il primo è: \"Ascolta, Israele! Il Signore nostro Dio è l'unico Signore; amerai il Signore tuo Dio con tutto il tuo cuore e con tutta la tua anima, con tutta la tua mente e con tutta la tua forza\". Il secondo è questo: \"Amerai il tuo prossimo come te stesso\". Non c'è altro comandamento più grande di questi». Lo scriba gli disse: «Hai detto bene, Maestro, e secondo verità, che Egli è unico e non vi è altri all'infuori di lui; amarlo con tutto il cuore, con tutta l'intelligenza e con tutta la forza e amare il prossimo come se stesso vale più di tutti gli olocausti e i sacrifici». Vedendo che egli aveva risposto saggiamente, Gesù gli disse: «Non sei lontano dal regno di Dio». E nessuno aveva più il coraggio di interrogarlo.<br><br>Parola del Signore.",
             "canto_offertorio": "-",
             "canto_comunione": "<a href='nav-bar/testo_canti.html?titolo=Questo è il mio comandamento' target='_blank'>Questo è il mio comandamento</a>",
-            "antifona_alla_comunione": "Mi indicherai il sentiero della vita, gioia piena alla tua presenza. "
+            "antifona_alla_comunione": "Mi indicherai il sentiero della vita, gioia piena alla tua presenza. ",
+            "canto_finale": "-"
         },
         {
             "title": "XXXII domenica tempo ordinario - B",
@@ -691,7 +723,8 @@
             "vangelo": "<i>Dal Vangelo secondo Marco, Mc 12,38-44</i><br><br>In quel tempo, Gesù [nel tempio] diceva alla folla nel suo insegnamento: «Guardatevi dagli scribi, che amano passeggiare in lunghe vesti, ricevere saluti nelle piazze, avere i primi seggi nelle sinagoghe e i primi posti nei banchetti. Divorano le case delle vedove e pregano a lungo per farsi vedere. Essi riceveranno una condanna più severa». Seduto di fronte al tesoro, osservava come la folla vi gettava monete. Tanti ricchi ne gettavano molte. Ma, venuta una vedova povera, vi gettò due monetine, che fanno un soldo. Allora, chiamati a sé i suoi discepoli, disse loro: «In verità io vi dico: questa vedova, così povera, ha gettato nel tesoro più di tutti gli altri. Tutti infatti hanno gettato parte del loro superfluo. Lei invece, nella sua miseria, vi ha gettato tutto quello che aveva, tutto quanto aveva per vivere».<br><br>Parola di Dio.",
             "canto_offertorio": "-",
             "canto_comunione": "<a href='nav-bar/testo_canti.html?titolo=Il Signore è il mio Pastore' target='_blank'>Il Signore è il mio Pastore</a>",
-            "antifona_alla_comunione": "Il Signore è il mio pastore: non manco di nulla. Su pascoli erbosi mi fa riposare, ad acque tranquille mi conduce. (Sal 22,1-2)"
+            "antifona_alla_comunione": "Il Signore è il mio pastore: non manco di nulla. Su pascoli erbosi mi fa riposare, ad acque tranquille mi conduce. (Sal 22,1-2)",
+            "canto_finale": "-"
         },
         {
             "title": "XXXIII domenica tempo ordinario - B",
@@ -713,28 +746,32 @@
             "vangelo": "<i>Dal Vangelo secondo Marco, Mc 13,24-32</i><br><br>In quel tempo, Gesù disse ai suoi discepoli: «In quei giorni, dopo quella tribolazione, il sole si oscurerà, la luna non darà più la sua luce, le stelle cadranno dal cielo e le potenze che sono nei cieli saranno sconvolte. Allora vedranno il Figlio dell'uomo venire sulle nubi con grande potenza e gloria. Egli manderà gli angeli e radunerà i suoi eletti dai quattro venti, dall'estremità della terra fino all'estremità del cielo. Dalla pianta di fico imparate la parabola: quando ormai il suo ramo diventa tenero e spuntano le foglie, sapete che l'estate è vicina. Così anche voi: quando vedrete accadere queste cose, sappiate che egli è vicino, è alle porte. In verità io vi dico: non passerà questa generazione prima che tutto questo avvenga. Il cielo e la terra passeranno, ma le mie parole non passeranno. Quanto però a quel giorno o a quell'ora, nessuno lo sa, né gli angeli nel cielo né il Figlio, eccetto il Padre».<br><br>Parola del Signore.",
             "canto_offertorio": "-",
             "canto_comunione": "-",
-            "antifona_alla_comunione": "Il mio bene è stare vicino a Dio; nel Signore ho posto il mio rifugio. (Sal 72,28)"
+            "antifona_alla_comunione": "Il mio bene è stare vicino a Dio; nel Signore ho posto il mio rifugio. (Sal 72,28)",
+            "canto_finale": "-"
         },
         {
             "title": "NOSTRO SIGNORE GESÙ CRISTO RE DELL'UNIVERSO - B",
             "numero": "Solennità di Cristo Re",
             "anno": "B",
-            "colore": "red",
+            "colore": "#FF0000",
             "antifona_ingresso": "L’Agnello immolato<br>è degno di ricevere potenza e ricchezza,<br>sapienza, forza e onore:<br>a lui gloria e potenza nei secoli dei secoli.<br><br><b>Si dice il Gloria.</b>",
-            "canto_ingresso": "-",
+            "canto_ingresso": "<a href='nav-bar/testo_canti.html?titolo=Cielo nuovo' target='_blank'>Cielo nuovo</a>",
             "atto_penitenziale": "La morte di Cristo ha segnato la fine del potere del male. Animati dalla fiducia nel nostro Dio, e salvatore lento all'ira e ricco di grazia, riconosciamo le nostre colpe e chiediamo la conversione profonda del cuore, preludio della nostra salvezza.",
-            "tropo_1": "-<br><b>Kyrie, eleison</b>",
-            "tropo_2": "-<br><b>Christe, eleison</b>",
-            "tropo_3": "-<br><b>Kyrie, eleison</b>",
+            "tropo_1": "Signore, Agnello Immolato per la nostra salvezza.<br><b>Kyrie, eleison</b>",
+            "tropo_2": "Cristo, Figlio dell'Uomo e Testimone fedele.<br><b>Christe, eleison</b>",
+            "tropo_3": "Signore, che per le tue ferite siamo stati guariti.<br><b>Kyrie, eleison</b>",
             "prima_lettura_testo": "<i>Dal libro del profeta Daniele<br>Dn 7,13-14</i><br><br>Guardando nelle visioni notturne, ecco venire con le nubi del cielo uno simile a un figlio d'uomo; giunse fino al vegliardo e fu presentato a lui. Gli furono dati potere, gloria e regno; tutti i popoli, nazioni e lingue lo servivano: il suo potere è un potere eterno, che non finirà mai, e il suo regno non sarà mai distrutto.<br><br>Parola di Dio.",
             "salmo_link": "db/tempi_liturgici/tempo_ordinario/salmi_anno_b/-",
             "salmo_testo": "<i>Dal Sal 92 (93)<br><b>R. Il Signore regna, si riveste di splendore.</b></i><br><br>Il Signore regna, si riveste di maestà:<br>si riveste il Signore, si cinge di forza. R.<br><br>È stabile il mondo, non potrà vacillare.<br>Stabile è il tuo trono da sempre,<br>dall'eternità tu sei. R.<br><br>Davvero degni di fede i tuoi insegnamenti!<br>La santità si addice alla tua casa<br>per la durata dei giorni, Signore. R.",
             "seconda_lettura_testo": "<i>Dal libro dell'Apocalisse di san Giovanni apostolo<br>Ap 1,5-8</i><br><br>Gesù Cristo è il testimone fedele, il primogenito dei morti e il sovrano dei re della terra. A Colui che ci ama e ci ha liberati ai nostri peccati con il suo sangue, che ha fatto di noi un regno, sacerdoti per il suo Dio e Padre, a lui la gloria e la potenza nei secoli dei secoli. Amen. Ecco, viene con le nubi e ogni occhio lo vedrà, anche quelli che lo trafissero, e per lui tutte le tribù della terra si batteranno il petto. Sì, Amen! Dice il Signore Dio: Io sono l'Alfa e l'Omèga, Colui che è, che era e che viene, l'Onnipotente!<br><br>Parola di Dio.",
             "acclamazione_al_vangelo": "Alleluia, alleluia.<br><br>Benedetto colui che viene nel nome del Signore!<br>Benedetto il Regno che viene, del nostro padre Davide!<br><br>Alleluia.",
             "vangelo": "<i>Dal Vangelo secondo Giovanni<br>Gv 18,33b-37</i><br><br>In quel tempo, Pilato disse a Gesù: «Sei tu il re dei Giudei?». Gesù rispose: «Dici questo da te, oppure altri ti hanno parlato di me?». Pilato disse: «Sono forse io Giudeo? La tua gente e i capi dei sacerdoti ti hanno consegnato a me. Che cosa hai fatto?». Rispose Gesù: «Il mio regno non è di questo mondo; se il mio regno fosse di questo mondo, i miei servitori avrebbero combattuto perché non fossi consegnato ai Giudei; ma il mio regno non è di quaggiù». Allora Pilato gli disse: «Dunque tu sei re?». Rispose Gesù: «Tu lo dici: io sono re. Per questo io sono nato e per questo sono venuto nel mondo: per dare testimonianza alla verità. Chiunque è dalla verità, ascolta la mia voce».<br><br>Parola del Signore.",
-            "canto_offertorio": "-",
-            "canto_comunione": "-",
-            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)"
+            "canto_offertorio": "<a href='nav-bar/testo_canti.html?titolo=Cielo nuovo' target='_blank'>Cielo nuovo</a>",
+            "canto_offertorio_2": "<a href='nav-bar/testo_canti.html?titolo=Benedetto sei Tu Signore' target='_blank'>Benedetto sei Tu Signore</a>",
+            "canto_comunione": "<a href='nav-bar/testo_canti.html?titolo=Re di Gloria' target='_blank'>Re di Gloria</a>",
+            "canto_comunione_2": "<a href='nav-bar/testo_canti.html?titolo=Pane di Vita nuova' target='_blank'>Pane di Vita nuova</a>",
+            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)",
+            "canto_finale": "<a href='nav-bar/testo_canti.html?titolo=Cielo nuovo' target='_blank'>Cielo nuovo</a>"
         },
         {
             "title": "I giorno Novena Immacolata - B",
@@ -755,7 +792,8 @@
             "vangelo": "<i>Dal Vangelo secondo Giovanni<br>Gv 18,33b-37</i><br><br>In quel tempo, Pilato disse a Gesù: «Sei tu il re dei Giudei?». Gesù rispose: «Dici questo da te, oppure altri ti hanno parlato di me?». Pilato disse: «Sono forse io Giudeo? La tua gente e i capi dei sacerdoti ti hanno consegnato a me. Che cosa hai fatto?». Rispose Gesù: «Il mio regno non è di questo mondo; se il mio regno fosse di questo mondo, i miei servitori avrebbero combattuto perché non fossi consegnato ai Giudei; ma il mio regno non è di quaggiù». Allora Pilato gli disse: «Dunque tu sei re?». Rispose Gesù: «Tu lo dici: io sono re. Per questo io sono nato e per questo sono venuto nel mondo: per dare testimonianza alla verità. Chiunque è dalla verità, ascolta la mia voce».<br><br>Parola del Signore.",
             "canto_offertorio": "-",
             "canto_comunione": "-",
-            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)"
+            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)",
+            "canto_finale": "-"
         },
         {
             "title": "II giorno di Novena - B",
@@ -776,7 +814,8 @@
             "vangelo": "<i>Dal Vangelo secondo Giovanni<br>Gv 18,33b-37</i><br><br>In quel tempo, Pilato disse a Gesù: «Sei tu il re dei Giudei?». Gesù rispose: «Dici questo da te, oppure altri ti hanno parlato di me?». Pilato disse: «Sono forse io Giudeo? La tua gente e i capi dei sacerdoti ti hanno consegnato a me. Che cosa hai fatto?». Rispose Gesù: «Il mio regno non è di questo mondo; se il mio regno fosse di questo mondo, i miei servitori avrebbero combattuto perché non fossi consegnato ai Giudei; ma il mio regno non è di quaggiù». Allora Pilato gli disse: «Dunque tu sei re?». Rispose Gesù: «Tu lo dici: io sono re. Per questo io sono nato e per questo sono venuto nel mondo: per dare testimonianza alla verità. Chiunque è dalla verità, ascolta la mia voce».<br><br>Parola del Signore.",
             "canto_offertorio": "-",
             "canto_comunione": "-",
-            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)"
+            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)",
+            "canto_finale": "-"
         },
         {
             "title": "III giorno di Novena - B",
@@ -797,7 +836,8 @@
             "vangelo": "<i>Dal Vangelo secondo Giovanni<br>Gv 18,33b-37</i><br><br>In quel tempo, Pilato disse a Gesù: «Sei tu il re dei Giudei?». Gesù rispose: «Dici questo da te, oppure altri ti hanno parlato di me?». Pilato disse: «Sono forse io Giudeo? La tua gente e i capi dei sacerdoti ti hanno consegnato a me. Che cosa hai fatto?». Rispose Gesù: «Il mio regno non è di questo mondo; se il mio regno fosse di questo mondo, i miei servitori avrebbero combattuto perché non fossi consegnato ai Giudei; ma il mio regno non è di quaggiù». Allora Pilato gli disse: «Dunque tu sei re?». Rispose Gesù: «Tu lo dici: io sono re. Per questo io sono nato e per questo sono venuto nel mondo: per dare testimonianza alla verità. Chiunque è dalla verità, ascolta la mia voce».<br><br>Parola del Signore.",
             "canto_offertorio": "-",
             "canto_comunione": "-",
-            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)"
+            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)",
+            "canto_finale": "-"
         },
         {
             "title": "IV giorno di Novena - B",
@@ -818,7 +858,8 @@
             "vangelo": "<i>Dal Vangelo secondo Giovanni<br>Gv 18,33b-37</i><br><br>In quel tempo, Pilato disse a Gesù: «Sei tu il re dei Giudei?». Gesù rispose: «Dici questo da te, oppure altri ti hanno parlato di me?». Pilato disse: «Sono forse io Giudeo? La tua gente e i capi dei sacerdoti ti hanno consegnato a me. Che cosa hai fatto?». Rispose Gesù: «Il mio regno non è di questo mondo; se il mio regno fosse di questo mondo, i miei servitori avrebbero combattuto perché non fossi consegnato ai Giudei; ma il mio regno non è di quaggiù». Allora Pilato gli disse: «Dunque tu sei re?». Rispose Gesù: «Tu lo dici: io sono re. Per questo io sono nato e per questo sono venuto nel mondo: per dare testimonianza alla verità. Chiunque è dalla verità, ascolta la mia voce».<br><br>Parola del Signore.",
             "canto_offertorio": "-",
             "canto_comunione": "-",
-            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)"
+            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)",
+            "canto_finale": "-"
         },
         {
             "title": "V giorno di Novena - B",
@@ -839,7 +880,8 @@
             "vangelo": "<i>Dal Vangelo secondo Giovanni<br>Gv 18,33b-37</i><br><br>In quel tempo, Pilato disse a Gesù: «Sei tu il re dei Giudei?». Gesù rispose: «Dici questo da te, oppure altri ti hanno parlato di me?». Pilato disse: «Sono forse io Giudeo? La tua gente e i capi dei sacerdoti ti hanno consegnato a me. Che cosa hai fatto?». Rispose Gesù: «Il mio regno non è di questo mondo; se il mio regno fosse di questo mondo, i miei servitori avrebbero combattuto perché non fossi consegnato ai Giudei; ma il mio regno non è di quaggiù». Allora Pilato gli disse: «Dunque tu sei re?». Rispose Gesù: «Tu lo dici: io sono re. Per questo io sono nato e per questo sono venuto nel mondo: per dare testimonianza alla verità. Chiunque è dalla verità, ascolta la mia voce».<br><br>Parola del Signore.",
             "canto_offertorio": "-",
             "canto_comunione": "-",
-            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)"
+            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)",
+            "canto_finale": "-"
         },
         {
             "title": "VI giorno di Novena - B",
@@ -860,7 +902,8 @@
             "vangelo": "<i>Dal Vangelo secondo Giovanni<br>Gv 18,33b-37</i><br><br>In quel tempo, Pilato disse a Gesù: «Sei tu il re dei Giudei?». Gesù rispose: «Dici questo da te, oppure altri ti hanno parlato di me?». Pilato disse: «Sono forse io Giudeo? La tua gente e i capi dei sacerdoti ti hanno consegnato a me. Che cosa hai fatto?». Rispose Gesù: «Il mio regno non è di questo mondo; se il mio regno fosse di questo mondo, i miei servitori avrebbero combattuto perché non fossi consegnato ai Giudei; ma il mio regno non è di quaggiù». Allora Pilato gli disse: «Dunque tu sei re?». Rispose Gesù: «Tu lo dici: io sono re. Per questo io sono nato e per questo sono venuto nel mondo: per dare testimonianza alla verità. Chiunque è dalla verità, ascolta la mia voce».<br><br>Parola del Signore.",
             "canto_offertorio": "-",
             "canto_comunione": "-",
-            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)"
+            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)",
+            "canto_finale": "-"
         },
         {
             "title": "VII giorno di Novena - B",
@@ -881,7 +924,8 @@
             "vangelo": "<i>Dal Vangelo secondo Giovanni<br>Gv 18,33b-37</i><br><br>In quel tempo, Pilato disse a Gesù: «Sei tu il re dei Giudei?». Gesù rispose: «Dici questo da te, oppure altri ti hanno parlato di me?». Pilato disse: «Sono forse io Giudeo? La tua gente e i capi dei sacerdoti ti hanno consegnato a me. Che cosa hai fatto?». Rispose Gesù: «Il mio regno non è di questo mondo; se il mio regno fosse di questo mondo, i miei servitori avrebbero combattuto perché non fossi consegnato ai Giudei; ma il mio regno non è di quaggiù». Allora Pilato gli disse: «Dunque tu sei re?». Rispose Gesù: «Tu lo dici: io sono re. Per questo io sono nato e per questo sono venuto nel mondo: per dare testimonianza alla verità. Chiunque è dalla verità, ascolta la mia voce».<br><br>Parola del Signore.",
             "canto_offertorio": "-",
             "canto_comunione": "-",
-            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)"
+            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)",
+            "canto_finale": "-"
         },
         {
             "title": "VIII giorno di Novena - B",
@@ -902,7 +946,8 @@
             "vangelo": "<i>Dal Vangelo secondo Giovanni<br>Gv 18,33b-37</i><br><br>In quel tempo, Pilato disse a Gesù: «Sei tu il re dei Giudei?». Gesù rispose: «Dici questo da te, oppure altri ti hanno parlato di me?». Pilato disse: «Sono forse io Giudeo? La tua gente e i capi dei sacerdoti ti hanno consegnato a me. Che cosa hai fatto?». Rispose Gesù: «Il mio regno non è di questo mondo; se il mio regno fosse di questo mondo, i miei servitori avrebbero combattuto perché non fossi consegnato ai Giudei; ma il mio regno non è di quaggiù». Allora Pilato gli disse: «Dunque tu sei re?». Rispose Gesù: «Tu lo dici: io sono re. Per questo io sono nato e per questo sono venuto nel mondo: per dare testimonianza alla verità. Chiunque è dalla verità, ascolta la mia voce».<br><br>Parola del Signore.",
             "canto_offertorio": "-",
             "canto_comunione": "-",
-            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)"
+            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)",
+            "canto_finale": "-"
         },
         {
             "title": "IX giorno di Novena - B",
@@ -923,7 +968,8 @@
             "vangelo": "<i>Dal Vangelo secondo Giovanni<br>Gv 18,33b-37</i><br><br>In quel tempo, Pilato disse a Gesù: «Sei tu il re dei Giudei?». Gesù rispose: «Dici questo da te, oppure altri ti hanno parlato di me?». Pilato disse: «Sono forse io Giudeo? La tua gente e i capi dei sacerdoti ti hanno consegnato a me. Che cosa hai fatto?». Rispose Gesù: «Il mio regno non è di questo mondo; se il mio regno fosse di questo mondo, i miei servitori avrebbero combattuto perché non fossi consegnato ai Giudei; ma il mio regno non è di quaggiù». Allora Pilato gli disse: «Dunque tu sei re?». Rispose Gesù: «Tu lo dici: io sono re. Per questo io sono nato e per questo sono venuto nel mondo: per dare testimonianza alla verità. Chiunque è dalla verità, ascolta la mia voce».<br><br>Parola del Signore.",
             "canto_offertorio": "-",
             "canto_comunione": "-",
-            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)"
+            "antifona_alla_comunione": "Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)",
+            "canto_finale": "-"
         },
         {
             "title": "Immacolata",

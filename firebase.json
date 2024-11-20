@@ -6,5 +6,15 @@
       "**/.*",
       "**/node_modules/**"
     ]
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/xxxiii-domenica-ordinario-anno-b",
+      "destination": "/celebrazioni.html?numero=33&anno=B&festivita=ordinario"
+    },
+    {
+      "source": "/solennita-di-cristo-re-anno-b",
+      "destination": "/celebrazioni.html?numero=Solennit%C3%A0%20di%20Cristo%20Re&anno=B&festivita=ordinario"
+    }
+  ]
 }

@@ -10,75 +10,8 @@
     <script src="javascript/javascript.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <meta name="description"
-        content="Proposta Canti per celebrazioni liturgiche: antifone, canti di ingresso, salmi responsoriali, letture liturgiche, e altro. Tutto per preparare le celebrazioni liturgiche.">
-    <meta name="keywords"
-        content="canti liturgici, celebrazioni liturgiche, tempo ordinario, avvento, quaresima, antifone, letture, salmi responsoriali, anno liturgico, spartiti salmi, domenica, tempo ordinario">
-    <meta name="description"
-        content="Proposta di canti per le celebrazioni liturgiche della prossima domenica. Scopri canti d'ingresso, salmi, letture e antifone per le domeniche del tempo ordinario e altre celebrazioni.">
-    <meta name="keywords"
-        content="proposta canti, canti liturgici, prossima domenica, domenica prossima, tempo ordinario, celebrazioni liturgiche, anno liturgico, domenica liturgia, letture domenicali, salmi responsoriali">
-    <title>Proposta Canti</title>
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Proposta Canti per la ${numero}° domenica",
-          "description": "Proposta canti per la ${numero}° domenica - anno ${anno} del tempo di ${festivita}.",
-          "url": "https://propostacanti.web.app/celebrazioni.html?numero=${numero}&anno=${anno}&festivita=${festivita}"
-        }
-        </script>
-
+    <link rel="canonical" href="${window.location.href}">
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const theme = localStorage.getItem("theme-navbar")
-            setNavbarColor(theme);
-            setDarkTheme();
-
-            document.getElementById('download').addEventListener('click', () => {
-                const { jsPDF } = window.jspdf;
-                const doc = new jsPDF();
-
-                const element = document.querySelector('.responsive-container');
-                const textContent = element.innerText || element.textContent;
-
-                const maxWidth = 190; // Larghezza massima per il testo
-                const marginTop = 10; // Margine superiore
-                const marginBottom = 10; // Margine inferiore
-                const lineHeight = 10; // Altezza delle righe
-
-                // Modifica del font e della dimensione del testo
-                doc.setFont('helvetica', 'bold'); // Puoi usare 'normal', 'bold', 'italic'
-                doc.setFontSize(12); // Imposta la dimensione del testo
-
-                // Imposta il colore del testo (RGB)
-
-                const lines = doc.splitTextToSize(textContent, maxWidth);
-                const linesPerPage = Math.floor((doc.internal.pageSize.height - marginTop - marginBottom) / lineHeight);
-                let yPosition = marginTop;
-
-                for (let i = 0; i < lines.length; i++) {
-                    if (i > 0 && i % linesPerPage === 0) {
-                        doc.addPage();
-                        yPosition = marginTop;
-                    }
-
-                    // Aggiunge il testo con un allineamento centrato (opzionale)
-                    const textWidth = doc.getStringUnitWidth(lines[i]) * doc.internal.getFontSize() / doc.internal.scaleFactor;
-                    const xPosition = (doc.internal.pageSize.width - textWidth) / 2; // Centra il testo
-
-                    // Aggiungi la riga corrente al PDF
-                    doc.text(lines[i], xPosition, yPosition);
-
-                    yPosition += lineHeight;
-                }
-
-                // Salva il PDF
-                doc.save('foglietto_messa.pdf');
-            });
-
-        });
-
         function getQueryParams() {
             const urlParams = new URLSearchParams(window.location.search);
             const numero = urlParams.get('numero');
@@ -87,12 +20,212 @@
             return { numero, anno, festivita };
         }
 
+        function updateMetaTags(celebrationTitle, description, url, imageUrl) {
+            // Aggiorna il titolo della pagina
+            document.title = celebrationTitle;
+
+            // Aggiorna i meta tag esistenti
+            const metaTags = {
+                "description": description,
+                "og:title": celebrationTitle,
+                "og:description": description,
+                "og:url": url,
+                "og:image": imageUrl
+            };
+            console.log(metaTags);
+
+            for (const [name, content] of Object.entries(metaTags)) {
+                let metaTag = document.querySelector(`meta[name="${name}"]`) || document.querySelector(`meta[property="${name}"]`);
+                if (!metaTag) {
+                    metaTag = document.createElement('meta');
+                    if (name.startsWith("og:")) {
+                        metaTag.setAttribute("property", name);
+                    } else {
+                        metaTag.setAttribute("name", name);
+                    }
+                    document.head.appendChild(metaTag);
+                }
+                metaTag.setAttribute("content", content);
+            }
+        }
+
+        function updateStructuredData(celebrationTitle, description, url) {
+            // Rimuove dati strutturati esistenti
+            const existingScript = document.querySelector('script[type="application/ld+json"]');
+            if (existingScript) {
+                existingScript.remove();
+            }
+
+            // Aggiunge nuovi dati strutturati
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            const structuredData = {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": celebrationTitle,
+                "description": description,
+                "url": url
+            };
+            script.textContent = JSON.stringify(structuredData);
+            document.head.appendChild(script);
+        }
+
+        function addSection(title, content) {
+            if (!content) return;
+            doc.setFontSize(14);
+            doc.setTextColor(0, 0, 0);
+            doc.text(title, 10, yOffset);
+            yOffset += 8;
+
+            // Aggiunta del testo formattato
+            doc.setFontSize(10);
+            yOffset = drawFormattedText(doc, content, 10, yOffset, 180); // Usa una larghezza massima di 180 per il wrapping
+
+            // Controlla se serve una nuova pagina
+            if (yOffset > 280) { // Altezze superiori a ~280 unità richiedono una nuova pagina
+                doc.addPage();
+                yOffset = 20; // Ripristina l'offset verticale per la nuova pagina
+            }
+
+            yOffset += 4; // Spaziatura tra le sezioni
+        }
+
+        function drawFormattedText(doc, text, x, y, maxWidth) {
+            const splitText = text.split(/(<b>|<\/b>|<i>|<\/i>|<br>)/);
+            let isBold = false, isItalic = false;
+            let lastPartWasBreak = false; // Traccia se l'ultimo elemento era un <br>
+
+            splitText.forEach(part => {
+                switch (part) {
+                    case '<b>':
+                        isBold = true;
+                        doc.setFont("Helvetica", isItalic ? "bolditalic" : "bold");
+                        lastPartWasBreak = false;
+                        break;
+                    case '</b>':
+                        isBold = false;
+                        doc.setFont("Helvetica", isItalic ? "italic" : "normal");
+                        lastPartWasBreak = false;
+                        break;
+                    case '<i>':
+                        isItalic = true;
+                        doc.setFont("Helvetica", isBold ? "bolditalic" : "italic");
+                        lastPartWasBreak = false;
+                        break;
+                    case '</i>':
+                        isItalic = false;
+                        doc.setFont("Helvetica", isBold ? "bold" : "normal");
+                        lastPartWasBreak = false;
+                        break;
+                    case '<br>':
+                        if (!lastPartWasBreak) { // Vai a capo solo se il precedente non era un <br>
+                            y += 1; // Incremento verticale per il ritorno a capo
+                            x = 10; // Reset della posizione orizzontale
+                            lastPartWasBreak = true; // Segna che hai appena processato un <br>
+                        }
+                        break;
+                    default:
+                        const wrappedText = doc.splitTextToSize(part, maxWidth);
+                        wrappedText.forEach(line => {
+                            if (y > 280) { // Se si supera il limite della pagina
+                                doc.addPage();
+                                y = 20; // Ripristina l'offset verticale
+                            }
+                            doc.text(line, x, y);
+                            y += 6; // Spostamento verticale per ogni linea
+                        });
+                        lastPartWasBreak = false; // Una parte di testo normale interrompe la sequenza di <br>
+                }
+            });
+
+            return y; // Restituisce il nuovo offset verticale
+        }
+
+        function generatePdf(data, numero) {
+            const jsonData = data.celebrazioni.find(celebra => celebra.numero == numero);
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            let yOffset = 20; // Offset verticale iniziale
+
+            // Colore per il riquadro
+            const hexToRgb = (hex) => {
+                const bigint = parseInt(hex.slice(1), 16);
+                const r = (bigint >> 16) & 255;
+                const g = (bigint >> 8) & 255;
+                const b = bigint & 255;
+                return { r, g, b };
+            };
+
+            const { r, g, b } = hexToRgb(jsonData.colore);
+
+            // Disegna il riquadro dietro il titolo
+            doc.setFillColor(r, g, b); // Imposta il colore del riquadro
+            doc.rect(10, yOffset, 190, 12, 'F'); // Disegna un rettangolo pieno
+            yOffset += 8; // Sposta l'offset verso il basso per il testo
+
+            // Titolo del documento
+            doc.setFontSize(16);
+            doc.setTextColor(255, 255, 255); // Colore del testo in bianco
+            doc.text(jsonData.title, 15, yOffset);
+            yOffset += 10;
+
+            // Funzione per aggiungere sezioni con testo formattato
+            const addSection = (title, content) => {
+                if (!content) return;
+                doc.setFontSize(14);
+                doc.setTextColor(0, 0, 0);
+                doc.text(title, 10, yOffset);
+                yOffset += 8;
+
+                // Aggiunta del testo formattato
+                doc.setFontSize(10);
+                yOffset = drawFormattedText(doc, content, 10, yOffset, 180); // Usa una larghezza massima di 180 per il wrapping
+
+                if (yOffset > 280) { // Altezze superiori a ~280 unità richiedono una nuova pagina
+                    doc.addPage();
+                    yOffset = 20; // Ripristina l'offset verticale per la nuova pagina
+                }
+
+                yOffset += 4;
+            };
+
+            // Aggiunta delle sezioni
+            addSection("Antifona d'ingresso", jsonData.antifona_ingresso);
+            addSection("Atto Penitenziale", jsonData.atto_penitenziale);
+            addSection("Tropo 1", jsonData.tropo_1);
+            addSection("Tropo 2", jsonData.tropo_2);
+            addSection("Tropo 3", jsonData.tropo_3);
+            addSection("Prima Lettura", jsonData.prima_lettura_testo);
+            addSection("Salmo", jsonData.salmo_testo);
+            addSection("Seconda Lettura", jsonData.seconda_lettura_testo);
+            addSection("Acclamazione al Vangelo", jsonData.acclamazione_al_vangelo);
+            addSection("Vangelo", jsonData.vangelo);
+            addSection("Antifona alla Comunione", jsonData.antifona_alla_comunione);
+
+            // Salva il PDF
+            doc.save(`${jsonData.title}.pdf`);
+        }
+
+
         function populatePage(data, numero, anno) {
             const celebrazione = data.celebrazioni.find(celebra => celebra.numero == numero);
             let number_cast = Number(numero)
             console.log(typeof Number(numero) === 'number');
 
             if (celebrazione) {
+                const isNumber = !isNaN(Number(numero));
+                const celebrationTitle = isNumber
+                    ? `${convertiInRomano(numero)} Domenica del Tempo Ordinario - Anno ${anno}`
+                    : `${numero} - Anno ${anno}`;
+
+                const description = `Proposta di canti per la ${celebrationTitle}. Scopri testi e canti per la celebrazione.`;
+                const url = window.location.href;
+                const imageUrl = 'style/img/sfondo.png'; // Aggiungi l'URL di un'immagine predefinita o dinamica qui.
+
+                // Aggiorna i meta tag e i dati strutturati
+                updateMetaTags(celebrationTitle, description, url, imageUrl);
+                updateStructuredData(celebrationTitle, description, url);
                 if (typeof Number(numero) === 'number' && !isNaN(Number(numero))) {
                     document.title = `Proposta Canti - ${convertiInRomano(numero)} DOMENICA DEL TEMPO ORDINARIO - ANNO ${anno}`;
                     const metaDescription = document.createElement('meta');
@@ -141,8 +274,24 @@
                 document.querySelector('#acclamazione-al-vangelo').innerHTML = celebrazione.acclamazione_al_vangelo;
                 document.querySelector('#vangelo').innerHTML = celebrazione.vangelo;
                 document.querySelector('#canto-offertorio').innerHTML = celebrazione.canto_offertorio;
-                document.querySelector('#canto-comunione').innerHTML = celebrazione.canto_comunione;
+                const canto_offertorio_2 = celebrazione.canto_offertorio_2;
+                if (canto_offertorio_2) {
+                    document.querySelector('#canto-offertorio-2').innerHTML = celebrazione.canto_offertorio_2;
+                } else {
+                    document.getElementById('canto-offertorio-2').style.display = 'none';
+                }
+
+
                 document.querySelector('#antifona-alla-comunione').innerHTML = celebrazione.antifona_alla_comunione;
+                document.querySelector('#canto-comunione').innerHTML = celebrazione.canto_comunione;
+                const canto_comunione_2 = celebrazione.canto_comunione_2;
+                if (canto_comunione_2) {
+                    document.querySelector('#canto-comunione_2').innerHTML = celebrazione.canto_comunione_2;
+                } else {
+                    document.getElementById('canto-offertorio-2').style.display = 'none';
+                }
+
+                document.querySelector('#canto-finale').innerHTML = celebrazione.canto_finale;
             } else {
                 document.body.innerHTML = `<p class="error">Errore: Celebrazione non trovata per numero ${numero} e anno ${anno}.</p>`;
             }
@@ -165,10 +314,11 @@
                 .then(response => response.json())
                 .then(data => {
                     populatePage(data, numero, anno);
+                    document.getElementById('download').addEventListener('click', () => generatePdf(data, numero));
                 })
                 .catch(error => {
                     console.error('Errore nel caricamento del JSON:', error);
-                    document.body.innerHTML = `<p class="error">Si è verificato un errore durante il caricamento delle informazioni. Riprova più tardi.</p>`;
+                    window.location.href = "404.html"
                 });
         });
 
@@ -226,12 +376,17 @@
 
         <h3>Canto d'offertorio</h3>
         <p id="canto-offertorio"></p>
-
-        <h3>Canto di comunione</h3>
-        <p id="canto-comunione"></p>
+        <p id="canto-offertorio-2"></p>
 
         <h2>Antifona alla Comunione</h2>
         <p id="antifona-alla-comunione"></p>
+
+        <h3>Canto di comunione</h3>
+        <p id="canto-comunione"></p>
+        <p id="canto-comunione_2"></p>
+
+        <h3>Canto finale</h3>
+        <p id="canto-finale"></p>
 
     </div>
 
