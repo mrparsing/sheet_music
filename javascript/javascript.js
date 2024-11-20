@@ -20,7 +20,6 @@ function tipologia_anno(anno, data) {
     const domeniche_avvento = calcolaDomenicheAvvento(anno);
     const primaDomenicaAvvento = domeniche_avvento[0];
 
-    console.log("sdfjnsdfojnsd", data < primaDomenicaAvvento);
     if (anno % 3 === 2) {
         if (data < primaDomenicaAvvento) {
             return "B";
@@ -209,9 +208,11 @@ function calcolaFestivita(anno) {
         const dataNovena = new Date(dataInizioNovena);
         dataNovena.setDate(dataNovena.getDate() + i);
 
+        const tipologia_tempo = dataNovena < domenicheAvvento[0] ? "ordinario" : "avvento";
+
         festivita.push({
             anno: tipologia_anno(anno, dataNovena),
-            tipologia: "ordinario",
+            tipologia: `${tipologia_tempo}`,
             numero: `Novena Immacolata - Giorno ${i + 1}`,
             data: dataNovena
         });
@@ -309,9 +310,10 @@ function setNavBarTheme() {
 function inserisci_elemento_lista(numero, anno, tipologia) {
     const ul = document.querySelector('.prossime-celebrazioni-div ul');
     const li = document.createElement('li');
-    console.log(numero, numero.includes("Novena Immacolata"));
+
     if (numero.includes("Novena Immacolata")) {
-        li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=ordinario">${numero} - anno: ${anno}</a>`;
+        console.log(numero);
+        li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=${tipologia}">${numero} - anno: ${anno}</a>`;
     }
     if (tipologia === "ordinario" && !numero.includes("Novena Immacolata")) {
         if (numero === "Solennità di Cristo Re") {
@@ -321,7 +323,7 @@ function inserisci_elemento_lista(numero, anno, tipologia) {
         } else {
             li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=ordinario">${convertiInRomano(numero)} domenica tempo ordinario - anno: ${anno}</a>`;
         }
-    } else if (tipologia === "avvento") {
+    } else if (tipologia === "avvento" && !numero.includes("Novena Immacolata")) {
         li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=avvento">${convertiInRomano(numero)} domenica tempo d'avvento - anno: ${anno}</a>`;
     } else if (tipologia === "natale") {
         li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=natale">${numero}</a>`;

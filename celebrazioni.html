@@ -32,7 +32,6 @@
                 "og:url": url,
                 "og:image": imageUrl
             };
-            console.log(metaTags);
 
             for (const [name, content] of Object.entries(metaTags)) {
                 let metaTag = document.querySelector(`meta[name="${name}"]`) || document.querySelector(`meta[property="${name}"]`);
@@ -157,7 +156,15 @@
                 return { r, g, b };
             };
 
-            const { r, g, b } = hexToRgb(jsonData.colore);
+            let colore;
+            if (festivita === "ordinario" && numero.includes("Novena Immacolata")) {
+                colore = jsonData.colore;
+            } else if (festivita === "avvento" && numero.includes("Novena Immacolata")) {
+                colore = jsonData.colore_2;
+            } else {
+                colore = jsonData.colore;
+            }
+            const { r, g, b } = hexToRgb(colore);
 
             // Disegna il riquadro dietro il titolo
             doc.setFillColor(r, g, b); // Imposta il colore del riquadro
@@ -208,10 +215,9 @@
         }
 
 
-        function populatePage(data, numero, anno) {
+        function populatePage(data, numero, anno, festivita) {
             const celebrazione = data.celebrazioni.find(celebra => celebra.numero == numero);
             let number_cast = Number(numero)
-            console.log(typeof Number(numero) === 'number');
 
             if (celebrazione) {
                 const isNumber = !isNaN(Number(numero));
@@ -245,7 +251,14 @@
                     document.getElementById('title').innerHTML = `${numero} - ANNO ${anno}`;
 
                 }
-                const colore = celebrazione.colore;
+                let colore;
+                if (festivita === "ordinario" && numero.includes("Novena Immacolata")) {
+                    colore = celebrazione.colore;
+                } else if (festivita === "avvento" && numero.includes("Novena Immacolata")) {
+                    colore = celebrazione.colore_2;
+                } else {
+                    colore = celebrazione.colore;
+                }
                 document.querySelector("#myNavbar").setAttribute("style", `background-color: ${colore};`);
                 document.querySelector('#antifona-ingresso').innerHTML = celebrazione.antifona_ingresso;
                 document.querySelector('#canto-ingresso').innerHTML = celebrazione.canto_ingresso || "";
@@ -298,30 +311,33 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+            // Estrai i parametri della query URL
             const { numero, anno, festivita } = getQueryParams();
+
             let jsonFile = "";
-            if (festivita === "ordinario") {
+            if (festivita === "ordinario" && !numero.includes("Novena Immacolata")) {
                 jsonFile = `db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else if (festivita === "natale") {
                 // gestisci natale
-            } else if (festivita === "avvento") {
+            } else if (festivita === "avvento" && !numero.includes("Novena Immacolata")) {
                 jsonFile = `db/tempi_liturgici/avvento/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else if (festivita === "quaresima") {
                 jsonFile = `db/tempi_liturgici/quaresima/celebrazioni_anno_${anno.toLowerCase()}.json`;
+            } else {
+                jsonFile = `db/tempi_liturgici/celebrazioni_fisse.json`;
             }
             console.log(jsonFile);
             fetch(jsonFile)
                 .then(response => response.json())
                 .then(data => {
-                    populatePage(data, numero, anno);
+                    populatePage(data, numero, anno, festivita); // Qui `numero` è già definito
                     document.getElementById('download').addEventListener('click', () => generatePdf(data, numero));
                 })
                 .catch(error => {
                     console.error('Errore nel caricamento del JSON:', error);
-                    window.location.href = "404.html"
+                    //window.location.href = "404.html"
                 });
         });
-
 
     </script>
 </head>
