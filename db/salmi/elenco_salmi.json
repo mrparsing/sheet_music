@@ -815,6 +815,22 @@
             "numero_romano": "xxxiii",
             "autore": "Mauro Visconti",
             "download_link": "../db/tempi_liturgici/tempo_ordinario/salmi_anno_c/C 33 Visconti.pdf"
+        },
+        {
+            "titolo": "Salmo XXXIII domenica tempo ordinario - C",
+            "anno": "altre_festivita",
+            "numero_arabo": "33",
+            "numero_romano": "xxxiii",
+            "autore": "Mauro Visconti",
+            "download_link": "../db/tempi_liturgici/tempo_ordinario/salmi_anno_c/C 33 Visconti.pdf"
+        },
+        {
+            "titolo": "Salmo XXXIII domenica tempo ordinario - C",
+            "anno": "eventi_speciali",
+            "numero_arabo": "33",
+            "numero_romano": "xxxiii",
+            "autore": "Mauro Visconti",
+            "download_link": "../db/tempi_liturgici/tempo_ordinario/salmi_anno_c/C 33 Visconti.pdf"
         }
     ]
 }

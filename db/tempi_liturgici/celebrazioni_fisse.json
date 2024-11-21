@@ -3,6 +3,7 @@
         {
             "title": "I giorno Novena Immacolata - A",
             "numero": "Novena Immacolata - Giorno 1",
+            "numero_giorno": 1,
             "anno": "A",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -26,6 +27,7 @@
         {
             "title": "II giorno di Novena - A",
             "numero": "Novena Immacolata - Giorno 2",
+            "numero_giorno": 2,
             "anno": "A",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -49,6 +51,7 @@
         {
             "title": "III giorno di Novena - A",
             "numero": "Novena Immacolata - Giorno 3",
+            "numero_giorno": 3,
             "anno": "A",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -72,6 +75,7 @@
         {
             "title": "IV giorno di Novena - A",
             "numero": "Novena Immacolata - Giorno 4",
+            "numero_giorno": 4,
             "anno": "A",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -95,6 +99,7 @@
         {
             "title": "V giorno di Novena - A",
             "numero": "Novena Immacolata - Giorno 5",
+            "numero_giorno": 5,
             "anno": "A",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -118,6 +123,7 @@
         {
             "title": "VI giorno di Novena - A",
             "numero": "Novena Immacolata - Giorno 6",
+            "numero_giorno": 6,
             "anno": "A",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -141,6 +147,7 @@
         {
             "title": "VII giorno di Novena - A",
             "numero": "Novena Immacolata - Giorno 7",
+            "numero_giorno": 7,
             "anno": "A",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -164,6 +171,7 @@
         {
             "title": "VIII giorno di Novena - A",
             "numero": "Novena Immacolata - Giorno 8",
+            "numero_giorno": 8,
             "anno": "A",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -187,6 +195,7 @@
         {
             "title": "IX giorno di Novena - A",
             "numero": "Novena Immacolata - Giorno 9",
+            "numero_giorno": 9,
             "anno": "A",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -210,6 +219,7 @@
         {
             "title": "I giorno Novena Immacolata - B",
             "numero": "Novena Immacolata - Giorno 1",
+            "numero_giorno": 1,
             "anno": "B",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -233,6 +243,7 @@
         {
             "title": "II giorno di Novena - B",
             "numero": "Novena Immacolata - Giorno 2",
+            "numero_giorno": 2,
             "anno": "B",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -256,6 +267,7 @@
         {
             "title": "III giorno di Novena - B",
             "numero": "Novena Immacolata - Giorno 3",
+            "numero_giorno": 3,
             "anno": "B",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -279,6 +291,7 @@
         {
             "title": "IV giorno di Novena - B",
             "numero": "Novena Immacolata - Giorno 4",
+            "numero_giorno": 4,
             "anno": "B",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -302,6 +315,7 @@
         {
             "title": "V giorno di Novena - B",
             "numero": "Novena Immacolata - Giorno 5",
+            "numero_giorno": 5,
             "anno": "B",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -325,6 +339,7 @@
         {
             "title": "VI giorno di Novena - B",
             "numero": "Novena Immacolata - Giorno 6",
+            "numero_giorno": 6,
             "anno": "B",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -348,6 +363,7 @@
         {
             "title": "VII giorno di Novena - B",
             "numero": "Novena Immacolata - Giorno 7",
+            "numero_giorno": 7,
             "anno": "B",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -371,6 +387,7 @@
         {
             "title": "VIII giorno di Novena - B",
             "numero": "Novena Immacolata - Giorno 8",
+            "numero_giorno": 8,
             "anno": "B",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -394,6 +411,7 @@
         {
             "title": "IX giorno di Novena - B",
             "numero": "Novena Immacolata - Giorno 9",
+            "numero_giorno": 9,
             "anno": "B",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -417,6 +435,7 @@
         {
             "title": "I giorno Novena Immacolata - C",
             "numero": "Novena Immacolata - Giorno 1",
+            "numero_giorno": 1,
             "anno": "C",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -440,6 +459,7 @@
         {
             "title": "II giorno di Novena - C",
             "numero": "Novena Immacolata - Giorno 2",
+            "numero_giorno": 2,
             "anno": "C",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -463,6 +483,7 @@
         {
             "title": "III giorno di Novena - C",
             "numero": "Novena Immacolata - Giorno 3",
+            "numero_giorno": 3,
             "anno": "C",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -486,6 +507,7 @@
         {
             "title": "IV giorno di Novena - C",
             "numero": "Novena Immacolata - Giorno 4",
+            "numero_giorno": 4,
             "anno": "C",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -509,6 +531,7 @@
         {
             "title": "V giorno di Novena - C",
             "numero": "Novena Immacolata - Giorno 5",
+            "numero_giorno": 5,
             "anno": "C",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -532,6 +555,7 @@
         {
             "title": "VI giorno di Novena - C",
             "numero": "Novena Immacolata - Giorno 6",
+            "numero_giorno": 6,
             "anno": "C",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -555,6 +579,7 @@
         {
             "title": "VII giorno di Novena - C",
             "numero": "Novena Immacolata - Giorno 7",
+            "numero_giorno": 7,
             "anno": "C",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -578,6 +603,7 @@
         {
             "title": "VIII giorno di Novena - C",
             "numero": "Novena Immacolata - Giorno 8",
+            "numero_giorno": 8,
             "anno": "C",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",
@@ -601,6 +627,7 @@
         {
             "title": "IX giorno di Novena - C",
             "numero": "Novena Immacolata - Giorno 9",
+            "numero_giorno": 9,
             "anno": "C",
             "colore": "#2a9a5c",
             "colore_2": "#8A2BE2",

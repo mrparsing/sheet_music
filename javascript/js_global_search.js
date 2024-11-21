@@ -1,7 +1,7 @@
 document.getElementById("global_search").addEventListener("keyup", searchCanti);
 
 async function searchCanti(event, page) {
-    const input = document.getElementById("global_search").value.toLowerCase();
+    const input = document.getElementById("global_search").value.toLowerCase().trim();
 
     // Salva l'input nella memoria locale
     localStorage.setItem("searchInput", input);
@@ -128,6 +128,58 @@ async function searchCanti(event, page) {
                 document.getElementById("resultsContainer").innerHTML = "<div>Nessun risultato trovato</div>"
                 console.log("Nessun risultato trovato.");
             }
+        } else if (input.includes("novena")) { // cerca in celebrazioni fisse
+            if (page === "index" || page === "celebrazioni") {
+                jsonFile = "db/tempi_liturgici/celebrazioni_fisse.json";
+                linkRisultati = "nav-bar/risultati.html";
+            } else if (page === "anno") {
+                jsonFile = "../../db/tempi_liturgici/celebrazioni_fisse.json";
+                linkRisultati = "../risultati.html";
+            } else {
+                jsonFile = "../db/tempi_liturgici/celebrazioni_fisse.json";
+                linkRisultati = "risultati.html";
+            }
+
+            let arabicNumbers = input.match(/\b(\d+)\b/g); // Trova i numeri arabi nell'input
+            let numeriRomani = input.match(/\b([ivxlc]+)\b/gi); // Trova i numeri romani nell'input
+
+            let anno = '';
+
+            // Verifica se l'input contiene l'anno (a, b, c)
+            const match = input.match(/\b([abc])\b/); // Trova l'anno
+            if (match) {
+                anno = match[1].toLowerCase(); // Prendi l'anno trovato
+            }
+
+            let results = []; // o un altro valore iniziale appropriato
+
+
+            if (anno) {
+                results = await cerca(jsonFile, arabicNumbers, numeriRomani, anno); // Costruisci il percorso JSON completo
+            } else if (!anno) {
+                // Se non abbiamo trovato il valore anno itera su tutti i file
+                results = results.concat(await cerca(jsonFile, arabicNumbers, numeriRomani, 'a'));
+                results = results.concat(await cerca(jsonFile, arabicNumbers, numeriRomani, 'b'));
+                results = results.concat(await cerca(jsonFile, arabicNumbers, numeriRomani, 'c'));
+            }
+
+            // Imposta il link dei risultati
+            linkRisultati = (page === "index" || page === "celebrazioni") ? "nav-bar/risultati.html"
+                : (page === "anno") ? "../risultati.html"
+                    : "risultati.html";
+
+            // Stampa i risultati
+            if (results.length > 0) {
+                localStorage.setItem("searchResults", JSON.stringify(results));
+                localStorage.setItem("tipologia", "messa");
+
+                // Reindirizza alla pagina dei risultati
+                window.location.href = linkRisultati;
+            } else {
+                document.getElementById("resultsContainer").innerHTML = "<div>Nessun risultato trovato</div>"
+                console.log("Nessun risultato trovato.");
+            }
+
         } else { // cerca un canto
             if (page === "index" || page === "celebrazioni") {
                 jsonFile = "db/canti.json";
@@ -175,8 +227,14 @@ async function cerca(jsonFile, arabicNumbers, numeriRomani, anno) {
 
             data.celebrazioni.forEach(item => {
                 // Verifica se il titolo o il numero corrispondono ai criteri di ricerca
-                if (item.numero === numeroDomenica && item.anno.toLowerCase() === anno) {
-                    results.push(item);
+                if (item.numero_giorno) {
+                    if (item.numero_giorno === numeroDomenica && item.anno.toLowerCase() === anno) {
+                        results.push(item);
+                    }
+                } else {
+                    if (item.numero === numeroDomenica && item.anno.toLowerCase() === anno) {
+                        results.push(item);
+                    }
                 }
             });
         } catch (error) {
