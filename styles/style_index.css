@@ -498,9 +498,11 @@ body {
 .dark-theme #celebrazioneList li:hover {
     background-color: #555;
 }
+
 .dark-theme #celebrazioneList li {
     background-color: #3a3a3a;
 }
+
 /* Hover per i link nel tema scuro */
 .dark-theme #celebrazioneList li a:hover {
     color: #ffffff;
@@ -828,4 +830,32 @@ p {
         padding: 10px;
         gap: 20px;
     }
+}
+
+.suggestions-container {
+    position: absolute;
+    /* Posiziona il contenitore in base all'elemento padre posizionato */
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    /* Stessa larghezza dell'input */
+    max-height: 200px;
+    /* Limita l'altezza */
+    overflow-y: auto;
+    /* Aggiunge una scrollbar se necessario */
+    z-index: 1000;
+    /* Garantisce che appaia sopra altri elementi */
+    display: none;
+    /* Nascondilo di default */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Effetto ombra */
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
 }

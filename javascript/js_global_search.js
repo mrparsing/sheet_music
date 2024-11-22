@@ -9,7 +9,7 @@ async function searchCanti(event, page) {
     let jsonFile = "";
     let linkRisultati = "";
 
-    if (event.key === "Enter") {
+    if (event.key === "Enter" || event.type === "click") {
         if (input.includes("salmo")) {
             // Determina il percorso del file JSON e il link ai risultati in base alla pagina
             if (page === "index" || page === "celebrazioni") {
@@ -268,4 +268,151 @@ function convertRomanToInt(roman) {
     }
 
     return total;
+}
+
+async function suggestions(event, page) {
+    const query = document.getElementById("global_search").value.toLowerCase().trim();
+    let results = [];
+
+    const filePaths = {
+        salmo: {
+            "index": "db/salmi/elenco_salmi.json",
+            "celebrazioni": "db/salmi/elenco_salmi.json",
+            "anno": "../../db/salmi/elenco_salmi.json",
+            "default": "../db/salmi/elenco_salmi.json"
+        },
+        domenica: {
+            "index": [
+                "db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_a.json",
+                "db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_b.json",
+                "db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_c.json"
+            ],
+            "celebrazioni": [
+                "db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_a.json",
+                "db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_b.json",
+                "db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_c.json"
+            ],
+            "anno": [
+                "../../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_a.json",
+                "../../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_b.json",
+                "../../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_c.json"
+            ],
+            "default": [
+                "../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_a.json",
+                "../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_b.json",
+                "../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_c.json"
+            ]
+        },
+        canti: {
+            "index": "db/canti.json",
+            "celebrazioni": "db/canti.json",
+            "anno": "../../db/canti.json",
+            "default": "../db/canti.json"
+        }
+    };
+
+    if (query.includes("salmo")) {
+        const jsonFile = filePaths.salmo[page] || filePaths.salmo["default"];
+        results = await fetchJsonFile(jsonFile);
+    } else if (query.includes("domenica") || query.includes("ordinario")) {
+        const jsonFiles = filePaths.domenica[page] || filePaths.domenica["default"];
+        for (const jsonFile of jsonFiles) {
+            results = results.concat(await fetchJsonFile(jsonFile));
+        }
+    } else {
+        const jsonFile = filePaths.canti[page] || filePaths.canti["default"];
+        results = await fetchJsonFile(jsonFile);
+    }
+
+    if (results.length != 0) {
+        console.log(results);
+    }
+    aggiornaSuggerimenti(results, page);
+}
+
+async function fetchJsonFile(jsonFile) {
+    let results = [];
+
+    if (jsonFile.includes("celebrazioni")) {
+        try {
+            const response = await fetch(jsonFile);
+            const data = await response.json();
+
+            // Itera sugli oggetti nel JSON
+            data.celebrazioni.forEach(item => {
+                results.push(item.title)
+            });
+        } catch (error) {
+            console.error('Errore nel fetching dei dati:', error);
+        }
+    } else if (jsonFile.includes("elenco_salmi")) {
+        try {
+            const response = await fetch(jsonFile);
+            const data = await response.json();
+
+            // Itera sugli oggetti nel JSON
+            data.salmi.forEach(item => {
+                results.push(item.titolo)
+            });
+        } catch (error) {
+            console.error('Errore nel fetching dei dati:', error);
+        }
+    } else {
+        try {
+            const response = await fetch(jsonFile);
+            const data = await response.json();
+
+            // Itera sugli oggetti nel JSON
+            data.canti.forEach(item => {
+                results.push(item.titolo)
+            });
+        } catch (error) {
+            console.error('Errore nel fetching dei dati:', error);
+        }
+    }
+
+    return results;
+}
+
+function aggiornaSuggerimenti(termine, page) {
+    const query = document.getElementById("global_search").value.toLowerCase().trim();
+
+    // Se il campo di input è vuoto, nascondi i suggerimenti e termina
+    if (query === '') {
+        document.getElementById('suggestions').style.display = 'none';
+        return;
+    }
+
+    const suggerimenti = termine.filter(t => t.toLowerCase().startsWith(query)); // Filtra i termini
+
+    const lista = document.getElementById('suggestions');
+    lista.innerHTML = ''; // Svuota i suggerimenti precedenti
+
+    // Mostra il contenitore se ci sono suggerimenti
+    lista.style.display = suggerimenti.length > 0 ? 'block' : 'none';
+
+    if (suggerimenti.length === 0) {
+        const elemento = document.createElement('div');
+        elemento.textContent = 'Nessun suggerimento';
+        elemento.className = 'suggestion-item';
+        lista.appendChild(elemento);
+    } else {
+        suggerimenti.forEach(termine => {
+            const elemento = document.createElement('div');
+            elemento.textContent = termine;
+            elemento.className = 'suggestion-item';
+            elemento.addEventListener('click', (event) => {
+                // Imposta il valore dell'input al termine selezionato
+                document.getElementById('global_search').value = termine;
+
+                // Richiama la funzione di ricerca con il termine selezionato
+                searchCanti(event, page);
+
+                // Nascondi i suggerimenti dopo il clic
+                lista.innerHTML = '';
+                lista.style.display = 'none';
+            });
+            lista.appendChild(elemento);
+        });
+    }
 }

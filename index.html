@@ -116,7 +116,11 @@
                 <button onclick="location.href='nav-bar/eventi_speciali.html'">Eventi speciali</button>
                 <button onclick="location.href='nav-bar/imp_supporto.html'">Impostazioni/Supporto</button>
             </div>
-            <input type="text" id="global_search" onkeyup="searchCanti(event, 'index')" placeholder="Cerca...">
+            <div style="position: relative;">
+                <input type="text" id="global_search" onkeyup="searchCanti(event, 'index')"
+                    oninput="suggestions(event, 'index')" placeholder="Cerca..." autocomplete="off">
+                <div id="suggestions" class="suggestions-container"></div>
+            </div>
         </div>
         <div class="header">
             <div class="header-content">
@@ -127,7 +131,8 @@
 
         <div class="main-content" id="main-content">
             <div class="slogan-div">
-                <p>Proposta canti liturgici per ogni domenica dell'anno. Questa proposta di canti vuole essere una traccia offerta a tutti gli
+                <p>Proposta canti liturgici per ogni domenica dell'anno. Questa proposta di canti vuole essere una
+                    traccia offerta a tutti gli
                     animatori liturgico-musicali per la scelta delle parti canore per l’Ingresso, l’Offertorio, la
                     Comunione e il
                     Congedo, in modo che siano pertinenti ai testi proposti dal Messale e alla Parola di Dio proclamata.
