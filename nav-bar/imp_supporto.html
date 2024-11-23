@@ -240,6 +240,24 @@
         .social-button i {
             vertical-align: middle;
         }
+
+        .github-link {
+            color: #2196F3;
+            /* A bold orange-red color */
+            font-weight: bold;
+            /* Make the link bold */
+            text-decoration: none;
+            /* Remove underline */
+            transition: color 0.3s ease;
+            /* Smooth color transition */
+        }
+
+        .github-link:hover {
+            color: #1a8cff;
+            /* A darker shade when hovered */
+            text-decoration: underline;
+            /* Underline on hover */
+        }
     </style>
     <script>
         function toggleTheme() {
@@ -308,8 +326,9 @@
             <div class="section">
                 <h3>Contatti</h3>
                 <p>Per qualsiasi richiesta di supporto, suggerimenti o segnalazioni di problemi, puoi creare un'issue
-                    nella repository <a href="https://github.com/mrparsing/proposta_canti/issues"
-                        target="_blank">GitHub</a> o inviare un messaggio compilando il form.</p>
+                    nella <a href="https://github.com/mrparsing/cantusacri" target="_blank" class="github-link">GitHub
+                        Repository</a>
+                    o inviare un messaggio compilando il form.</p>
                 <form action="https://formspree.io/f/xgveegyl" method="POST">
                     <input type="email" name="email" placeholder="La tua email" required>
                     <textarea name="message" placeholder="Il tuo messaggio" required></textarea>
