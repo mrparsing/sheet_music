@@ -115,7 +115,11 @@
                 <button onclick="location.href='eventi_speciali.html'">Eventi speciali</button>
                 <button onclick="location.href='imp_supporto.html'">Impostazioni/Supporto</button>
             </div>
-            <input type="text" id="global_search" onkeyup="searchCanti(event, 'spartiti_salmi')" placeholder="Cerca...">
+            <div class="inputs">
+                <input type="text" id="global_search" onkeyup="searchCanti(event, 'spartiti_salmi')"
+                    oninput="suggestions(event, 'spartiti_salmi')" placeholder="Cerca..." autocomplete="off">
+                <div id="suggestions" class="suggestions-container"></div>
+            </div>
         </div>
 
         <div class="main-content" id="main-content">

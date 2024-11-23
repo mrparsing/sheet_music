@@ -430,6 +430,31 @@ body {
         padding: 20px;
     }
 
+    .inputs {
+        position: relative; /* Necessario per rendere #suggestions posizionato rispetto a .inputs */
+        display: flex; /* Garantisce che il contenitore mantenga la dimensione adeguata */
+        width: 100%;
+        align-items: center;
+    }
+    
+    #global_search {
+        width: 100%; /* Adatta la larghezza al contenitore genitore */
+        box-sizing: border-box; /* Assicura che padding e border siano inclusi nella larghezza */
+    }
+    
+    #suggestions {
+        position: absolute; /* Posizionamento assoluto rispetto al genitore posizionato (.inputs) */
+        top: 100%; /* Sposta sotto l'input */
+        left: 0; /* Allinea al lato sinistro dell'input */
+        width: 100%; /* Larghezza uguale alla barra di ricerca */
+        z-index: 1000; /* Assicura che compaia sopra gli altri elementi */
+        background-color: white; /* Sfondo leggibile */
+        border: 1px solid #ccc; /* Bordo visibile */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Opzionale: effetto di ombra */
+        max-height: 200px; /* Limita l'altezza per evitare che occupi troppo spazio */
+        overflow-y: auto; /* Aggiunge lo scrolling se necessario */
+        display: none; /* Di base, nascosto */
+    }
 }
 
 
@@ -829,6 +854,10 @@ p {
         /* Dispone gli elementi in colonna */
         padding: 10px;
         gap: 20px;
+    }
+
+    .suggestions-container {
+        width: 100%;
     }
 }
 
