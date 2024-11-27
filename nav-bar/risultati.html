@@ -231,29 +231,25 @@
             `;
                 results.forEach(canto => {
                     const row = resultsTable.insertRow();
+                    let isAscolta = true;
+                    let isDownloadLink = true;
+                    let isAutore = true;
+                    let isTesto = true;
 
-                    if (canto.download_link === "-") {
-                        row.innerHTML = `
-            <td>${canto.titolo}</td>
-            <td>${canto.autore}</td>
-            <td>${canto.tipologia}</td>
-            <td>${canto.tempo}</td>
-            <td><a href="${canto.ascolta}">Ascolta</a></td>
-            <td>Spartito non disponibile</td>
-            <td><a href="testo_canti.html?titolo=${canto.titolo}">Testo</a></td>
-            `;
-                    } else {
-                        row.innerHTML = `
-            <td>${canto.titolo}</td>
-            <td>${canto.autore}</td>
-            <td>${canto.tipologia}</td>
-            <td>${canto.tempo}</td>
-            <td><a href="${canto.ascolta}">Ascolta</a></td>
-            <td><a href="${canto.download_link}">Download</a></td>
-            <td><a href="testo_canti.html?titolo=${canto.titolo}">Testo</a></td>
-            `;
-                    }
+                    if (canto.ascolta === "-") { isAscolta = false; }
+                    if (canto.download_link === "-") { isDownloadLink = false; }
+                    if (canto.autore === "-") { isAutore = false; }
+                    if (canto.testo === "-") { isTesto = false; }
 
+                    row.innerHTML = `
+        <td>${canto.titolo}</td>
+        <td>${isAutore ? canto.autore : "Non disponibile"}</td>
+        <td>${canto.tipologia}</td>
+        <td>${canto.tempo}</td>
+        <td>${isAscolta ? `<a href="${canto.ascolta}">Ascolta</a>` : "Non disponibile"}</td>
+        <td>${isDownloadLink ? `<a href="${canto.download_link}">Download</a>` : "Spartito non disponibile"}</td>
+        <td>${isTesto ? `<a href="${canto.titolo}">Testo</a>` : "Testo non disponibile"}</td>
+    `;
                 })
             }
         }

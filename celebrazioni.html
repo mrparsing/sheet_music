@@ -11,6 +11,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="canonical" href="${window.location.href}">
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #toggleButton1,
+        #toggleButton2 {
+            background-color: transparent;
+            border: transparent;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
     <script>
         function getQueryParams() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -22,12 +39,12 @@
 
         function updateMetaTags(celebrationTitle, description, url, imageUrl) {
             // Aggiorna il titolo della pagina
-            document.title = celebrationTitle;
-
+            document.title = "Proposta canti " + celebrationTitle;
             // Aggiorna i meta tag esistenti
+
             const metaTags = {
                 "description": description,
-                "og:title": celebrationTitle,
+                "og:title": "Proposta canti " + celebrationTitle,
                 "og:description": description,
                 "og:url": url,
                 "og:image": imageUrl
@@ -140,6 +157,17 @@
             return y; // Restituisce il nuovo offset verticale
         }
 
+        function download(data, numero, link_foglietto_messa) {
+            console.log("link", link_foglietto_messa);
+            if (link_foglietto_messa) {
+                window.location.href = link_foglietto_messa;
+            }
+            else {
+                generatePdf(data, numero);
+            }
+           
+        }
+
         function generatePdf(data, numero) {
             const jsonData = data.celebrazioni.find(celebra => celebra.numero == numero);
 
@@ -216,15 +244,26 @@
 
 
         function populatePage(data, numero, anno, festivita) {
-            const celebrazione = data.celebrazioni.find(celebra => celebra.numero == numero);
+            const celebrazione = data.celebrazioni.find(celebra => celebra.numero == numero && celebra.anno == anno);
+            document.getElementById('download').addEventListener('click', () => download(data, numero, celebrazione.link_foglietto_messa));
+
             let number_cast = Number(numero)
 
             if (celebrazione) {
-                const isNumber = !isNaN(Number(numero));
-                const celebrationTitle = isNumber
-                    ? `${convertiInRomano(numero)} Domenica del Tempo Ordinario - Anno ${anno}`
-                    : `${numero} - Anno ${anno}`;
-
+                // SI DEVONO AGGIUNGERE ANCHE I CASI DEGLI ALTRI TEMPI
+                let isNumber;
+                let celebrationTitle;
+                if (festivita === "avvento") {
+                    isNumber = !isNaN(Number(numero));
+                    celebrationTitle = isNumber
+                        ? `${convertiInRomano(numero)} Domenica d'Avvento - Anno ${anno}`
+                        : `${numero} - Anno ${anno}`;
+                } else {
+                    isNumber = !isNaN(Number(numero));
+                    celebrationTitle = isNumber
+                        ? `${convertiInRomano(numero)} Domenica del tempo ordinario - Anno ${anno}`
+                        : `${numero} - Anno ${anno}`;
+                }
                 const description = `Proposta di canti per la ${celebrationTitle}. Scopri testi e canti per la celebrazione.`;
                 const url = window.location.href;
                 const imageUrl = 'style/img/sfondo.png'; // Aggiungi l'URL di un'immagine predefinita o dinamica qui.
@@ -232,7 +271,7 @@
                 // Aggiorna i meta tag e i dati strutturati
                 updateMetaTags(celebrationTitle, description, url, imageUrl);
                 updateStructuredData(celebrationTitle, description, url);
-                if (typeof Number(numero) === 'number' && !isNaN(Number(numero))) {
+                if (typeof Number(numero) === 'number' && !isNaN(Number(numero)) && festivita === "ordinario") {
                     document.title = `Proposta Canti - ${convertiInRomano(numero)} DOMENICA DEL TEMPO ORDINARIO - ANNO ${anno}`;
                     const metaDescription = document.createElement('meta');
                     metaDescription.name = "description";
@@ -241,7 +280,16 @@
 
                     document.getElementById('title').innerHTML = `${convertiInRomano(numero)} DOMENICA DEL TEMPO ORDINARIO - ANNO ${anno}`;
 
-                } else {
+                } else if (festivita === "avvento") {
+                    document.title = `Proposta Canti - ${convertiInRomano(numero)} DOMENICA D'AVVENTO - ANNO ${anno}`;
+                    const metaDescription = document.createElement('meta');
+                    metaDescription.name = "description";
+                    metaDescription.content = `Scopri la proposta canti per la ${convertiInRomano(numero)} domenica d'avvento - ${anno}. Suggerimenti per Ingresso, Offertorio, Comunione e canto finale.`;
+                    document.head.appendChild(metaDescription);
+
+                    document.getElementById('title').innerHTML = `${convertiInRomano(numero)} DOMENICA D'AVVENTO - ANNO ${anno}`;
+                }
+                else {
                     document.title = `Proposta Canti - ${numero} - ANNO ${anno}`;
                     const metaDescription = document.createElement('meta');
                     metaDescription.name = "description";
@@ -260,13 +308,57 @@
                     colore = celebrazione.colore;
                 }
                 document.querySelector("#myNavbar").setAttribute("style", `background-color: ${colore};`);
+
+                // NOVENA IMMACOLATA MATTINO E SERA
+
+                if (celebrazione.novena_mattina && celebrazione.novena_sera) {
+                    document.querySelector('#novena_mattino').innerHTML = celebrazione.novena_mattina;
+                    document.querySelector('#novena_sera').innerHTML = celebrazione.novena_sera;
+                } else {
+                    document.getElementById('toggleButton1').style.display = 'none';
+                    document.getElementById('toggleButton2').style.display = 'none';
+                }
+
+                // ANTIFONA D'INGRESSO
+
                 document.querySelector('#antifona-ingresso').innerHTML = celebrazione.antifona_ingresso;
-                document.querySelector('#canto-ingresso').innerHTML = celebrazione.canto_ingresso || "";
-                document.querySelector('#atto-penitenziale').innerHTML = celebrazione.atto_penitenziale;
-                document.querySelector('#tropo-1').innerHTML = celebrazione.tropo_1;
-                document.querySelector('#tropo-2').innerHTML = celebrazione.tropo_2;
-                document.querySelector('#tropo-3').innerHTML = celebrazione.tropo_3;
+
+                // CANTO D'INGRESSO
+
+                if (celebrazione.canto_ingresso) {
+                    document.querySelector('#canto-ingresso-1').innerHTML = celebrazione.canto_ingresso;
+                } else {
+                    document.getElementById('canto-ingresso-1').style.display = 'none';
+                    document.getElementById('canto-ingresso').style.display = 'none';
+                }
+                const canto_ingresso_2 = celebrazione.canto_ingresso_2;
+                if (canto_ingresso_2) {
+                    document.querySelector('#canto-ingresso-2').innerHTML = canto_ingresso_2;
+                } else {
+                    document.getElementById('canto-ingresso-2').style.display = 'none';
+                }
+
+                // ATTO PENITENZIALE
+
+                if (celebrazione.atto_penitenziale) {
+                    document.querySelector('#atto-penitenziale').innerHTML = celebrazione.atto_penitenziale;
+                    document.querySelector('#tropo-1').innerHTML = celebrazione.tropo_1;
+                    document.querySelector('#tropo-2').innerHTML = celebrazione.tropo_2;
+                    document.querySelector('#tropo-3').innerHTML = celebrazione.tropo_3;
+                } else {
+                    document.getElementById('atto-penitenziale').style.display = 'none';
+                    document.getElementById('atto-penitenziale-title').style.display = 'none';
+                    document.getElementById('tropo-1').style.display = 'none';
+                    document.getElementById('tropo-2').style.display = 'none';
+                    document.getElementById('tropo-3').style.display = 'none';
+                }
+
+                // PRIMA LETTURA
+
                 document.querySelector('#prima-lettura').innerHTML = celebrazione.prima_lettura_testo;
+
+                // SALMO
+
                 document.querySelector('#salmo').innerHTML = celebrazione.salmo_testo;
 
                 const link_salmo = celebrazione.salmo_link;
@@ -283,28 +375,61 @@
                     document.getElementById('link_salmo2').style.display = 'none';
                 }
 
-                document.querySelector('#seconda-lettura').innerHTML = celebrazione.seconda_lettura_testo;
+                // SECONDA LETTURA
+
+                if (celebrazione.seconda_lettura_testo) {
+                    document.querySelector('#seconda-lettura').innerHTML = celebrazione.seconda_lettura_testo;
+                } else {
+                    document.getElementById('seconda-lettura').style.display = 'none';
+                    document.getElementById('seconda-lettura-title').style.display = 'none';
+                }
+
+                // VANGELO
+
                 document.querySelector('#acclamazione-al-vangelo').innerHTML = celebrazione.acclamazione_al_vangelo;
                 document.querySelector('#vangelo').innerHTML = celebrazione.vangelo;
-                document.querySelector('#canto-offertorio').innerHTML = celebrazione.canto_offertorio;
+
+                // CANTO D'OFFERTORIO
+
+                if (celebrazione.canto_offertorio) {
+                    document.querySelector('#canto-offertorio').innerHTML = celebrazione.canto_offertorio;
+                } else {
+                    document.getElementById('canto-offertorio').style.display = 'none';
+                }
                 const canto_offertorio_2 = celebrazione.canto_offertorio_2;
                 if (canto_offertorio_2) {
-                    document.querySelector('#canto-offertorio-2').innerHTML = celebrazione.canto_offertorio_2;
+                    document.querySelector('#canto-offertorio-2').innerHTML = canto_offertorio_2;
                 } else {
                     document.getElementById('canto-offertorio-2').style.display = 'none';
                 }
 
+                // ANTIFONA DI COMUNIONE
 
                 document.querySelector('#antifona-alla-comunione').innerHTML = celebrazione.antifona_alla_comunione;
-                document.querySelector('#canto-comunione').innerHTML = celebrazione.canto_comunione;
+
+                // CANTO COMUNIONE
+
+                if (celebrazione.canto_comunione) {
+                    document.querySelector('#canto-comunione').innerHTML = celebrazione.canto_comunione;
+                } else {
+                    document.getElementById('canto-comunione').style.display = 'none';
+                }
                 const canto_comunione_2 = celebrazione.canto_comunione_2;
                 if (canto_comunione_2) {
-                    document.querySelector('#canto-comunione_2').innerHTML = celebrazione.canto_comunione_2;
+                    document.querySelector('#canto-comunione_2').innerHTML = canto_comunione_2;
                 } else {
-                    document.getElementById('canto-offertorio-2').style.display = 'none';
+                    document.getElementById('canto-comunione_2').style.display = 'none';
+                    document.getElementById('canto-comunione-title').style.display = 'none';
                 }
 
-                document.querySelector('#canto-finale').innerHTML = celebrazione.canto_finale;
+                // CANTO FINALE
+
+                if (celebrazione.canto_finale) {
+                    document.querySelector('#canto-finale').innerHTML = celebrazione.canto_finale;
+                } else {
+                    document.getElementById('canto-finale').style.display = 'none';
+                    document.getElementById('canto-finale-title').style.display = 'none';
+                }
             } else {
                 document.body.innerHTML = `<p class="error">Errore: Celebrazione non trovata per numero ${numero} e anno ${anno}.</p>`;
             }
@@ -331,7 +456,6 @@
                 .then(response => response.json())
                 .then(data => {
                     populatePage(data, numero, anno, festivita); // Qui `numero` è già definito
-                    document.getElementById('download').addEventListener('click', () => generatePdf(data, numero));
                 })
                 .catch(error => {
                     console.error('Errore nel caricamento del JSON:', error);
@@ -364,13 +488,17 @@
     <div class="responsive-container">
         <h1 id="title"></h1>
 
+        <h2><button id="toggleButton1">> Novena del mattino (clicca per mostrare)</button></h2>
+        <p id="novena_mattino" class="hidden"></p>
+
         <h2>Antifona d'ingresso</h2>
         <p id="antifona-ingresso"></p>
 
-        <h3>Canto d'ingresso</h3>
-        <p id="canto-ingresso"></p>
+        <h3 id="canto-ingresso">Canto d'ingresso</h3>
+        <p id="canto-ingresso-1"></p>
+        <p id="canto-ingresso-2"></p>
 
-        <h2>Atto Penitenziale</h2>
+        <h2 id="atto-penitenziale-title">Atto Penitenziale</h2>
         <p id="atto-penitenziale"></p>
 
         <p id="tropo-1"></p>
@@ -385,7 +513,7 @@
         <p><a id="link_salmo2" href="" download>Salmo Responsoriale (2)</a></p>
         <p id="salmo"></p>
 
-        <h2>Seconda Lettura</h2>
+        <h2 id="seconda-lettura-title">Seconda Lettura</h2>
         <p id="seconda-lettura"></p>
 
         <h2>Acclamazione al Vangelo</h2>
@@ -394,18 +522,21 @@
         <h2>Vangelo</h2>
         <p id="vangelo"></p>
 
-        <h3>Canto d'offertorio</h3>
+        <h3 id="canto-offertorio">Canto d'offertorio</h3>
         <p id="canto-offertorio"></p>
         <p id="canto-offertorio-2"></p>
 
         <h2>Antifona alla Comunione</h2>
         <p id="antifona-alla-comunione"></p>
 
-        <h3>Canto di comunione</h3>
+        <h3 id="canto-comunione-title">Canto di comunione</h3>
         <p id="canto-comunione"></p>
         <p id="canto-comunione_2"></p>
 
-        <h3>Canto finale</h3>
+        <h2><button id="toggleButton2">> Novena della sera (clicca per mostrare)</button></h2>
+        <p id="novena_sera" class="hidden"></p>
+
+        <h3 id="canto-finale-title">Canto finale</h3>
         <p id="canto-finale"></p>
 
     </div>
@@ -415,6 +546,36 @@
             const navbar = document.getElementById('myNavbar');
             navbar.classList.toggle('active');
         }
+    </script>
+
+    <script>
+        // Seleziona il pulsante e il paragrafo
+        const toggleButton1 = document.getElementById('toggleButton1');
+        const toggleButton2 = document.getElementById('toggleButton2');
+        const toggleText1 = document.getElementById('novena_mattino');
+        const toggleText2 = document.getElementById('novena_sera');
+
+        // Aggiunge un event listener per il click
+        toggleButton1.addEventListener('click', () => {
+            // Controlla se il testo è nascosto
+            if (toggleText1.classList.contains('hidden')) {
+                toggleText1.classList.remove('hidden'); // Mostra il testo
+                toggleButton1.textContent = 'V Novena del mattino (clicca per nascondere)'; // Cambia il testo del pulsante
+            } else {
+                toggleText1.classList.add('hidden'); // Nasconde il testo
+                toggleButton1.textContent = '> Novena del mattino (clicca per mostrare)'; // Ripristina il testo del pulsante
+            }
+        });
+        toggleButton2.addEventListener('click', () => {
+            // Controlla se il testo è nascosto
+            if (toggleText2.classList.contains('hidden')) {
+                toggleText2.classList.remove('hidden'); // Mostra il testo
+                toggleButton2.textContent = 'V Novena della sera (clicca per nascondere)'; // Cambia il testo del pulsante
+            } else {
+                toggleText2.classList.add('hidden'); // Nasconde il testo
+                toggleButton2.textContent = '> Novena della sera (clicca per mostrare)'; // Ripristina il testo del pulsante
+            }
+        });
     </script>
 </body>
 

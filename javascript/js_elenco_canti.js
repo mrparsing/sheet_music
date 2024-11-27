@@ -1,4 +1,5 @@
-function carica_canti() {
+function carica_canti(page) {
+    console.log(page);
     fetch('../db/canti.json')
         .then(response => response.json())
         .then(data => {
@@ -13,56 +14,142 @@ function carica_canti() {
                 list.appendChild(letterHeader);
 
                 groupedCanti[letter].forEach(canto => {
-                    const li = document.createElement('li');
-                    li.onclick = toggleDetails;
-                    li.setAttribute('data-letter', letter);
-                    li.setAttribute('data-author', canto.autore);
-                    li.setAttribute('data-type', canto.tipologia);
-                    li.setAttribute('data-tempo', canto.tempo);
+                    if (page === "matrimoni" && canto.matrimonio === true) {
+                        const li = document.createElement('li');
+                        li.onclick = toggleDetails;
+                        li.setAttribute('data-letter', letter);
+                        li.setAttribute('data-author', canto.autore);
+                        li.setAttribute('data-type', canto.tipologia);
+                        li.setAttribute('data-tempo', canto.tempo);
 
-                    const span = document.createElement('span');
-                    span.textContent = canto.titolo;
-                    li.appendChild(span);
+                        const span = document.createElement('span');
+                        span.textContent = canto.titolo;
+                        li.appendChild(span);
 
-                    const detailsDiv = document.createElement('div');
-                    detailsDiv.className = 'canto-details';
-                    detailsDiv.style.display = 'none';
-                    detailsDiv.innerHTML = `<strong>Autore:</strong> ${canto.autore} | <strong>Tipologia:</strong> ${canto.tipologia} | <strong>Tempo:</strong> ${canto.tempo}`;
+                        const detailsDiv = document.createElement('div');
+                        detailsDiv.className = 'canto-details';
+                        detailsDiv.style.display = 'none';
+                        detailsDiv.innerHTML = `<strong>Autore:</strong> ${canto.autore} | <strong>Tipologia:</strong> ${canto.tipologia} | <strong>Tempo:</strong> ${canto.tempo}`;
 
-                    const linksDiv = document.createElement('div');
-                    linksDiv.className = 'link-buttons'; // Classe per il layout flessibile
+                        const linksDiv = document.createElement('div');
+                        linksDiv.className = 'link-buttons'; // Classe per il layout flessibile
 
-                    const ascoltaLink = document.createElement('a');
-                    ascoltaLink.href = canto.ascolta;
-                    ascoltaLink.className = 'link-button';
-                    ascoltaLink.textContent = 'Ascolta';
-                    linksDiv.appendChild(ascoltaLink);
+                        const ascoltaLink = document.createElement('a');
+                        ascoltaLink.href = canto.ascolta;
+                        ascoltaLink.className = 'link-button';
+                        ascoltaLink.textContent = 'Ascolta';
+                        linksDiv.appendChild(ascoltaLink);
 
-                    const scaricaLink = document.createElement('a');
-                    scaricaLink.href = canto.download_link;
-                    scaricaLink.className = 'link-button';
-                    scaricaLink.textContent = 'Scarica';
-                    linksDiv.appendChild(scaricaLink);
+                        const scaricaLink = document.createElement('a');
+                        scaricaLink.href = canto.download_link;
+                        scaricaLink.className = 'link-button';
+                        scaricaLink.textContent = 'Scarica';
+                        linksDiv.appendChild(scaricaLink);
 
-                    const testoLink = document.createElement('a');
-                    testoLink.href = `testo_canti.html?titolo=${encodeURIComponent(canto.titolo)}`;
-                    testoLink.className = 'testo-button';
-                    testoLink.textContent = 'Testo';
+                        const testoLink = document.createElement('a');
+                        testoLink.href = `testo_canti.html?titolo=${encodeURIComponent(canto.titolo)}`;
+                        testoLink.className = 'testo-button';
+                        testoLink.textContent = 'Testo';
 
-                    linksDiv.appendChild(testoLink);
+                        linksDiv.appendChild(testoLink);
 
-                    detailsDiv.appendChild(linksDiv); // Aggiungi il div dei link al div dei dettagli
-                    li.appendChild(detailsDiv);
+                        detailsDiv.appendChild(linksDiv); // Aggiungi il div dei link al div dei dettagli
+                        li.appendChild(detailsDiv);
 
-                    list.appendChild(li);
+                        list.appendChild(li);
+                    } else if (page === "comunioni" && canto.comunioni === true) {
+                        const li = document.createElement('li');
+                        li.onclick = toggleDetails;
+                        li.setAttribute('data-letter', letter);
+                        li.setAttribute('data-author', canto.autore);
+                        li.setAttribute('data-type', canto.tipologia);
+                        li.setAttribute('data-tempo', canto.tempo);
+
+                        const span = document.createElement('span');
+                        span.textContent = canto.titolo;
+                        li.appendChild(span);
+
+                        const detailsDiv = document.createElement('div');
+                        detailsDiv.className = 'canto-details';
+                        detailsDiv.style.display = 'none';
+                        detailsDiv.innerHTML = `<strong>Autore:</strong> ${canto.autore} | <strong>Tipologia:</strong> ${canto.tipologia} | <strong>Tempo:</strong> ${canto.tempo}`;
+
+                        const linksDiv = document.createElement('div');
+                        linksDiv.className = 'link-buttons'; // Classe per il layout flessibile
+
+                        const ascoltaLink = document.createElement('a');
+                        ascoltaLink.href = canto.ascolta;
+                        ascoltaLink.className = 'link-button';
+                        ascoltaLink.textContent = 'Ascolta';
+                        linksDiv.appendChild(ascoltaLink);
+
+                        const scaricaLink = document.createElement('a');
+                        scaricaLink.href = canto.download_link;
+                        scaricaLink.className = 'link-button';
+                        scaricaLink.textContent = 'Scarica';
+                        linksDiv.appendChild(scaricaLink);
+
+                        const testoLink = document.createElement('a');
+                        testoLink.href = `testo_canti.html?titolo=${encodeURIComponent(canto.titolo)}`;
+                        testoLink.className = 'testo-button';
+                        testoLink.textContent = 'Testo';
+
+                        linksDiv.appendChild(testoLink);
+
+                        detailsDiv.appendChild(linksDiv); // Aggiungi il div dei link al div dei dettagli
+                        li.appendChild(detailsDiv);
+
+                        list.appendChild(li);
+                    } else if (page !== "matrimoni" && page !== "comunioni") {
+                        const li = document.createElement('li');
+                        li.onclick = toggleDetails;
+                        li.setAttribute('data-letter', letter);
+                        li.setAttribute('data-author', canto.autore);
+                        li.setAttribute('data-type', canto.tipologia);
+                        li.setAttribute('data-tempo', canto.tempo);
+
+                        const span = document.createElement('span');
+                        span.textContent = canto.titolo;
+                        li.appendChild(span);
+
+                        const detailsDiv = document.createElement('div');
+                        detailsDiv.className = 'canto-details';
+                        detailsDiv.style.display = 'none';
+                        detailsDiv.innerHTML = `<strong>Autore:</strong> ${canto.autore} | <strong>Tipologia:</strong> ${canto.tipologia} | <strong>Tempo:</strong> ${canto.tempo}`;
+
+                        const linksDiv = document.createElement('div');
+                        linksDiv.className = 'link-buttons'; // Classe per il layout flessibile
+
+                        const ascoltaLink = document.createElement('a');
+                        ascoltaLink.href = canto.ascolta;
+                        ascoltaLink.className = 'link-button';
+                        ascoltaLink.textContent = 'Ascolta';
+                        linksDiv.appendChild(ascoltaLink);
+
+                        const scaricaLink = document.createElement('a');
+                        scaricaLink.href = canto.download_link;
+                        scaricaLink.className = 'link-button';
+                        scaricaLink.textContent = 'Scarica';
+                        linksDiv.appendChild(scaricaLink);
+
+                        const testoLink = document.createElement('a');
+                        testoLink.href = `testo_canti.html?titolo=${encodeURIComponent(canto.titolo)}`;
+                        testoLink.className = 'testo-button';
+                        testoLink.textContent = 'Testo';
+
+                        linksDiv.appendChild(testoLink);
+
+                        detailsDiv.appendChild(linksDiv); // Aggiungi il div dei link al div dei dettagli
+                        li.appendChild(detailsDiv);
+
+                        list.appendChild(li);
+
+                    }
                 });
             });
         })
         .catch(error => console.error('Errore nel caricamento del file JSON:', error));
 }
-document.addEventListener('DOMContentLoaded', function () {
-    carica_canti()
-});
 
 function toggleDetails(event) {
     const details = event.currentTarget.querySelector('.canto-details');

@@ -182,7 +182,6 @@ body {
     flex-grow: 1;
     padding: 15px;
     width: 100%;
-    height: calc(100vh - 60px);
     gap: 10px;
     opacity: 0;
     transform: translateY(10px);
@@ -207,7 +206,7 @@ body {
     /* margin: 20px 0; */
     border-radius: 8px;
     line-height: 1.6;
-    max-height: 700px;
+    max-height: 650px;
     /* display: flex; */
     /* flex-direction: column; */
 }

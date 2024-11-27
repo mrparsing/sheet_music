@@ -25,7 +25,8 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=VVuplmEF2Ik",
             "download_link": "../db/canti/i_cieli_narrano.pdf",
-            "testo": "<b>RIT. I cieli narrano la gloria di Dio<br>E il firmamento annunzia l'opera sua<br>Alleluja, alleluja, alleluja, alleluja.</b><br><br>Il giorno al giorno ne affida il messaggio<br>La notte alla notte ne trasmette notizia<br>Non è linguaggio, non sono parole, di cui non si oda il suono. RIT.<br><br>Lui sorge dall'ultimo estremo del cielo<br>E la sua corsa l'altro estremo raggiunge<br>Nessuna delle creature potrà<br>Mai sottrarsi al suo calore. RIT.<br><br>La legge di Dio rinfranca l'anima mia<br>La testimonianza del Signore è verace<br>Gioisce il cuore ai suoi giusti<br>Precettiche danno la luce agli occhi. RIT.<br>"
+            "testo": "<b>RIT. I cieli narrano la gloria di Dio<br>E il firmamento annunzia l'opera sua<br>Alleluja, alleluja, alleluja, alleluja.</b><br><br>Il giorno al giorno ne affida il messaggio<br>La notte alla notte ne trasmette notizia<br>Non è linguaggio, non sono parole, di cui non si oda il suono. RIT.<br><br>Lui sorge dall'ultimo estremo del cielo<br>E la sua corsa l'altro estremo raggiunge<br>Nessuna delle creature potrà<br>Mai sottrarsi al suo calore. RIT.<br><br>La legge di Dio rinfranca l'anima mia<br>La testimonianza del Signore è verace<br>Gioisce il cuore ai suoi giusti<br>Precettiche danno la luce agli occhi. RIT.<br>",
+            "matrimonio": true
         },
         {
             "titolo": "Ti esalto, Dio mio Re",
@@ -34,7 +35,8 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=AN409soM5X4",
             "download_link": "../db/canti/ti_esalto_dio_mio_re.pdf",
-            "testo": "<b>RIT. Ti esalto Dio mio re,<br>canterò in eterno a te:<br>io voglio lodarti Signore,<br>e benedirti, alleluia!</b><br><br>Il Signore è degno di ogni lode,<br>non si può misurar la sua grandezza;<br>ogni vivente proclama la sua gloria,<br>la sua opera è giustizia e verità. RIT.<br><br>Il Signore è paziente e pietoso.<br>Lento all’ira e ricco di grazia,<br>tenerezza ha per ogni creatura,<br>il Signore è buono verso tutti. RIT."
+            "testo": "<b>RIT. Ti esalto Dio mio re,<br>canterò in eterno a te:<br>io voglio lodarti Signore,<br>e benedirti, alleluia!</b><br><br>Il Signore è degno di ogni lode,<br>non si può misurar la sua grandezza;<br>ogni vivente proclama la sua gloria,<br>la sua opera è giustizia e verità. RIT.<br><br>Il Signore è paziente e pietoso.<br>Lento all’ira e ricco di grazia,<br>tenerezza ha per ogni creatura,<br>il Signore è buono verso tutti. RIT.",
+            "comunioni": true
         },
         {
             "titolo": "Gustate e vedete",
@@ -42,7 +44,8 @@
             "tipologia": "Offertorio, Comunione",
             "ascolta": "https://www.youtube.com/watch?v=JN9WTx9H75w",
             "download_link": "../db/canti/gustate_e_vedete.pdf",
-            "testo": "<b>RIT. Gustate e vedete come è buono il Signore<br>Beato l'uomo che trova il suo rifugio in Lui<br>Temete il Signore, Suoi santi<br>Nulla manca a coloro che Lo temono</b><br><br>Benedirò il Signore in ogni tempo<br>Sulla mia bocca la Sua lode<br>Io mi glorio nel Signore<br>Ascoltino gli umili e si rallegrino. RIT. <br><br>Celebrate con me il Signore<br>Esaltiamo insieme il Suo Nome<br>Ho cercato il Signore<br>E m'ha risposto, m'ha liberato. RIT.<br><br>Guardate a Lui e sarete raggianti<br>Non saranno confusi i vostri volti<br>Il Signore ascolta il povero<br>Egli lo libera da ogni angoscia. RIT."
+            "testo": "<b>RIT. Gustate e vedete come è buono il Signore<br>Beato l'uomo che trova il suo rifugio in Lui<br>Temete il Signore, Suoi santi<br>Nulla manca a coloro che Lo temono</b><br><br>Benedirò il Signore in ogni tempo<br>Sulla mia bocca la Sua lode<br>Io mi glorio nel Signore<br>Ascoltino gli umili e si rallegrino. RIT. <br><br>Celebrate con me il Signore<br>Esaltiamo insieme il Suo Nome<br>Ho cercato il Signore<br>E m'ha risposto, m'ha liberato. RIT.<br><br>Guardate a Lui e sarete raggianti<br>Non saranno confusi i vostri volti<br>Il Signore ascolta il povero<br>Egli lo libera da ogni angoscia. RIT.",
+            "matrimonio": true
         },
         {
             "titolo": "Rallegriamoci ed esultiamo",
@@ -59,7 +62,8 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=AmSLoX-F-b0",
             "download_link": "../db/canti/dove_la_carita_è_vera.pdf",
-            "testo": ""
+            "testo": "",
+            "matrimonio": true
         },
         {
             "titolo": "Benedici il Signore",
@@ -76,7 +80,7 @@
             "tipologia": "Alleluia",
             "ascolta": "https://www.youtube.com/watch?v=BKdNqlnLmjY",
             "download_link": "../db/canti/alleluia_cantico_agnello.pdf",
-            "testo": ""
+            "testo": "", "matrimonio": true
         },
         {
             "titolo": "Alleluia ed oggi ancora",
@@ -93,8 +97,8 @@
             "tipologia": "Offertorio",
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=mbaza6xCOGg",
-            "download_link": "download10.html",
-            "testo": ""
+            "download_link": "-",
+            "testo": "<b>Ecco, Signore, l'offerta che piace a Te<br>Ecco la nostra vita, la vita che hai dato a noi.<br>È il nostro dono per Te.</b><br><br>Tu non hai gradito né oro né argento<br>Un cuore ci hai donato per poterti amare<br><br>E se per amore nel mondo soffriremo<br>Signore, questo è il dono che vorremmo offrirti<br><br>"
         },
         {
             "titolo": "Alleluia, Tu sei Pietro",
@@ -103,7 +107,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=tyeSixss7U4&t=58s",
             "download_link": "../db/canti/alleluia_tu_sei_pietro.pdf",
-            "testo": ""
+            "testo": "-"
         },
         {
             "titolo": "Resta qui con noi",
@@ -166,7 +170,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=ABbrXiYkKsQ",
             "download_link": "../db/canti/alto_e_glorioso_dio.pdf",
-            "testo": ""
+            "testo": "", "matrimonio": true
         },
         {
             "titolo": "Lodi all'Altissimo",
@@ -175,7 +179,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=EWoNIf476Qc",
             "download_link": "../db/canti/lodi_all_altissimo.pdf",
-            "testo": ""
+            "testo": "", "matrimonio": true
         },
         {
             "titolo": "Pane di Vita nuova",
@@ -185,6 +189,7 @@
             "ascolta": "https://www.youtube.com/watch?v=2TjvpY5dqTU",
             "download_link": "../db/canti/pane_di_vita_nuova.pdf",
             "testo": "Pane di vita nuova<br>vero cibo dato agli uomini,<br>nutrimento che sostiene il mondo,<br>dono splendido di grazia.<br><br>Tu sei sublime frutto<br>di quell'albero di vita<br>che Adamo non potè toccare:<br>ora è in Cristo a noi donato.<br><br><b>RIT.  PANE DELLA VITA,<br>        SANGUE DI SALVEZZA,<br>        VERO CORPO, VERA BEVANDA<br>        CIBO DI GRAZIA PER IL MONDO.</b><br><br>Sei l'Agnello immolato<br>nel cui Sangue è la salvezza,<br>memoriale della vera Pasqua<br>della nuova Alleanza.<br><br>Manna che nel deserto<br>nutri il popolo in cammino,<br>sei sostegno e forza nella prova<br>per la Chiesa in mezzo al mondo. RIT.<br><br>Vino che ci dà gioia,<br>che riscalda il nostro cuore,<br>sei per noi il prezioso frutto<br>della vigna del Signore.<br><br>Dalla vite ai tralci<br>scorre la vitale linfa<br>che ci dona la vita divina,<br>scorre il sangue dell'amore. RIT.<br><br>Al banchetto ci inviti<br>che per noi hai preparato,<br>doni all'uomo la tua Sapienza,<br>doni il Verbo della vita.<br><br>Segno d'amore eterno<br>pegno di sublimi nozze,<br>comunione nell'unico corpo<br>che in Cristo noi formiamo. RIT.<br><br>Nel tuo Sangue è la vita<br>ed il fuoco dello Spirito,<br>la sua fiamma incendia il nostro cuore<br>e purifica il mondo.<br><br>Nel prodigio dei pani<br>tu sfamasti ogni uomo,<br>nel tuo amore il povero è nutrito<br>e riceve la tua vita. RIT.<br><br>Sacerdote eterno<br>Tu sei vittima ed altare,<br>offri al Padre tutto l'universo,<br>sacrificio dell'amore.<br><br>Il tuo Corpo è tempio<br>della lode della Chiesa,<br>dal costato tu l'hai generata,<br>nel tuo Sangue l'hai redenta. RIT.<br><br>Vero Corpo di Cristo<br>tratto da Maria Vergine,<br>dal tuo fianco doni a noi la grazia, <br>per mandarci tra le genti.<br><br>Dai confini del mondo,<br>da ogni tempo e ogni luogo<br>il creato a te renda grazie,<br>per l'eternità ti adori. RIT.<br><br>A te Padre la lode,<br>che donasti il Redentore,<br>e al Santo Spirito di vita <br>sia per sempre onore e gloria. Amen"
+            , "matrimonio": true
         },
         {
             "titolo": "Ecco l'acqua",
@@ -193,7 +198,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=_h1TjZoTIIg",
             "download_link": "../db/canti/ecco_l_acqua.pdf",
-            "testo": ""
+            "testo": "", "matrimonio": true
         },
         {
             "titolo": "Cantate al Signore",
@@ -202,7 +207,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=aC4c4ENu8lg",
             "download_link": "../db/canti/cantate_al_signore.pdf",
-            "testo": ""
+            "testo": "", "matrimonio": true
         },
         {
             "titolo": "Eccomi",
@@ -220,7 +225,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=ZR7JPMB3O7c",
             "download_link": "../db/canti/la_vera_gioia.pdf",
-            "testo": ""
+            "testo": "", "matrimonio": true
         },
         {
             "titolo": "Benedetto sei Tu Signore",
@@ -247,7 +252,7 @@
             "tempo": "Mariano",
             "ascolta": "https://www.youtube.com/watch?v=AAkAsRX4Bv8",
             "download_link": "../db/canti/madre_fiducia_nostra.pdf",
-            "testo": ""
+            "testo": "", "matrimonio": true
         },
         {
             "titolo": "Se m'accogli",
@@ -264,7 +269,7 @@
             "tipologia": "Finale",
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=dWlhPUKDfDQ",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -283,7 +288,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=k8gW7nIodv8",
             "download_link": "-",
-            "testo": ""
+            "testo": "", "matrimonio": true
         },
         {
             "titolo": "Riuniti nel nome del Signore",
@@ -471,7 +476,7 @@
             "tipologia": "Ingresso",
             "tempo": "Qualsiasi",
             "ascolta": "link52.html",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -516,7 +521,7 @@
             "tipologia": "Comunione",
             "tempo": "Avvento",
             "ascolta": "https://www.youtube.com/watch?v=RDbsjzWEsS8",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -539,11 +544,11 @@
         },
         {
             "titolo": "Re di Gloria",
-            "autore": "F. Marranzino – A. De Luca",
+            "autore": "F. Marranzino - A. De Luca",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=5lrJN9n8-iQ",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": "Ho incontrato te, Gesù,<br>e ogni cosa in me è cambiata,<br>tutta la mia vita ora ti appartiene<br>tutto il mio passato io lo affido a te,<br>Gesù, Re di gloria, mio Signor.<br><br>Tutto in te riposa,<br>la mia mente, il mio cuore,<br>trovo pace in te Signor tu mi dai la gioia.<br>Voglio stare insieme a te, non lasciarti mai,<br>Gesù, Re di gloria, mio Signor.<br><br>Dal tuo amore chi mi separerà,<br>sulla croce hai dato la vita per me.<br>Una corona di gloria mi darai<br>quando un giorno ti vedrò.<br><br>Tutto in te riposa,<br>la mia mente, il mio cuore,<br>trovo pace in te, Signor,<br>tu mi dai la gioia vera.<br>Voglio stare insieme a te,<br>non lasciarti mai Gesù,<br>Re di gloria, mio Signor.<br><br>Dal tuo amore chi mi separerà...<br><br>Dal tuo amore chi mi separerà.<br>Io ti aspetto, mio Signor,<br>Io ti aspetto, mio Signor,<br>io ti aspetto, mio Re!<br>"
         },
         {
@@ -557,12 +562,12 @@
         },
         {
             "titolo": "Ave Maris Stella",
-            "autore": "autore 62",
+            "autore": "Sconosciuto",
             "tipologia": "Ingresso",
             "tempo": "Qualsiasi",
-            "ascolta": "",
+            "ascolta": "-",
             "download_link": "../db/canti/ave maris stella.pdf",
-            "testo": ""
+            "testo": "Ave, maris stella,<br>Dei mater alma<br>atque semper virgo,<br>felix coeli porta!<br><br>Sumens illud Ave,<br>Gabrielis ore,<br>funda nos in pace,<br>mutans Evæ nomen.<br><br>Solve vincla reis,<br>profer lumen caecis,<br>mala nostra pelle,<br>bona cuncta poscie.<br><br>Monstra te esse Matrem,<br>sumat per te precem<br>Qui, pro nobis natus,<br>tulit esse tuus.<br><br>Virgo sungularis,<br>inter omnes mitis,<br>nos, culpis solutos,<br>mites fac et castos.<br><br>Vitam præsta puram,<br>iter para tutum<br>ut, videntes Jesum,<br>sempre collætemur.<br><br>Sit laus Deo Patri<br>summo Christo decus<br>Spiritui Sancto,<br>Tribus honor unus. Amen"
         },
         {
             "titolo": "Tu amerai il Signore tuo Dio",
@@ -579,7 +584,7 @@
             "tipologia": "Offertorio, Comunione",
             "tempo": "Qualsiasi",
             "ascolta": "-",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -641,7 +646,7 @@
             "autore": "autore 69",
             "tipologia": "Alleluia",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -669,7 +674,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=lnPJE8bCA6A",
             "download_link": "../db/canti/Andro a vederla un di.pdf",
-            "testo": ""
+            "testo": "Andrò a vederla un dì,<br>in cielo patria mia, <br>andrò a veder Maria, <br>mia gioia e mio amor. R.<br><br<b>Al cielo, al cielo, al ciel!<br>Andrò a vederla un dì. </b>x2<br><br> Andrò a vederla un dì, <br>è il grido di speranza, <br>che infondemi costanza <br>nel viaggio e fra i dolor. R.<br><br>Andrò a vederla un dì, <br>lasciando questo esilio; <br>le poserò qual figlio <br>il capo sopra il cuor. R.<br><br>Andrò a vederla un dì, <br>le andrò vicino al trono, <br>ad ottenere in dono <br>un serto di splendor. R."
         },
         {
             "titolo": "Inni e canti",
@@ -723,7 +728,7 @@
             "tempo": "Mariano",
             "ascolta": "https://www.youtube.com/watch?v=scymHbbXB3U",
             "download_link": "../db/canti/mira il tuo popolo.pdf",
-            "testo": ""
+            "testo": "Mira il tuo popolo, o bella Signora,<br><i>che pien di giubilo oggi t'onora, x2</i><br>anch'io festevole corro ai tuoi pie':<br><i>o santa Vergine, prega per me.</i> x2<br><br>Il pietosissimo tuo dolce cuore,<br><i>egl'è rifugio al peccatore, x2</i><br>tesori e grazie racchiude in sé:<br><i>o santa Vergine, prega per me.</i> x2<br><br>In questa misera valle infelice,<br><i>tutti Ti invocano Soccorritrice, x2</i><br>questo bel titolo conviene a te:<br><i>o santa Vergine, prega per me.</i> x2<br><br>Del vasto oceano propizia stella,<br><i>ti vedo splendere sempre più bella; x2</i><br>al porto guidami per tua mercé:<br><i>o santa Vergine, prega per me.</i> x2<br><br>Pietosa mostrati con l'alma mia,<br><i>Madre dei miseri, santa Maria; x2</i><br>madre più tenera di te non v'è:<br><i>o santa Vergine, prega per me.</i> x2<br><br>A me rivolgiti con dolce viso,<br><i>Regina amabile del paradiso;x2</i><br>Te potentissima l'Eterno fe':<br><i>o santa Vergine, prega per me.</i> x2"
         },
         {
             "titolo": "Il signore è vicino",
@@ -748,7 +753,7 @@
             "autore": "autore 81",
             "tipologia": "Offertorio",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -756,7 +761,7 @@
             "autore": "autore 82",
             "tipologia": "Finale",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -764,7 +769,7 @@
             "autore": "autore 83",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -772,7 +777,7 @@
             "autore": "autore 84",
             "tipologia": "Ingresso",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -780,7 +785,7 @@
             "autore": "autore 85",
             "tipologia": "",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -788,7 +793,7 @@
             "autore": "autore 86",
             "tipologia": "Offertorio, Comunione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -804,7 +809,7 @@
             "autore": "autore 87",
             "tipologia": "Accensione candela",
             "tempo": "Avvento",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -812,7 +817,7 @@
             "autore": "autore 88",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -820,7 +825,7 @@
             "autore": "autore 89",
             "tipologia": "Ingresso, Offertorio, Comunione",
             "tempo": "Natale",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -828,7 +833,7 @@
             "autore": "autore 90",
             "tipologia": "Offertorio",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -836,7 +841,7 @@
             "autore": "autore 91",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -844,7 +849,7 @@
             "autore": "autore 92",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -852,7 +857,7 @@
             "autore": "autore 93",
             "tipologia": "Finale",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -860,7 +865,7 @@
             "autore": "autore 94",
             "tipologia": "Ingresso",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -868,7 +873,7 @@
             "autore": "autore 95",
             "tipologia": "Ingresso",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -876,7 +881,7 @@
             "autore": "autore 96",
             "tipologia": "Ingresso",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -884,7 +889,7 @@
             "autore": "autore 98",
             "tipologia": "Ingresso",
             "tempo": "Quaresima",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -892,7 +897,7 @@
             "autore": "autore 99",
             "tipologia": "Offertorio",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -900,39 +905,40 @@
             "autore": "autore 100",
             "tipologia": "Ingresso, Offertorio, Comunione",
             "tempo": "Natale",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
             "titolo": "Madre mia bellissima",
-            "autore": "autore 101",
+            "autore": "Giosy Cento",
             "tipologia": "Comunione",
             "tempo": "Mariano",
-            "download_link": "../db/canti/",
-            "testo": ""
+            "download_link": "../db/canti/madre mia bellissima.pdf",
+            "testo": "Madre mia bellissima<br>Tu che stringi un figlio a te<br>E in lui abbracci noi<br>Piena sei di grazia<br><br><b>R. Prega insieme a noi, tu Immacolata<br>Fa' che noi viviamo come il tuo Gesù<br>Prega insieme a noi, tu Immacolata<br>Fa' che noi viviamo come il tuo Gesù</b><br><br>Madre mia dolcissima<br>Dio amore ti creò<br>Cielo azzurro su di noi<br>Piena sei di umanità. R.<br><br>Madre mia bellissima<br>Coi tuoi occhi mi vedrai<br>Nel mio cuore leggerai<br>Il sorriso tornerà. R.<br><br>Madre sei per tutti noi<br>I problemi sentirai<br>A Gesù li porterai<br>E più forti ci farai. R.<br><br>"
         },
         {
             "titolo": "Il pane del cammino",
             "autore": "autore 102",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
             "titolo": "Immacolata vergine bella",
-            "autore": "autore 103",
+            "autore": "Pietro Panzetti",
             "tipologia": "Finale",
             "tempo": "Mariano",
-            "download_link": "../db/canti/",
-            "testo": ""
+            "ascolta": "https://www.youtube.com/watch?v=y58aDIsWeTc",
+            "download_link": "../db/canti/Immacolata_Vergine.pdf",
+            "testo": "Immacolata, Vergine bella,<br>di nostra vita Tu sei la stella.<br>Fra le tempeste deh! guida il cuore,<br>di chi t'invoca Madre d'Amore.<br><br>Siam peccatori, ma figli tuoi:<br>Immacolata prega per noi.<br><br>La tua preghiera onnipotente,<br>o dolce mamma, tutta clemente;<br>a Gesù buono deh! tu ci guida,<br>accogli il cuore che in te confida.<br><br>Tu che nel cielo siedi Regina<br>a noi pietosa lo sguardo inchina:<br>pel divin Figlio che stringi al petto<br>rendici degni del tuo affetto."
         },
         {
             "titolo": "Rallegrati Gerusalemme",
             "autore": "autore 104",
             "tipologia": "Ingresso",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -940,7 +946,7 @@
             "autore": "autore 105",
             "tipologia": "",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -948,7 +954,7 @@
             "autore": "autore 107",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -956,7 +962,7 @@
             "autore": "autore 108",
             "tipologia": "Finale",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -964,7 +970,7 @@
             "autore": "autore 109",
             "tipologia": "Finale",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -972,7 +978,7 @@
             "autore": "autore 110",
             "tipologia": "Adorazione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -980,31 +986,32 @@
             "autore": "autore 111",
             "tipologia": "Adorazione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
             "titolo": "Signore, da chi andremo",
-            "autore": "autore 112",
+            "autore": "-",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
-            "testo": ""
+            "download_link": "-",
+            "testo": "-"
         },
         {
             "titolo": "Come un fiore",
-            "autore": "autore 113",
+            "autore": "Stefano Varnavà",
             "tipologia": "Comunione",
+            "ascolta": "-",
             "tempo": "Mariano",
-            "download_link": "../db/canti/",
-            "testo": ""
+            "download_link": "../db/canti/Come un fiore.pdf",
+            "testo": "Come un fiore della natura<br>Tutta vera davanti a Dio<br>Luminosa come luna tu sei,<br>nella luce del tuo Dio.<br><br>O Madonna, col tuo Bambino <br>Vegli attenta ogni piccino<br>Che nel mondo viene, a ricordar<br>Di Tuo Figlio la bontà.<br><br>O Madonna: \"Ave Maria\"<br>È preghiera di chi ti ama,<br>che ripete quel saluto che a Te<br>un Arcangelo portò.<br><br>Per chi soffre, Donna pietosa<br>Per chi attende sei la speranza:<br>chi ti chiama presto incontrerà<br>un tuo sogno di bontà."
         },
         {
             "titolo": "Ti ringrazio",
             "autore": "autore 114",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -1012,7 +1019,7 @@
             "autore": "autore 115",
             "tipologia": "Adorazione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -1020,23 +1027,23 @@
             "autore": "autore 116",
             "tipologia": "Alleluia",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
             "titolo": "Sei tu Signore il pane",
-            "autore": "autore 117",
+            "autore": "George Kirbye",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
-            "testo": ""
+            "download_link": "../db/canti/sei-tu-signore-il-pane.pdf",
+            "testo": "Sei tu, Signore, il pane, tu cibo sei per noi<br>Risorto a vita nuova, sei vivo in mezzo a noi.<br><br>Nell'ultima sua cena Gesù si dona ai suoi:<br>\"Prendete pane e vino, la vita mia per voi\".<br><br>\"Mangiate questo pane: chi crede in me vivrà.<br>Chi beve il vino nuovo con me risorgerà\".<br><br>È Cristo il pane vero, diviso qui fra noi:<br>formiamo un solo corpo e Dio sarà con noi.<br><br>Se porti la sua croce, in lui tu regnerai.<br>Se muori unito a Cristo, con lui rinascerai.<br><br>Verranno i cieli nuovi, la terra fiorirà.<br>Vivremo da fratelli: la Chiesa è carità."
         },
         {
             "titolo": "Guada questa offerta",
             "autore": "autore 118",
             "tipologia": "Offertorio",
             "tempo": "Qualsiasi",
-            "download_link": "../db/canti/",
+            "download_link": "-",
             "testo": ""
         },
         {
@@ -1053,6 +1060,24 @@
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
             "download_link": "../db/canti/"
+        },
+        {
+            "titolo": "Ave Maria piena di grazia",
+            "autore": "Sconosciuto",
+            "tipologia": "Ingresso",
+            "tempo": "-",
+            "ascolta": "-",
+            "download_link": "-",
+            "testo": "P. Ave Maria, piena di grazie,<br><b>T. benedetta tu fra le donne.</b><br><br>P. Ave, Signora degli angeli<br><b>T. benedetta tu fra le donne.</b><br><br>P. Ave, gloria dei santi<br><b>T. benedetta tu fra le donne.</b><br><br>P. Ave, rifugio degli erranti,<br><b>T. benedetta tu fra le donne.</b><br><br>P. Ave speranza nostra,<br><b>T. benedetta tu fra le donne.</b><br><br>P. Ave, Regina di misericordia<br><b>T. benedetta tu fra le donne.</b><br><br>P. Gloriosa Madre del Signore, Santa Maria,<br>degna di lode degli angeli<br>e della venerazione di tutti.<br><b>T. Ave, Maria, piena di grazie,<br>benedetta tu fra le donne.</b><br><h3>Inno</h3>Per sempre si canti<br>la lode di te,<br>o Vergine Santa,<br>o Madre d’Amore.<br><br><b>Per sempre si canti<br>la lode di te,<br>o Vergine Santa,<br>o Madre d’Amore.</b><br><br>Nel giorno funesto<br>che l’uomo peccò<br>soltanto una stella<br>accesa restò. R.<br><br>Sei tu quella stella<br>d’intatto candor<br>che dona speranza<br>e guida a Gesù. R.<br><br>Lo Spirito Santo<br>te sola colmò<br>di grazie divina<br>e d’ogni virtù. R.<br><br>Tu sei benedetta<br>tra tutte quaggiù:<br>il casto tuo seno<br>si scelse il Signor. R.<br><br>E tu benedici,<br>così ti preghiam<br>chiunque t’invoca<br>con fervido cuor. R."
+        },
+        {
+            "titolo": "Novena Immacolata - Mattina",
+            "autore": "Sconosciuto",
+            "tipologia": "",
+            "tempo": "",
+            "ascolta": "",
+            "download_link": "../db/canti/Novena Immacolata - Mattina.pdf",
+            "testo": ""
         }
     ]
 }
