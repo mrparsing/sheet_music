@@ -224,15 +224,21 @@ async function cerca(jsonFile, arabicNumbers, numeriRomani, anno) {
             const response = await fetch(jsonFile);
             const data = await response.json();
             const numeroDomenica = arabicNumbers ? parseInt(arabicNumbers[0]) : numeriRomani ? convertRomanToInt(numeriRomani[0]) : null;
-
             data.celebrazioni.forEach(item => {
+                console.log(item);
                 // Verifica se il titolo o il numero corrispondono ai criteri di ricerca
-                if (item.numero_giorno) {
-                    if (item.numero_giorno === numeroDomenica && item.anno.toLowerCase() === anno) {
-                        results.push(item);
+                if (numeroDomenica) {
+                    if (item.numero_giorno) {
+                        if (item.numero_giorno === numeroDomenica && item.anno.toLowerCase() === anno) {
+                            results.push(item);
+                        }
+                    } else {
+                        if (item.numero === numeroDomenica && item.anno.toLowerCase() === anno) {
+                            results.push(item);
+                        }
                     }
                 } else {
-                    if (item.numero === numeroDomenica && item.anno.toLowerCase() === anno) {
+                    if (item.anno.toLowerCase() === anno) {
                         results.push(item);
                     }
                 }

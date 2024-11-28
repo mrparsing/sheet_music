@@ -817,12 +817,20 @@
             "download_link": "../db/tempi_liturgici/tempo_ordinario/salmi_anno_c/C 33 Visconti.pdf"
         },
         {
-            "titolo": "Salmo XXXIII domenica tempo ordinario - C",
-            "anno": "altre_festivita",
-            "numero_arabo": "33",
-            "numero_romano": "xxxiii",
+            "titolo": "Salmo I domenica d'avvento - C",
+            "anno": "C",
+            "numero_arabo": "1",
+            "numero_romano": "i",
             "autore": "Mauro Visconti",
-            "download_link": "../db/tempi_liturgici/tempo_ordinario/salmi_anno_c/C 33 Visconti.pdf"
+            "download_link": "../db/tempi_liturgici/avvento/salmi_anno_c/C 1 avvento Visconti.pdf"
+        },
+        {
+            "titolo": "Salmo I domenica d'avvento - C",
+            "anno": "C",
+            "numero_arabo": "1",
+            "numero_romano": "i",
+            "autore": "Giuseppe Liberto",
+            "download_link": "../db/tempi_liturgici/avvento/salmi_anno_c/C 1 avvento Liberto.pdf"
         },
         {
             "titolo": "Salmo XXXIII domenica tempo ordinario - C",
@@ -830,7 +838,7 @@
             "numero_arabo": "33",
             "numero_romano": "xxxiii",
             "autore": "Mauro Visconti",
-            "download_link": "../db/tempi_liturgici/tempo_ordinario/salmi_anno_c/C 33 Visconti.pdf"
+            "download_link": "../db/tempi_liturgici/avvento/salmi_anno_c/C 1 Visconti.pdf"
         }
     ]
 }

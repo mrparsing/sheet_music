@@ -85,7 +85,7 @@
             const lista = document.getElementById('list');
 
             // Pulisce la lista esistente
-            lista.innerHTML = '';
+            // lista.innerHTML = '';
 
             // Cicla attraverso tutte le celebrazioni nel JSON
             celebrazioni.forEach(function (celebrazione) {
@@ -112,13 +112,23 @@
         // Funzione che carica i dati dal file JSON
         function caricaDatiCelebrazioni() {
             const anno = getQueryParams();
-            const jsonFile = `../../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
+            const jsonFile_ordinario = `../../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
+            const jsonFile_avvento = `../../db/tempi_liturgici/avvento/celebrazioni_anno_${anno.toLowerCase()}.json`;
 
-            console.log(jsonFile);
 
-            fetch(jsonFile)
+            fetch(jsonFile_avvento)
                 .then(response => response.json()) // Converte la risposta in JSON
                 .then(data => {
+                    generaListaCelebrazioni(data.celebrazioni); // Passa i dati alla funzione che genera la lista
+                })
+                .catch(error => {
+                    console.error('Errore durante il caricamento dei dati:', error);
+                });
+
+            fetch(jsonFile_ordinario)
+                .then(response => response.json()) // Converte la risposta in JSON
+                .then(data => {
+                    console.log(data);
                     generaListaCelebrazioni(data.celebrazioni); // Passa i dati alla funzione che genera la lista
                 })
                 .catch(error => {
