@@ -29,7 +29,7 @@ async function searchCanti(event, page) {
                 const salmi = data.salmi;
 
                 const words = input.split(" ");
-                const filters = { number: null, romanNumber: null, year: null, season: null };
+                const filters = { number: null, testo: [], romanNumber: null, year: null, season: null };
 
                 // Analizza l'input per numero arabo, numero romano, anno e tempo liturgico
                 words.forEach(word => {
@@ -41,8 +41,15 @@ async function searchCanti(event, page) {
                         filters.year = word.toUpperCase(); // Anno
                     } else if (["ordinario", "quaresima", "pasqua", "avvento"].includes(word)) {
                         filters.season = word; // Tempo liturgico
+                    } else {
+                        if (word !== "salmo" && word !== "testo") {
+                            filters.testo.push(word);
+                        }
                     }
                 });
+
+                const stringa = filters.testo.join(" ");  // Unisce le parole con uno spazio tra di esse
+                filters.testo = stringa;
 
                 // Filtra i salmi in base ai criteri
                 const results = salmi.filter(salmo => {
@@ -50,10 +57,15 @@ async function searchCanti(event, page) {
                     const matchesNumber = filters.number ? salmo.numero_arabo === filters.number : true;
                     const matchesRomanNumber = filters.romanNumber ? salmo.numero_romano === filters.romanNumber : true;
                     const matchesYear = filters.year ? salmo.anno === filters.year : true;
-                    const matchesSeason = filters.season ? salmo.titolo.toLowerCase().includes(filters.season) : true;
-
-                    return matchesTitle && matchesNumber && matchesRomanNumber && matchesYear && matchesSeason;
+                    const matchesSeason = filters.season ? salmo.titolo.toLowerCase().includes(filters.season.toLowerCase()) : true;
+                    if (input.includes("salmo testo")) {
+                        const testo = filters.testo ? salmo.testo.toLowerCase() === filters.testo : true;
+                        return matchesTitle && testo && matchesNumber && matchesRomanNumber && matchesYear && matchesSeason;
+                    } else {
+                        return matchesTitle && matchesNumber && matchesRomanNumber && matchesYear && matchesSeason;
+                    }
                 });
+
 
                 // Salva i risultati in localStorage
                 localStorage.setItem("searchResults", JSON.stringify(results));
