@@ -630,7 +630,7 @@
             "tempo": "Avvento",
             "ascolta": "https://www.youtube.com/watch?v=SSs7W-tGHGw",
             "download_link": "../db/canti/Sei luce splendida.pdf",
-            "testo": ""
+            "testo": "Una luce risplende per i giusti,<br>una stella proclama il tuo mattino,<br>ogni uomo richiama sul cammino verso il regno.<br><br><b>Sei luce splendida,<br>che il cuore illumina,<br>Signore Gesù.<br>Sei luce splendida,<br>che guida i popoli,<br>Signore Gesù.</b><br><br>Quando il cielo si chiude nel silenzio,<br>quando il buio nasconde l’orizzonte,<br>tu riaccendi nell’intimo alla gente la speranza. R.<br><br>Se la strada si perde nel deserto,<br>se la vita si aggira senza senso,<br>come un sole riappari, Dio Immenso, a orientarci.<br>"
         },
         {
             "titolo": "Alleluia",
@@ -647,7 +647,7 @@
             "tempo": "Avvento",
             "ascolta": "https://www.youtube.com/watch?v=TacRTZTc1ok",
             "download_link": "../db/canti/Tuquandoverrai.pdf",
-            "testo": ""
+            "testo": "Tu, quando verrai, Signore Gesù,<br>quel giorno sarai un sole per noi.<br>Un libero canto da noi nascerà<br>e come una danza il cielo sarà.<br><br>Tu, quando verrai, Signore Gesù,<br>insieme vorrai far festa con noi.<br>E senza tramonto la festa sarà,<br>perché finalmente saremo con te.<br><br>Tu, quando verrai, Signore Gesù,<br>per sempre dirai: \"Gioite con me!\".<br>Noi ora sappiamo che il Regno verrà:<br>nel breve passaggio viviamo di te."
         },
         {
             "titolo": "Astro del ciel",
@@ -701,7 +701,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=VyPcLu0RCmo",
             "download_link": "../db/canti/Dell'aurora tu sorgi piu bella.pdf",
-            "testo": ""
+            "testo": "Dell'aurora tu sorgi più bella<br>coi tuoi raggi fai lieta la terra<br>e fra gli astri che il cielo rinserra<br>non v'è stella più bella di te.<br><br><b>Bella tu sei qual sole,<br>bianca più della Luna<br>e le stelle più belle,<br>non son belle al par di te.<br>Bella tu sei qual sole,<br>bianca più della Luna<br>e le stelle più belle,<br>non son belle al par di te.</b><br><br>Gli occhi tuoi son più belli del mare,<br>la tua fronte ha il colore del giglio,<br>le tue gote baciate dal Figlio<br>son due rose e le labbra son fior. R.<br><br>Delle perle tu passi l'incanto,<br>la bellezza tu vinci dei fiori,<br>tu dell'iride eclissi i colori,<br>il tuo viso rapisce il Signor. R.<br><br>Ti incoronano dodici stelle,<br>della luna si incurva l'argento;<br>ai tuoi piè spiega l'alito il vento,<br>il tuo manto ha il colore del mar. R."
         },
         {
             "titolo": "T'adoriam, Ostia divina",
@@ -728,7 +728,7 @@
             "tempo": "Avvento",
             "ascolta": "https://www.youtube.com/watch?v=u8CVWWGWdPk",
             "download_link": "../db/canti/Il Signore è vicino.pdf",
-            "testo": ""
+            "testo": "<b>Il Signore è vicino,<br>rallegratevi in lui, Alleluia!<br>Rallegratevi, rallegratevi,<br>rallegratevi, alleluia!</b><br><br>Si rallegri il deserto<br>e gioisca la terra:<br>spunterà come un fiore<br>la venuta di Dio.<br>Si rallegrino gli umili<br>e smarriti di cuore:<br>il Signore è potente<br>lui che fa grandi cose. R.<br><br>Si rallegrino i poveri<br>e con loro gli oppressi:<br>viene un giorno di grazia,<br>di vittoria e giustizia.<br>Si rallegri chi ha fame<br>e chi ha sete di Dio:<br>una mensa abbondante<br>gli prepara il Signore. R.<br><br>Si rallegri chi è cieco<br>si apriranno i suoi occhi<br>ed il muto sia pronto<br>a cantare di gioia.<br>Si rallegri chi è sordo<br>udirà la notizia<br>e lo zoppo stia in piedi<br>danzerà per la festa. R.<br><br>Si rallegrino i giovani<br>e gli anziani e i bambini:<br>si daranno tutti la mano<br>annunciando la pace.<br>Si rallegri il credente<br>e ogni uomo che attende:<br>la salvezza è vicina<br>a chi cerca il Signore."
         },
         {
             "titolo": "Cielo nuovo",
@@ -797,11 +797,11 @@
         },
         {
             "titolo": "Vieni ancora, Gesù",
-            "autore": "autore 87",
+            "autore": "Roland Patzleiner",
             "tipologia": "Accensione candela",
             "tempo": "Avvento",
             "download_link": "-",
-            "testo": ""
+            "testo": "Vieni ancora, Gesù,<br>sulle strade del mondo:<br>nella notte sarai<br>una stella per noi.<br><br><b>Ti preghiamo, Gesù<br>vieni ancora tra noi.<br>Tu la luce sarai <br>e il giorno verrà.</b><br><br>Vieni ancora, Gesù<br>sulle vie dei cuori:<br>nell 'inverno sarai <br>una fiamma per noi. R.<br><br>Vieni ancora, Gesù,<br>sui sentieri del male:<br>nel desero sarai<br>nuova vita per noi. R.<br><br>"
         },
         {
             "titolo": "Symbolum 77",
@@ -897,7 +897,7 @@
             "tipologia": "Ingresso, Offertorio, Comunione",
             "tempo": "Natale",
             "download_link": "-",
-            "testo": ""
+            "testo": "In notte placida, per muto sentier,<br>dai campi del ciel è discese l'Amor,<br>all'alme fedeli il Redentor!<br>Nell'aura è il palpito d'un grande mister:<br>del nuovo Israel è nato il Signor,<br>il fiore più bello dei nostri fior!<br><br>Cantate, o popoli, gloria all'Altissimo<br>l'animo aprite a speranza ed amor!<br><br>Se l'aura è gelida, se fosco è il ciel,<br>oh, vieni al mio cuore, vieni a posar,<br>ti vò col mio amore riscaldar.<br>Se il fieno è rigido, se il vento è crudel,<br>un cuore che t'ama voglio a Te dar,<br>un cuor che Te brama, Gesù cullar."
         },
         {
             "titolo": "Madre mia bellissima",
