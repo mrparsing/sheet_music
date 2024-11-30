@@ -8,257 +8,9 @@
     <script src="../javascript/javascript.js"></script>
     <script src="../javascript/js_global_search.js"></script>
     <link rel="stylesheet" href="../styles/style_index.css">
+    <link rel="stylesheet" href="../styles/style_imp.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        #container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 80vh;
-        }
-
-        .row {
-            display: flex;
-            justify-content: center;
-            margin: 10px 0;
-        }
-
-        .box {
-            width: 300px;
-            height: 300px;
-            margin: 10px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .box .text {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 5px;
-            border-radius: 0 0 8px 8px;
-        }
-
-        @media (max-width: 768px) {
-            #container {
-                flex-direction: column;
-                margin-top: 480px;
-            }
-
-            .row {
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
-            }
-
-            .main-content {
-                margin-top: 60px;
-            }
-        }
-
-        .section {
-            width: 100%;
-            text-align: center;
-            max-width: 1000px;
-            margin-bottom: 30px;
-            margin-top: 30px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(122, 122, 122, 0.2);
-        }
-
-        .theme-switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-            margin-bottom: 20px;
-        }
-
-        .theme-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        input:checked+.slider {
-            background-color: #2196F3;
-        }
-
-        input:checked+.slider:before {
-            transform: translateX(26px);
-        }
-
-        a {
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .dark-theme a {
-            color: #4da6ff;
-        }
-
-        .dark-theme a:hover {
-            color: #1a8cff;
-            text-decoration: underline;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 400px;
-            /* Added max-width for better proportions */
-            width: 100%;
-            /* Full width for smaller screens */
-            margin: 0 auto;
-            /* Center the form */
-        }
-
-        form input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            /* Increased font size for better visibility */
-        }
-
-        form textarea {
-            width: 100%;
-            height: 150px;
-            /* Adjusted height for better proportions */
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            /* Increased font size for better visibility */
-        }
-
-        form button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #2196F3;
-            color: white;
-            cursor: pointer;
-            font-size: 16px;
-            /* Increased font size for better visibility */
-        }
-
-        form button:hover {
-            background-color: #1a8cff;
-        }
-
-        .social-share {
-            text-align: center;
-        }
-
-        .social-share h4 {
-            margin-bottom: 10px;
-        }
-
-        .social-button {
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 24px;
-            padding: 10px;
-            color: #333333;
-            /* colore scuro per il tema chiaro */
-            transition: color 0.3s ease;
-        }
-
-        .social-button:hover {
-            color: wheat;
-        }
-
-        .dark-theme .social-button:hover {
-            color: wheat;
-        }
-
-        .social-button i {
-            vertical-align: middle;
-        }
-
-        .github-link {
-            color: #2196F3;
-            /* A bold orange-red color */
-            font-weight: bold;
-            /* Make the link bold */
-            text-decoration: none;
-            /* Remove underline */
-            transition: color 0.3s ease;
-            /* Smooth color transition */
-        }
-
-        .github-link:hover {
-            color: #1a8cff;
-            /* A darker shade when hovered */
-            text-decoration: underline;
-            /* Underline on hover */
-        }
-    </style>
     <script>
         function toggleTheme() {
             document.body.classList.toggle('dark-theme');
@@ -336,6 +88,43 @@
                 </form>
             </div>
 
+            <div class="section">
+                <h3>Domande Frequenti (FAQ)</h3>
+                <div class="faq-item">
+                    <h4 onclick="toggleFaq(this)">Come posso segnalare un problema o un bug?</h4>
+                    <p style="display: none;">Se hai riscontrato un problema o un bug, puoi creare un'issue nel nostro
+                        <a href="https://github.com/mrparsing/cantusacri" target="_blank">repository GitHub</a> oppure
+                        inviaci un messaggio attraverso il modulo di contatto nella sezione "Contatti" della pagina.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 onclick="toggleFaq(this)">Posso suggerire un nuovo canto liturgico da aggiungere?</h4>
+                    <p style="display: none;">Sì! Se desideri suggerire un nuovo canto liturgico, puoi inviare la tua
+                        proposta tramite il modulo di contatto o direttamente nel nostro <a
+                            href="https://github.com/mrparsing/cantusacri" target="_blank">repository GitHub</a>.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 onclick="toggleFaq(this)">Come posso cercare un canto o un testo liturgico?</h4>
+                    <p style="display: none;">Puoi effettuare una ricerca in diversi modi:</p>
+                    <p style="display: none;"><strong>Salmi:</strong> Utilizza la parola chiave <em>salmo</em> per
+                        cercare i salmi. Ad esempio, puoi scrivere <em>salmo I domenica tempo ordinario - A</em>.</p>
+                    <p style="display: none;"><strong>Testo:</strong> Se conosci una parte del testo, puoi usarla per
+                        cercare un salmo o un canto. Ad esempio, cerca <em>Signore è il mio pastore</em>.</p>
+                    <p style="display: none;"><strong>Messa:</strong> Per trovare canti legati alla liturgia di una
+                        messa, usa parole chiave come <em>messa</em>, <em>celebrazione</em>, <em>domenica</em> o
+                        <em>solennità</em>.</p>
+                    <p style="display: none;"><strong>Novene:</strong> Per cercare le novene, utilizza la parola chiave
+                        <em>novena</em> seguita dal nome, ad esempio <em>novena immacolata</em> o <em>novena di
+                            natale</em>.</p>
+                    <p style="display: none;"><strong>Canti generici:</strong> Se non inserisci nessuna parola chiave,
+                        la ricerca mostrerà i canti disponibili.</p>
+                    <p style="display: none;">Se hai suggerimenti per nuovi canti liturgici, puoi inviarli tramite il
+                        modulo di contatto o direttamente nel nostro <a href="https://github.com/mrparsing/cantusacri"
+                            target="_blank">repository GitHub</a>.</p>
+                </div>
+            </div>
+
             <div class="social-share">
                 <h4>Condividi sui social:</h4>
                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://https://propostacanti.web.app"
@@ -359,5 +148,14 @@
         </div>
     </div>
 </body>
+<script>
+    function toggleFaq(element) {
+        const content = element.nextElementSibling;
+        while (content && content.tagName === 'P') {
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            content = content.nextElementSibling;
+        }
+    }
+</script>
 
 </html>

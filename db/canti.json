@@ -62,7 +62,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=AmSLoX-F-b0",
             "download_link": "../db/canti/dove_la_carita_è_vera.pdf",
-            "testo": "",
+            "testo": "<b>RIT. DOVE LA CARITÀ È VERA E SINCERA, LÀ C’È DIO.<br>DOVE LA CARITÀ PERDONA E TUTTO SOPPORTA.<br>DOVE LA CARITÀ BENIGNA COMPRENDE E NON SI VANTA,<br>TUTTO CREDE ED AMA E TUTTO SPERA LA VERA CARITÀ.</b><br><br>Ci ha riuniti in uno l’amore di Cristo:<br>esultiamo e rallegriamoci in lui,<br>temiamo ed amiamo il Dio vivente<br>ed amiamoci tra noi con cuore sincero. R.<br><br>Quando tutti insieme noi ci raduniamo<br>vigiliamo che non sian divisi i nostri cuori,<br>non più liti, non più dissidi e contese maligne,<br>ma sia sempre in mezzo a noi Cristo Signore. R.<br><br>Noi vedremo insieme con tutti i beati<br>nella gloria il tuo volto, Gesù Cristo Dio,<br>gioia immensa, gioia vera noi vivremo<br>per l’eternità infinita dei secoli. Amen. R.",
             "matrimonio": true
         },
         {
@@ -72,7 +72,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=oUbiqTndu14",
             "download_link": "../db/canti/benedici_il_signore.pdf",
-            "testo": ""
+            "testo": "<b>RIT. BENEDICI IL SIGNORE, ANIMA MIA,<brQUANT'È IN ME BENEDICA IL SUO NOME;<br>NON DIMENTICHERÒ TUTTI I SUOI BENEFICI,<br>BENEDICI IL SIGNORE, ANIMA MIA.</b><br><br>Lui perdona tutte le tue colpe<br>e ti salva dalla morte.<br>Ti corona di grazia e ti sazia di beni<br>nella tua giovinezza. R.<br><br>Il Signore agisce con giustizia,<br>con amore verso i poveri.<br>Rivelò a Mosè le sue vie, ad Israele <br>le sue grandi opere. R.<br><br>Il Signore è buono e pietoso,<br>lento all'ira e grande nell'amor.<br>Non conserva in eterno il suo sdegno e la sua ira<br>verso i nostri peccati. R.<br><br>Come dista oriente da occidente <br>allontana le tue colpe.<br>Perché sa che di polvere siam tutti noi plasmati,<br>come l'erba i nostri giorni. R.<br><br>Benedite il Signore voi angeli<br>voi tutti suoi ministri<br>beneditelo voi tutte sue opere e domini<br>benedicilo tu, anima mia. R."
         },
         {
             "titolo": "Alleluia cantico all'Agnello",
@@ -80,7 +80,8 @@
             "tipologia": "Alleluia",
             "ascolta": "https://www.youtube.com/watch?v=BKdNqlnLmjY",
             "download_link": "../db/canti/alleluia_cantico_agnello.pdf",
-            "testo": "", "matrimonio": true
+            "testo": "<b>Alleluia, alleluia,<br>alleluia, alleluia</b>﻿﻿﻿<br><br>Celebrerò il Signore, perché è buono;<br>perché eterna è la sua misericordia;<br>mia forza e mio canto è il Signore,<br>egli è stato la mia salvezza.<br><br>﻿﻿﻿Questo è il giorno che ha fatto il Signore:<br>rallegriamoci ed esultiamo.<br>Dona, Signore, la tua salvezza,<br>dona, Signore, la tua vittoria.<br><br>Salvezza, gloria e potenza sono del nostro Dio;<br>veri e giusti sono i suoi giudizi.<br>Lodate il nostro Dio, voi tutti suoi servi,<br>voi che lo temete, piccoli e grandi.<br><br>Ha preso possesso del suo regno il Signore,<br>il nostro Dio l'Onnipotente.<br>Rallegriamoci ed esultiamo, rendiamo a lui gloria.<br>Sono giunte le nozze dell'Agnello,<br>la sua sposa è pronta.<br><br>Sia gloria al Padre, sia gloria al Figlio<br>e allo Spirito Santo, <br>com'era nel principio, ora e sempre<br>e nei secoli dei secoli. Amen.",
+            "matrimonio": true
         },
         {
             "titolo": "Alleluia ed oggi ancora",
@@ -116,7 +117,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=39rBZFORuME",
             "download_link": "../db/canti/resta_qui_con_noi.pdf",
-            "testo": ""
+            "testo": "Le ombre si distendono, <br>scende ormai la sera, <br>e s'allontanano dietro ai monti <br>i riflessi di un giorno che non finirà, <br>di un giorno che ora scorrerà sempre, <br>perché sappiamo che una nuova vita <br>da qui è partita e mai più si fermerà.<br><br><b>Resta qui con noi, il sole scende già, <br>resta qui con noi, Signore è sera ormai.<br>Resta qui con noi, il sole scende già, <br>se tu sei tra noi la notte non verrà.</b><br><br>S'allarga verso il mare <br>il tuo cerchio d'onda <br>che il vento spingerà fino a quando <br>giungerà ai confini di ogni cuore, <br>alle porte dell'amore vero. <br>Come una fiamma che dove passa brucia, <br>così il tuo amore tutto il mondo invaderà.<br><br>Davanti a noi l'umanità <br>lotta, soffre e spera, <br>come una terra che nell'arsura <br>chieda l'acqua da un cielo senza nuvole, <br>ma che sempre le può dare vita. <br>Con te saremo sorgenti d'acqua pura,<br> con te fra noi il deserto fiorirà."
         },
         {
             "titolo": "Non di solo pane",

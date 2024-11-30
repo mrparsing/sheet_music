@@ -42,7 +42,7 @@ async function searchCanti(event, page) {
                     } else if (["ordinario", "quaresima", "pasqua", "avvento"].includes(word)) {
                         filters.season = word; // Tempo liturgico
                     } else {
-                        if (word !== "salmo" && word !== "testo") {
+                        if (word !== "salmo" && word !== "domenica" && word !== "tempo" && word !== "-") {
                             filters.testo.push(word);
                         }
                     }
@@ -50,7 +50,7 @@ async function searchCanti(event, page) {
 
                 const stringa = filters.testo.join(" ");  // Unisce le parole con uno spazio tra di esse
                 filters.testo = stringa;
-
+                console.log(stringa);
                 // Filtra i salmi in base ai criteri
                 const results = salmi.filter(salmo => {
                     const matchesTitle = salmo.titolo.toLowerCase().includes("salmo");
@@ -58,12 +58,10 @@ async function searchCanti(event, page) {
                     const matchesRomanNumber = filters.romanNumber ? salmo.numero_romano === filters.romanNumber : true;
                     const matchesYear = filters.year ? salmo.anno === filters.year : true;
                     const matchesSeason = filters.season ? salmo.titolo.toLowerCase().includes(filters.season.toLowerCase()) : true;
-                    if (input.includes("salmo testo")) {
-                        const testo = filters.testo ? salmo.testo.toLowerCase() === filters.testo : true;
-                        return matchesTitle && testo && matchesNumber && matchesRomanNumber && matchesYear && matchesSeason;
-                    } else {
-                        return matchesTitle && matchesNumber && matchesRomanNumber && matchesYear && matchesSeason;
-                    }
+                    const matchesTesto = salmo.testo.toLowerCase().includes(filters.testo);
+
+                    return matchesTitle && matchesTesto && matchesNumber && matchesRomanNumber && matchesYear && matchesSeason;
+
                 });
 
 
@@ -211,7 +209,7 @@ async function searchCanti(event, page) {
                 const data = await response.json();
 
                 data.canti.forEach(item => {
-                    if (input.toLowerCase() === item.titolo.toLowerCase()) {
+                    if (input.toLowerCase() === item.titolo.toLowerCase() || item.testo.toLowerCase().includes(input.toLowerCase())) {
                         results.push(item)
                     }
                 });

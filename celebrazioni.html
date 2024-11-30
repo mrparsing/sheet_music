@@ -166,7 +166,7 @@
             else {
                 generatePdf(data, numero);
             }
-           
+
         }
 
         function generatePdf(data, numero) {
@@ -281,7 +281,7 @@
 
                     document.getElementById('title').innerHTML = `${convertiInRomano(numero)} DOMENICA DEL TEMPO ORDINARIO - ANNO ${anno}`;
 
-                } else if (festivita === "avvento") {
+                } else if (typeof Number(numero) === 'number' && !isNaN(Number(numero)) && festivita === "avvento") {
                     document.title = `Proposta Canti - ${convertiInRomano(numero)} DOMENICA D'AVVENTO - ANNO ${anno}`;
                     const metaDescription = document.createElement('meta');
                     metaDescription.name = "description";

@@ -3,7 +3,7 @@
         {
             "titolo": "Salmo I domenica tempo ordinario - A",
             "anno": "A",
-            "testo": "Il Signore è il mio Pastore, non manco di nulla",
+            "testo": "",
             "numero_arabo": "1",
             "numero_romano": "i",
             "autore": "Mauro Visconti",
@@ -12,7 +12,7 @@
         {
             "titolo": "Salmo II domenica tempo ordinario - A",
             "anno": "A",
-            "testo": "ti esalto",
+            "testo": "",
             "numero_arabo": "2",
             "numero_romano": "ii",
             "autore": "Mauro Visconti",
@@ -921,7 +921,7 @@
         {
             "titolo": "Salmo I domenica d'avvento - C",
             "anno": "C",
-            "testo": "",
+            "testo": "A te, Signore, innalzo l’anima mia, in te confido",
             "numero_arabo": "1",
             "numero_romano": "i",
             "autore": "Mauro Visconti",
@@ -930,7 +930,7 @@
         {
             "titolo": "Salmo I domenica d'avvento - C",
             "anno": "C",
-            "testo": "",
+            "testo": "A te, Signore, innalzo l’anima mia, in te confido",
             "numero_arabo": "1",
             "numero_romano": "i",
             "autore": "Giuseppe Liberto",
@@ -939,7 +939,7 @@
         {
             "titolo": "Salmo XXXIII domenica tempo ordinario - C",
             "anno": "eventi_speciali",
-            "testo": "",
+            "testo": "ti esalto",
             "numero_arabo": "33",
             "numero_romano": "xxxiii",
             "autore": "Mauro Visconti",
