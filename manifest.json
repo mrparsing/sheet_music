@@ -4,7 +4,6 @@
   "description": "Proposta canti per celebrazioni liturgiche",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
   "icons": [
     {
       "src": "styles/img/matrimonio.png",
