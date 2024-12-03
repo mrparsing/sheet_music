@@ -257,12 +257,12 @@
         },
         {
             "titolo": "Se m'accogli",
-            "autore": "autore 28",
+            "autore": "Francesco Buttazzo",
             "tipologia": "Offertorio",
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=rxXtG6anu_0",
             "download_link": "../db/canti/se_maccogli.pdf",
-            "testo": ""
+            "testo": "Accogli i nostri doni, Dio dell'universo<br>In questo misterioso incontro col tuo Figlio<br>Ti offriamo il pane che Tu ci dai<br>Trasformalo in Te, Signor<br><br>Benedetto nei secoli il Signore<br>Infinita sorgente della vita<br>Benedetto nei secoli<br>Benedetto nei secoli<br><br>Accogli i nostri doni, Dio dell'universo<br>In questo misterioso incontro col tuo Figlio<br>Ti offriamo il vino che Tu ci dai<br>Trasformalo in Te, Signor<br><br>Benedetto nei secoli il Signore<br>Infinita sorgente della vita<br>Benedetto nei secoli<br>Benedetto nei secoli<br>Benedetto nei secoli il Signore<br>Infinita sorgente della vita<br>Benedetto nei secoli<br>Benedetto nei secoli"
         },
         {
             "titolo": "Santa Maria del cammino",
@@ -513,8 +513,8 @@
             "tipologia": "Ingresso, Offertorio, Comunione",
             "tempo": "Natale",
             "ascolta": "https://www.youtube.com/watch?v=gO7FdGLX548",
-            "download_link": "../db/canti/adeste fidelis.pdf",
-            "testo": ""
+            "download_link": "../db/canti/adeste fideles.pdf",
+            "testo": "Adeste fideles læti triumphantes,<br>venite, venite in Bethlehem.<br>Natum videte Regem angelorum.<br>Venite adoremus (ter)<br>Dominum.<br><br>En grege relicto humiles ad cunas,<br>vocati pastores adproperant,<br>et nos ovanti gradu festinemus.<br>Venite adoremus (ter)<br>Dominum.<br><br>Æterni Parentis splendorem æternum,<br>velatum sub carne videbimus,<br>Deum infantem pannis involutum.<br>Venite adoremus (ter)<br>Dominum.<br><br>Pro nobis egenum et fœno cubantem<br>piis foveamus amplexibus;<br>sic nos amantem quis non redamaret?<br>Venite adoremus (ter)<br>Dominum."
         },
         {
             "titolo": "Vieni Signore",
