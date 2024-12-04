@@ -291,13 +291,22 @@
                     document.getElementById('title').innerHTML = `${convertiInRomano(numero)} DOMENICA D'AVVENTO - ANNO ${anno}`;
                 }
                 else {
-                    document.title = `Proposta Canti - ${numero} - ANNO ${anno}`;
-                    const metaDescription = document.createElement('meta');
-                    metaDescription.name = "description";
-                    metaDescription.content = `Scopri la proposta canti per ${numero} - anno ${anno}. Suggerimenti per Ingresso, Offertorio, Comunione e canto finale.`;
-                    document.head.appendChild(metaDescription);
+                    let metaDescription;
+                    if (anno) {
+                        document.title = `Proposta Canti - ${numero} - ANNO ${anno}`;
+                        metaDescription = document.createElement('meta');
+                        metaDescription.name = "description";
+                        metaDescription.content = `Scopri la proposta canti per ${numero} - anno ${anno}. Suggerimenti per Ingresso, Offertorio, Comunione e canto finale.`;
+                        document.getElementById('title').innerHTML = `${numero} - ANNO ${anno}`;
 
-                    document.getElementById('title').innerHTML = `${numero} - ANNO ${anno}`;
+                    } else {
+                        document.title = `Proposta Canti - ${numero}`;
+                        metaDescription = document.createElement('meta');
+                        metaDescription.name = "description";
+                        metaDescription.content = `Scopri la proposta canti per ${numero}. Suggerimenti per Ingresso, Offertorio, Comunione e canto finale.`;
+                        document.getElementById('title').innerHTML = `${numero}`;
+                    }
+                    document.head.appendChild(metaDescription);
 
                 }
                 let colore;
@@ -450,7 +459,7 @@
             } else if (festivita === "quaresima") {
                 jsonFile = `db/tempi_liturgici/quaresima/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else {
-                jsonFile = `db/tempi_liturgici/celebrazioni_fisse.json`;
+                jsonFile = `db/tempi_liturgici/celebrazioni_fisse/celebrazioni_fisse.json`;
             }
             console.log(jsonFile);
             fetch(jsonFile)

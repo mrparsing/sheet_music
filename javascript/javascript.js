@@ -234,6 +234,8 @@ function calcolaFestivita(anno) {
         festivita.push({ anno: tipologia_anno(anno, domenica), tipologia: "ordinario", numero: `${index + 1}`, data: domenica });
     });
 
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 8)), tipologia: "immacolata", numero: "Solennità Immacolata", data: new Date(anno, 11, 8) })
+
     festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 24)), tipologia: "natale", numero: "Vigilia di Natale", data: new Date(anno, 11, 24) })
     festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 25)), tipologia: "natale", numero: "Natale", data: new Date(anno, 11, 25) })
     festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 26)), tipologia: "natale", numero: "Santo Stefano", data: new Date(anno, 11, 26) })
@@ -333,6 +335,8 @@ function inserisci_elemento_lista(numero, anno, tipologia) {
         li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=quaresima">${convertiInRomano(numero)} domenica tempo di quaresima - anno: ${anno}</a>`;
     } else if (tipologia === "pasqua") {
         li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=pasqua">${numero}</a>`;
+    } else if (tipologia === "immacolata") {
+        li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&festivita=immacolata">${numero}</a>`;
     }
     ul.appendChild(li);
 }
