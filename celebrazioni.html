@@ -453,7 +453,9 @@
             if (festivita === "ordinario" && !numero.includes("Novena Immacolata")) {
                 jsonFile = `db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else if (festivita === "natale") {
-                // gestisci natale
+                if (numero === "Vigilia di Natale") {
+                    jsonFile = `db/tempi_liturgici/natale/natale.json`;
+                }
             } else if (festivita === "avvento" && !numero.includes("Novena Immacolata")) {
                 jsonFile = `db/tempi_liturgici/avvento/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else if (festivita === "quaresima") {

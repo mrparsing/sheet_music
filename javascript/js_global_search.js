@@ -140,13 +140,13 @@ async function searchCanti(event, page) {
             }
         } else if (input.includes("novena")) { // cerca in celebrazioni fisse
             if (page === "index" || page === "celebrazioni") {
-                jsonFile = "db/tempi_liturgici/celebrazioni_fisse.json";
+                jsonFile = "db/tempi_liturgici/celebrazioni_fisse/celebrazioni_fisse.json";
                 linkRisultati = "nav-bar/risultati.html";
             } else if (page === "anno") {
-                jsonFile = "../../db/tempi_liturgici/celebrazioni_fisse.json";
+                jsonFile = "../../db/tempi_liturgici/celebrazioni_fisse/celebrazioni_fisse.json";
                 linkRisultati = "../risultati.html";
             } else {
-                jsonFile = "../db/tempi_liturgici/celebrazioni_fisse.json";
+                jsonFile = "../db/tempi_liturgici/celebrazioni_fisse/celebrazioni_fisse.json";
                 linkRisultati = "risultati.html";
             }
 
@@ -162,7 +162,6 @@ async function searchCanti(event, page) {
             }
 
             let results = []; // o un altro valore iniziale appropriato
-
 
             if (anno) {
                 results = await cerca(jsonFile, arabicNumbers, numeriRomani, anno); // Costruisci il percorso JSON completo
@@ -228,7 +227,7 @@ async function searchCanti(event, page) {
 
 async function cerca(jsonFile, arabicNumbers, numeriRomani, anno) {
     const results = []; // Lista per raccogliere i risultati
-
+    console.log("SONO QUIII", jsonFile);
     if (jsonFile) {
         try {
             const response = await fetch(jsonFile);

@@ -1070,6 +1070,15 @@
             "ascolta": "",
             "download_link": "../db/canti/Novena Immacolata - Mattina.pdf",
             "testo": ""
+        },
+        {
+            "titolo": "Salve Dolce Vergine",
+            "autore": "Marco Frisina",
+            "tipologia": "Ingresso, Offertorio, Comunione",
+            "tempo": "Mariano",
+            "ascolta": "https://www.youtube.com/watch?v=lNjtzdjQIzA",
+            "download_link": "../db/canti/Salve Dolce Vergine.pdf",
+            "testo": "Salve, o dolce Vergine,<br>salve, o dolce  Madre,<br>in Te esulta tutta la terra<br>e i cori degli angeli.<br><br>Tempio santo del Signore,<br>gloria delle vergini,<br>Tu giardino del Paradiso,<br>soavissimo fiore.<br><br>Tu sei trono altissimo,<br>Tu altar purissimo,<br>in te esulta, o piena di grazia,<br>tutta la creazione.<br><br>Paradiso mistico,<br>fonte sigillata,<br>il Signore in Te germoglia<br>l'albero della vita.<br><br>O Sovrana semplice, <br>o Potente umile,<br>apri a noi le porte del cielo, <br>dona a noi la luce.<br><br>Amen."
         }
     ]
 }
