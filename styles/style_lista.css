@@ -6,7 +6,6 @@
 }
 
 #searchInput {
-    margin-top: 160px;
     margin-bottom: 20px;
     padding: 12px 20px 12px 40px;
     width: 100%;
@@ -319,6 +318,10 @@
         flex-direction: row;
         width: 100%;
     }
+
+    #searchInput {
+        margin-top: 30px;
+    }
 }
 
 
@@ -417,6 +420,10 @@
         flex-direction: row;
         width: 600px;
     }
+}
+
+.search_bar_filtri {
+    margin-top: 100px;
 }
 
 .dark-theme .filters-container {

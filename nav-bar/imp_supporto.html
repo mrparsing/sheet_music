@@ -68,7 +68,8 @@
 
         <div class="main-content" id="main-content">
             <div style="display: flex; align-items: center;">
-                <p style="margin-right: 10px; position: relative; top: -2px; margin-top: 120px;">Attiva il tema scuro:</p>
+                <p style="margin-right: 10px; position: relative; top: -2px; margin-top: 120px;">Attiva il tema scuro:
+                </p>
                 <label class="theme-switch">
                     <input type="checkbox" id="theme-toggle" onclick="toggleTheme()">
                     <span class="slider"></span>
@@ -89,23 +90,30 @@
             </div>
 
             <div class="section">
-                <h3>Domande Frequenti (FAQ)</h3>
+                <h2>Domande Frequenti (FAQ)</h2>
                 <div class="faq-item">
-                    <h4 onclick="toggleFaq(this)">Come posso segnalare un problema o un bug?</h4>
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <i class="fas fa-chevron-right"></i> Come posso segnalare un problema o un bug?
+                    </div>
                     <p style="display: none;">Se hai riscontrato un problema o un bug, puoi creare un'issue nel nostro
                         <a href="https://github.com/mrparsing/cantusacri" target="_blank">repository GitHub</a> oppure
-                        inviaci un messaggio attraverso il modulo di contatto nella sezione "Contatti" della pagina.</p>
+                        inviaci un messaggio attraverso il modulo di contatto nella sezione "Contatti" della pagina.
+                    </p>
                 </div>
 
                 <div class="faq-item">
-                    <h4 onclick="toggleFaq(this)">Posso suggerire un nuovo canto liturgico da aggiungere?</h4>
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <i class="fas fa-chevron-right"></i> Posso suggerire un nuovo canto liturgico da aggiungere?
+                    </div>
                     <p style="display: none;">Sì! Se desideri suggerire un nuovo canto liturgico, puoi inviare la tua
                         proposta tramite il modulo di contatto o direttamente nel nostro <a
                             href="https://github.com/mrparsing/cantusacri" target="_blank">repository GitHub</a>.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h4 onclick="toggleFaq(this)">Come posso cercare un canto o un testo liturgico?</h4>
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <i class="fas fa-chevron-right"></i> Come posso cercare un canto o un testo liturgico?
+                    </div>
                     <p style="display: none;">Puoi effettuare una ricerca in diversi modi:</p>
                     <p style="display: none;"><strong>Salmi:</strong> Utilizza la parola chiave <em>salmo</em> per
                         cercare i salmi. Ad esempio, puoi scrivere <em>salmo I domenica tempo ordinario - A</em>.</p>
@@ -113,10 +121,12 @@
                         cercare un salmo o un canto. Ad esempio, cerca <em>Signore è il mio pastore</em>.</p>
                     <p style="display: none;"><strong>Messa:</strong> Per trovare canti legati alla liturgia di una
                         messa, usa parole chiave come <em>messa</em>, <em>celebrazione</em>, <em>domenica</em> o
-                        <em>solennità</em>.</p>
+                        <em>solennità</em>.
+                    </p>
                     <p style="display: none;"><strong>Novene:</strong> Per cercare le novene, utilizza la parola chiave
                         <em>novena</em> seguita dal nome, ad esempio <em>novena immacolata</em> o <em>novena di
-                            natale</em>.</p>
+                            natale</em>.
+                    </p>
                     <p style="display: none;"><strong>Canti generici:</strong> Se non inserisci nessuna parola chiave,
                         la ricerca mostrerà i canti disponibili.</p>
                     <p style="display: none;">Se hai suggerimenti per nuovi canti liturgici, puoi inviarli tramite il
@@ -150,12 +160,40 @@
 </body>
 <script>
     function toggleFaq(element) {
-        const content = element.nextElementSibling;
-        while (content && content.tagName === 'P') {
+        let content = element.nextElementSibling;
+        const icon = element.querySelector('i'); // Trova l'icona
+        element.classList.toggle('active');
+        console.log(icon);
+
+        while (content && (content.tagName === 'P' || content.tagName === 'DIV')) {
             content.style.display = content.style.display === 'none' ? 'block' : 'none';
             content = content.nextElementSibling;
         }
     }
 </script>
+
+<style>
+    .faq-question {
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .faq-question:hover {
+        color: #007BFF;
+    }
+
+    .faq-question i {
+        margin-right: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .faq-question.active i {
+        transform: rotate(90deg);
+    }
+</style>
 
 </html>
