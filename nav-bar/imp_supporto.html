@@ -163,7 +163,6 @@
         let content = element.nextElementSibling;
         const icon = element.querySelector('i'); // Trova l'icona
         element.classList.toggle('active');
-        console.log(icon);
 
         while (content && (content.tagName === 'P' || content.tagName === 'DIV')) {
             content.style.display = content.style.display === 'none' ? 'block' : 'none';

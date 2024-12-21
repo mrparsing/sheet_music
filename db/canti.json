@@ -120,6 +120,15 @@
             "testo": "Le ombre si distendono, <br>scende ormai la sera, <br>e s'allontanano dietro ai monti <br>i riflessi di un giorno che non finirà, <br>di un giorno che ora scorrerà sempre, <br>perché sappiamo che una nuova vita <br>da qui è partita e mai più si fermerà.<br><br><b>Resta qui con noi, il sole scende già, <br>resta qui con noi, Signore è sera ormai.<br>Resta qui con noi, il sole scende già, <br>se tu sei tra noi la notte non verrà.</b><br><br>S'allarga verso il mare <br>il tuo cerchio d'onda <br>che il vento spingerà fino a quando <br>giungerà ai confini di ogni cuore, <br>alle porte dell'amore vero. <br>Come una fiamma che dove passa brucia, <br>così il tuo amore tutto il mondo invaderà.<br><br>Davanti a noi l'umanità <br>lotta, soffre e spera, <br>come una terra che nell'arsura <br>chieda l'acqua da un cielo senza nuvole, <br>ma che sempre le può dare vita. <br>Con te saremo sorgenti d'acqua pura,<br> con te fra noi il deserto fiorirà."
         },
         {
+            "titolo": "Il deserto fiorirà",
+            "autore": "Marco Frisina",
+            "tipologia": "Comunione",
+            "tempo": "Avvento",
+            "ascolta": "https://www.youtube.com/watch?v=WZ8GCddPj5I",
+            "download_link": "../db/canti/Il deserto fiorirà.pdf",
+            "testo": "RIT. IL DESERTO FIORIRÀ,<br>COME UN CAMPO FIORIRÀ:<br>CORAGGIO, NON TEMETE,<br>EGLI VIENE A SALVARVI.<br><br>Esulti e fiorisca la steppa, <br>come fiore fiorisca;<br>e canti con gioia e giubilo: <br>l'è data la gloria del Libano. R.<br><br>Vedranno la gloria del Signore, <br>lo splendore di Dio. <br>Rendete salde le ginocchia<br>e forti le vostre mani. R.<br><br>E gli occhi dei ciechi s'apriranno  <br>e gli orecchi dei sordi;<br>allora lo zoppo salterà <br>e si udranno i canti di gioia. R.<br><br>Palude sarà la  terra arsa <br>e sorgente il deserto.<br>Farò una strada nella steppa: <br>la via dei Redenti. R.<br>"
+        },
+        {
             "titolo": "Non di solo pane",
             "autore": "Marco Frisina",
             "tipologia": "Comunione",
@@ -862,11 +871,11 @@
         },
         {
             "titolo": "O cieli piovete dall'alto",
-            "autore": "autore 95",
+            "autore": "Amadei",
             "tipologia": "Ingresso",
-            "tempo": "Qualsiasi",
+            "tempo": "Avvento",
             "download_link": "-",
-            "testo": ""
+            "testo": "<b>O cieli, piovete dall'alto,<br>o nubi, mandateci il Santo.<br>O terra, apriti, o terra,<br>e germina il Salvatore!</b><br><br>Siamo il deserto, siamo l'arsura:<br>Marànatha, marànatha<br>Siamo il vento, nessuno ci ode:<br>Marànatha, marànatha. R.<br><br>Siamo le tenebre, nessuno ci guida:<br>Marànatha, marànatha<br>Siam le catene, nessuno ci scioglie:<br>Marànatha, marànatha. R.<br><br>Siamo il freddo, nessuno ci copre:<br>Marànatha, marànatha<br>Siamo la fame, nessuno ci nutre:<br>Marànatha, marànatha. R.<br><br>Siamo le lacrime, nessuno ci asciuga:<br>Marànatha, marànatha<br>Siamo il dolore, nessuno ci guarda:<br>Marànatha, marànatha. R.<br><br>"
         },
         {
             "titolo": "Vieni Spirito d'Amore",

@@ -236,7 +236,7 @@ function calcolaFestivita(anno) {
 
     festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 8)), tipologia: "immacolata", numero: "Solennità Immacolata", data: new Date(anno, 11, 8) })
 
-    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 24)), tipologia: "natale", numero: "Vigilia di Natale", data: new Date(anno, 11, 24) })
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 24)), tipologia: "natale", numero: "Veglia di Natale", data: new Date(anno, 11, 24) })
     festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 25)), tipologia: "natale", numero: "Natale", data: new Date(anno, 11, 25) })
     festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 26)), tipologia: "natale", numero: "Santo Stefano", data: new Date(anno, 11, 26) })
     festivita.push({ anno: tipologia_anno(anno, new Date(anno + 1, 0, 1)), tipologia: "natale", numero: "Maria Santissima Madre di Dio", data: new Date(anno + 1, 0, 1) })

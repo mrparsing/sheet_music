@@ -250,6 +250,10 @@
 
             let number_cast = Number(numero)
 
+            if (numero === "Veglia di Natale") {
+                console.log("VEGLIA DI NATALE");
+            }
+
             if (celebrazione) {
                 // SI DEVONO AGGIUNGERE ANCHE I CASI DEGLI ALTRI TEMPI
                 let isNumber;
@@ -448,13 +452,13 @@
         document.addEventListener('DOMContentLoaded', function () {
             // Estrai i parametri della query URL
             const { numero, anno, festivita } = getQueryParams();
-
+            console.log(festivita, numero);
             let jsonFile = "";
             if (festivita === "ordinario" && !numero.includes("Novena Immacolata")) {
                 jsonFile = `db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else if (festivita === "natale") {
-                if (numero === "Vigilia di Natale") {
-                    jsonFile = `db/tempi_liturgici/natale/natale.json`;
+                if (numero === "Veglia di Natale") {
+                    jsonFile = `db/tempi_liturgici/natale/veglia_natale.json`;
                 }
             } else if (festivita === "avvento" && !numero.includes("Novena Immacolata")) {
                 jsonFile = `db/tempi_liturgici/avvento/celebrazioni_anno_${anno.toLowerCase()}.json`;
@@ -480,7 +484,7 @@
 
 <body>
     <div class="navbar" id="myNavbar">
-        <h1>Proposta canti</h1>
+        <h1>Liturgia</h1>
         <span class="menu-toggle" onclick="toggleMenu()">☰</span>
         <div class="navbar-buttons">
             <button onclick="location.href='index.html'">Home</button>
