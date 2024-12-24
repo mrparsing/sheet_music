@@ -44,7 +44,7 @@ function tipologia_anno(anno, data) {
 function calcolaDomenicheAvvento(anno) {
     const natale = new Date(anno, 11, 25); // 25 dicembre
     const quartaDomenicaAvvento = new Date(natale);
-    quartaDomenicaAvvento.setDate(natale.getDate() - (natale.getDay() + 1)); // Domenica precedente Natale
+    quartaDomenicaAvvento.setDate(natale.getDate() - (natale.getDay())); // Domenica precedente Natale
 
     const terzaDomenicaAvvento = new Date(quartaDomenicaAvvento);
     terzaDomenicaAvvento.setDate(quartaDomenicaAvvento.getDate() - 6);
@@ -237,7 +237,7 @@ function calcolaFestivita(anno) {
     festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 8)), tipologia: "immacolata", numero: "Solennità Immacolata", data: new Date(anno, 11, 8) })
 
     festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 24)), tipologia: "natale", numero: "Veglia di Natale", data: new Date(anno, 11, 24) })
-    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 25)), tipologia: "natale", numero: "Natale", data: new Date(anno, 11, 25) })
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 25)), tipologia: "natale", numero: "Natale del Signore - Messa del giorno", data: new Date(anno, 11, 25) })
     festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 26)), tipologia: "natale", numero: "Santo Stefano", data: new Date(anno, 11, 26) })
     festivita.push({ anno: tipologia_anno(anno, new Date(anno + 1, 0, 1)), tipologia: "natale", numero: "Maria Santissima Madre di Dio", data: new Date(anno + 1, 0, 1) })
     festivita.push({ anno: tipologia_anno(anno, new Date(anno + 1, 0, 6)), tipologia: "natale", numero: "Epifania", data: new Date(anno + 1, 0, 6) })
@@ -269,8 +269,13 @@ const festivita = calcolaFestivita(oggi.getFullYear());
 const prox_festivita = festivita.find(f => new Date(f.data) >= oggi);
 
 function avvia_index() {
-    localStorage.setItem("theme-navbar", prox_festivita.tipologia)
-    setNavbarColor(prox_festivita.tipologia)
+    if (prox_festivita.tipologia === "natale" && oggi < new Date(oggi.getFullYear(), 11, 25)) {
+        setNavbarColor("avvento")
+        localStorage.setItem("theme-navbar", "avvento")
+    } else {
+        setNavbarColor(prox_festivita.tipologia)
+        localStorage.setItem("theme-navbar", prox_festivita.tipologia)
+    }
 
     setDarkTheme()
 
@@ -328,7 +333,14 @@ function inserisci_elemento_lista(numero, anno, tipologia) {
     } else if (tipologia === "avvento" && !numero.includes("Novena Immacolata")) {
         li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=avvento">${convertiInRomano(numero)} domenica tempo d'avvento - anno: ${anno}</a>`;
     } else if (tipologia === "natale") {
-        li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=natale">${numero}</a>`;
+        if (numero === "Veglia di Natale") {
+            li.innerHTML = `<a href="../db/tempi_liturgici/natale/veglia_di_natale.html">${numero}</a>`;
+            console.log(li.innerHTML);
+        } else if (numero === "Natale del Signore - Messa del giorno") {
+            li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&festivita=natale">Natale del Signore - Messa del giorno</a>`;
+        } else {
+            li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=natale">${numero}</a>`;
+        }
     } else if (numero === "Mercoledì delle Ceneri") {
         li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=ceneri">${numero}</a>`;
     } else if (tipologia === "quaresima") {
@@ -357,8 +369,8 @@ function setNavbarColor(tipologia, page) {
                 table.style.backgroundColor = '#8A2BE2'; // Viola
                 break;
         }
-
     }
+
     switch (tipologia) {
         case "ordinario":
             navbar.style.backgroundColor = '#2a9a5c'; // Verde

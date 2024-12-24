@@ -92,7 +92,7 @@
             }
 
             #resultsTable {
-            margin-top: 150px;
+                margin-top: 150px;
             }
         }
 
@@ -218,6 +218,37 @@
             <td>${messa.title}</td>
             <td>${messa.numero}</td>
             <td>${messa.anno}</td>
+            `;
+                });
+            } else {
+                resultsTable.innerHTML = "<tr><td colspan='3'>Nessun risultato trovato.</td></tr>";
+            }
+        } else if (tipologia.includes("natale")) {
+            tableHeader.innerHTML = `
+                <th>Titolo</th>
+            `;
+            if (results && results.length > 0) {
+                results.forEach(messa => {
+                    const row = resultsTable.insertRow();
+
+                    // Imposta l'URL di destinazione per la riga
+                    let url;
+                    if (tipologia === "veglia di natale") {
+                        url = `../db/tempi_liturgici/natale/veglia_di_natale.html`;
+                    } else {
+                        url = `../db/tempi_liturgici/natale/natale.json`;
+                    }
+
+                    // Aggiungi l'evento di click alla riga per reindirizzare alla pagina
+                    row.addEventListener('click', () => {
+                        window.location.href = url;
+                    });
+
+                    // Stile per mostrare il puntatore come un link
+                    row.style.cursor = 'pointer';
+
+                    row.innerHTML = `
+            <td>${messa.title}</td>
             `;
                 });
             } else {

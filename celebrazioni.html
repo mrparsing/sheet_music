@@ -250,10 +250,6 @@
 
             let number_cast = Number(numero)
 
-            if (numero === "Veglia di Natale") {
-                console.log("VEGLIA DI NATALE");
-            }
-
             if (celebrazione) {
                 // SI DEVONO AGGIUNGERE ANCHE I CASI DEGLI ALTRI TEMPI
                 let isNumber;
@@ -459,6 +455,8 @@
             } else if (festivita === "natale") {
                 if (numero === "Veglia di Natale") {
                     jsonFile = `db/tempi_liturgici/natale/veglia_natale.json`;
+                } else if (numero === "Natale del Signore - Messa del giorno") {
+                    jsonFile = `db/tempi_liturgici/natale/natale.json`;
                 }
             } else if (festivita === "avvento" && !numero.includes("Novena Immacolata")) {
                 jsonFile = `db/tempi_liturgici/avvento/celebrazioni_anno_${anno.toLowerCase()}.json`;

@@ -18,6 +18,9 @@ async function searchCanti(event, page) {
             } else if (page === "anno") {
                 jsonFile = "../../db/salmi/elenco_salmi.json";
                 linkRisultati = "../risultati.html";
+            } else if (page === "natale") {
+                jsonFile = "../../salmi/elenco_salmi.json";
+                linkRisultati = "../../../nav-bar/risultati.html";
             } else {
                 jsonFile = "../db/salmi/elenco_salmi.json";
                 linkRisultati = "risultati.html";
@@ -78,7 +81,8 @@ async function searchCanti(event, page) {
             const jsonPaths = {
                 "ordinario": "db/tempi_liturgici/tempo_ordinario/*.json",
                 "avvento": "db/tempi_liturgici/avvento/*.json",
-                "quaresima": "db/tempi_liturgici/quaresima/*.json"
+                "quaresima": "db/tempi_liturgici/quaresima/*.json",
+                "natale": "../../tempi_liturgici/natale/*.json"
             };
 
             let arabicNumbers = input.match(/\b(\d+)\b/g); // Trova i numeri arabi nell'input
@@ -145,6 +149,9 @@ async function searchCanti(event, page) {
             } else if (page === "anno") {
                 jsonFile = "../../db/tempi_liturgici/celebrazioni_fisse/celebrazioni_fisse.json";
                 linkRisultati = "../risultati.html";
+            } else if (page === "natale") {
+                jsonFile = "../../tempi_liturgici/celebrazioni_fisse/celebrazioni_fisse.json";
+                linkRisultati = "../../../nav-bar/risultati.html";
             } else {
                 jsonFile = "../db/tempi_liturgici/celebrazioni_fisse/celebrazioni_fisse.json";
                 linkRisultati = "risultati.html";
@@ -173,9 +180,9 @@ async function searchCanti(event, page) {
             }
 
             // Imposta il link dei risultati
-            linkRisultati = (page === "index" || page === "celebrazioni") ? "nav-bar/risultati.html"
+            /*linkRisultati = (page === "index" || page === "celebrazioni") ? "nav-bar/risultati.html"
                 : (page === "anno") ? "../risultati.html"
-                    : "risultati.html";
+                    : "risultati.html";*/
 
             // Stampa i risultati
             if (results.length > 0) {
@@ -189,6 +196,61 @@ async function searchCanti(event, page) {
                 console.log("Nessun risultato trovato.");
             }
 
+        } else if (input.includes("natale")) {
+            if (input.includes("veglia di natale") || input.includes("veglia natale")) {
+                localStorage.setItem("tipologia", "veglia di natale");
+
+                if (page === "index" || page === "celebrazioni") {
+                    jsonFile = "db/tempi_liturgici/natale/veglia_natale.json";
+                    linkRisultati = "nav-bar/risultati.html";
+                } else if (page === "anno") {
+                    jsonFile = "../../db/tempi_liturgici/natale/veglia_natale.json";
+                    linkRisultati = "../risultati.html";
+                } else if (page === "natale") {
+                    jsonFile = "veglia_natale.json";
+                    linkRisultati = "../../../nav-bar/risultati.html";
+                } else {
+                    jsonFile = "../db/tempi_liturgici/natale/veglia_natale.json";
+                    linkRisultati = "risultati.html";
+                }
+            } else {
+                localStorage.setItem("tipologia", "natale");
+
+                if (page === "index" || page === "celebrazioni") {
+                    jsonFile = "db/tempi_liturgici/natale/natale.json";
+                    linkRisultati = "nav-bar/risultati.html";
+                } else if (page === "anno") {
+                    jsonFile = "../../db/tempi_liturgici/natale/natale.json";
+                    linkRisultati = "../risultati.html";
+                } else if (page === "natale") {
+                    jsonFile = "veglia_natale.json";
+                    linkRisultati = "../../../nav-bar/risultati.html";
+                } else {
+                    jsonFile = "../db/tempi_liturgici/natale/natale.json";
+                    linkRisultati = "risultati.html";
+                }
+            }
+
+            const results = []
+
+            try {
+                const response = await fetch(jsonFile);
+                const data = await response.json();
+
+                data.celebrazioni.forEach(item => {
+                    if (input.toLowerCase() === item.title.toLowerCase()) {
+                        results.push(item)
+                    }
+                });
+            } catch (error) {
+                console.error('Errore nel fetching dei dati: ', error)
+            }
+
+            localStorage.setItem("searchResults", JSON.stringify(results));
+
+            // Reindirizza alla pagina dei risultati
+            window.location.href = linkRisultati;
+
         } else { // cerca un canto
             if (page === "index" || page === "celebrazioni") {
                 jsonFile = "db/canti.json";
@@ -196,6 +258,9 @@ async function searchCanti(event, page) {
             } else if (page === "anno") {
                 jsonFile = "../../db/canti.json";
                 linkRisultati = "../risultati.html";
+            } else if (page === "natale") {
+                jsonFile = "../../canti.json";
+                linkRisultati = "../../../nav-bar/risultati.html";
             } else {
                 jsonFile = "../db/canti.json";
                 linkRisultati = "risultati.html";
@@ -227,7 +292,7 @@ async function searchCanti(event, page) {
 
 async function cerca(jsonFile, arabicNumbers, numeriRomani, anno) {
     const results = []; // Lista per raccogliere i risultati
-    console.log("SONO QUIII", jsonFile);
+
     if (jsonFile) {
         try {
             const response = await fetch(jsonFile);
