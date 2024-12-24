@@ -181,21 +181,27 @@ function calcolaFestivita(anno) {
     const pasqua = calcolaPasqua(anno);
     const domenicheAvvento = calcolaDomenicheAvvento(anno);
     const quaresima = calcolaQuaresima(anno);
-    const domenicheTempoOrdinario = calcolaDomenicheTempoOrdinario(anno);
-    const domenicheQuaresima = calcolaDomenicheQuaresima(anno)
+    date = new Date(oggi.getFullYear(), 11, 20)
+    let domenicheTempoOrdinario;
+    let domenicheQuaresima;
+    if (oggi > date) {
+        domenicheTempoOrdinario = calcolaDomenicheTempoOrdinario(anno + 1);
+        domenicheQuaresima = calcolaDomenicheQuaresima(anno + 1);
+    } else {
+        domenicheTempoOrdinario = calcolaDomenicheTempoOrdinario(anno);
+        domenicheQuaresima = calcolaDomenicheQuaresima(anno);
+    }
 
     const festivita = [];
 
-    domenicheQuaresima.forEach((domenica, index) => {
-        festivita.push({ anno: tipologia_anno(anno, domenica), tipologia: "quaresima", numero: `${index + 1}`, data: domenica });
-    });
-
-    // Aggiungi Avvento
+    // AVVENTO
+    // ------------------------------------------------------------------------------------------------------------------------------------
     domenicheAvvento.forEach((domenica, index) => {
         festivita.push({ anno: tipologia_anno(anno, domenica), tipologia: "avvento", numero: `${index + 1}`, data: domenica });
     });
 
-    // Novena Immacolata
+    // NOVENA IMMACOLATA
+    // ------------------------------------------------------------------------------------------------------------------------------------
     // Calcolo della data del 29 novembre
     const dataInizioNovena = new Date(anno, 10, 29); // 29 novembre
 
@@ -218,32 +224,38 @@ function calcolaFestivita(anno) {
         });
     }
 
-    const dataSanti = new Date(anno, 10, 1);
-    festivita.push({ anno: tipologia_anno(anno, dataSanti), tipologia: "ordinario", numero: 'Solennità di tutti i Santi', data: dataSanti });
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 8)), tipologia: "immacolata", numero: "Solennità Immacolata", data: new Date(anno, 11, 8) })
 
-    const cristoRe = new Date(domenicheAvvento[0]);
-    cristoRe.setDate(domenicheAvvento[0].getDate() - 7); // Sottrai 3 giorni
-    festivita.push({ anno: tipologia_anno(anno, cristoRe), tipologia: "ordinario", numero: 'Solennità di Cristo Re', data: cristoRe });
 
-    // Aggiungi inizio e fine Quaresima
-    festivita.push({ anno: tipologia_anno(anno, quaresima.inizioQuaresima), tipologia: "quaresima", numero: 'Mercoledì delle Ceneri', data: quaresima.inizioQuaresima });
-    festivita.push({ anno: tipologia_anno(anno, quaresima.fineQuaresima), tipologia: "quaresima", numero: 'Domenica delle Palme', data: quaresima.fineQuaresima });
+    // NATALE
+    // ------------------------------------------------------------------------------------------------------------------------------------
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 24)), tipologia: "natale", numero: "Veglia di Natale", data: new Date(anno, 11, 24) })
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 25)), tipologia: "natale", numero: "Natale del Signore - Messa del giorno", data: new Date(anno, 11, 25) })
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 26)), tipologia: "natale", numero: "Santo Stefano", data: new Date(anno, 11, 26) })
+    if (oggi > date) {
+        festivita.push({ anno: tipologia_anno(anno, new Date(anno + 1, 0, 1)), tipologia: "natale", numero: "Maria Santissima Madre di Dio", data: new Date(anno + 1, 0, 1) })
+        festivita.push({ anno: tipologia_anno(anno, new Date(anno + 1, 0, 6)), tipologia: "natale", numero: "Epifania", data: new Date(anno + 1, 0, 6) })
+    } else {
+        festivita.push({ anno: tipologia_anno(anno, new Date(anno + 1, 0, 1)), tipologia: "natale", numero: "Maria Santissima Madre di Dio", data: new Date(anno, 0, 1) })
+        festivita.push({ anno: tipologia_anno(anno, new Date(anno + 1, 0, 6)), tipologia: "natale", numero: "Epifania", data: new Date(anno, 0, 6) })
+    }
 
-    // Aggiungi domeniche del Tempo Ordinario
+    // TEMPO ORDINARIO
+    // ------------------------------------------------------------------------------------------------------------------------------------
     domenicheTempoOrdinario.forEach((domenica, index) => {
         festivita.push({ anno: tipologia_anno(anno, domenica), tipologia: "ordinario", numero: `${index + 1}`, data: domenica });
     });
 
-    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 8)), tipologia: "immacolata", numero: "Solennità Immacolata", data: new Date(anno, 11, 8) })
+    // TEMPO QUARESIMALE
+    // ------------------------------------------------------------------------------------------------------------------------------------
+    festivita.push({ anno: tipologia_anno(anno, quaresima.inizioQuaresima), tipologia: "quaresima", numero: 'Mercoledì delle Ceneri', data: quaresima.inizioQuaresima });
+    festivita.push({ anno: tipologia_anno(anno, quaresima.fineQuaresima), tipologia: "quaresima", numero: 'Domenica delle Palme', data: quaresima.fineQuaresima });
+    domenicheQuaresima.forEach((domenica, index) => {
+        festivita.push({ anno: tipologia_anno(anno, domenica), tipologia: "quaresima", numero: `${index + 1}`, data: domenica });
+    });
 
-    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 24)), tipologia: "natale", numero: "Veglia di Natale", data: new Date(anno, 11, 24) })
-    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 25)), tipologia: "natale", numero: "Natale del Signore - Messa del giorno", data: new Date(anno, 11, 25) })
-    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 11, 26)), tipologia: "natale", numero: "Santo Stefano", data: new Date(anno, 11, 26) })
-    festivita.push({ anno: tipologia_anno(anno, new Date(anno + 1, 0, 1)), tipologia: "natale", numero: "Maria Santissima Madre di Dio", data: new Date(anno + 1, 0, 1) })
-    festivita.push({ anno: tipologia_anno(anno, new Date(anno + 1, 0, 6)), tipologia: "natale", numero: "Epifania", data: new Date(anno + 1, 0, 6) })
-
-
-    // Aggiungi Pasqua
+    // TEMPO PASQUALE
+    // ------------------------------------------------------------------------------------------------------------------------------------
     const giovediSanto = new Date(pasqua);
     giovediSanto.setDate(pasqua.getDate() - 3); // Sottrai 3 giorni
 
@@ -258,16 +270,29 @@ function calcolaFestivita(anno) {
     festivita.push({ anno: tipologia_anno(anno, sabatoSanto), tipologia: "pasqua", numero: 'Sabato Santo', data: sabatoSanto });
     festivita.push({ anno: tipologia_anno(anno, pasqua), tipologia: "pasqua", numero: 'Pasqua', data: pasqua });
 
+    // SOLENNITA' DI TUTTI I SANTI
+    // ------------------------------------------------------------------------------------------------------------------------------------
+    const dataSanti = new Date(anno, 10, 1);
+    festivita.push({ anno: tipologia_anno(anno, dataSanti), tipologia: "ordinario", numero: 'Solennità di tutti i Santi', data: dataSanti });
+
+    // SOLENNITA' DI CRISTO RE
+    // ------------------------------------------------------------------------------------------------------------------------------------
+    const cristoRe = new Date(domenicheAvvento[0]);
+    cristoRe.setDate(domenicheAvvento[0].getDate() - 7); // Sottrai 3 giorni
+    festivita.push({ anno: tipologia_anno(anno, cristoRe), tipologia: "ordinario", numero: 'Solennità di Cristo Re', data: cristoRe });
+
+
     festivita.sort((a, b) => a.data - b.data);
 
     return festivita;
 }
 
 const oggi = new Date();
+console.log(oggi);
 oggi.setHours(0, 0, 0, 0); // Set time to 00:00:00.000
 const festivita = calcolaFestivita(oggi.getFullYear());
 const prox_festivita = festivita.find(f => new Date(f.data) >= oggi);
-
+console.log(festivita);
 function avvia_index() {
     if (prox_festivita.tipologia === "natale" && oggi < new Date(oggi.getFullYear(), 11, 25)) {
         setNavbarColor("avvento")
@@ -283,7 +308,6 @@ function avvia_index() {
 
     for (const festivitaItem of festivita) {
         if (festivitaItem.data >= oggi) {
-            console.log(festivitaItem);
             prox_celebrazioni.push(festivitaItem);
             if (prox_celebrazioni.length === 7) {
                 break;
@@ -368,6 +392,9 @@ function setNavbarColor(tipologia, page) {
             case "quaresima":
                 table.style.backgroundColor = '#8A2BE2'; // Viola
                 break;
+            case "natale":
+                table.style.backgroundColor = '#c5ac54'; // Viola
+                break;
         }
     }
 
@@ -380,6 +407,9 @@ function setNavbarColor(tipologia, page) {
             break;
         case "quaresima":
             navbar.style.backgroundColor = '#8A2BE2'; // Viola
+            break;
+        case "natale":
+            navbar.style.backgroundColor = '#c5ac54'; // Viola
             break;
     }
 }
