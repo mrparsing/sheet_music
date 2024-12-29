@@ -13,21 +13,21 @@
         function getQueryParams() {
             const urlParams = new URLSearchParams(window.location.search);
             const titolo = urlParams.get('titolo');
-
-            return titolo;
+            const festivita = urlParams.get('festivita')
+            return { titolo, festivita };
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            const theme = localStorage.getItem("theme-navbar")
-            if (!theme) {
+            const { titolo, festivita } = getQueryParams()
+
+            if (!festivita) {
                 setNavbarColor("ordinario")
             }
             else {
-                setNavbarColor(theme);
+                setNavbarColor(festivita);
             }
             setDarkTheme();
 
-            const titolo = getQueryParams()
             if (titolo) {
                 document.getElementById('titolo').innerText = titolo;
             }
@@ -36,19 +36,36 @@
                 .then(response => response.json())
                 .then(data => {
                     if (Array.isArray(data.canti)) {
-
                         data.canti.forEach(canto => {
                             if (canto.titolo.toLowerCase() === titolo.toLowerCase()) {
                                 document.getElementById('titolo').innerText = canto.titolo;
 
-                                // Controllo che l'elemento "info-canto" esista prima di modificarlo
                                 const infoCantoElement = document.getElementById('info-canto');
                                 if (infoCantoElement) {
-                                    infoCantoElement.innerHTML = `
-                                ${canto.autore} - ${canto.tipologia} - ${canto.tempo || ''} - 
-                                <a href="${canto.ascolta}" target="_blank">Ascolta</a> - 
-                                <a href="${canto.download_link}" target="_blank">Scarica PDF</a>
-                            `;
+                                    // Creazione dinamica delle informazioni da visualizzare
+                                    let infoHTML = '';
+
+                                    if (canto.autore && canto.autore !== '-') {
+                                        infoHTML += `${canto.autore}`;
+                                    }
+                                    if (canto.tipologia && canto.tipologia !== '-') {
+                                        if (infoHTML) infoHTML += ' - ';
+                                        infoHTML += `${canto.tipologia}`;
+                                    }
+                                    if (canto.tempo && canto.tempo !== '-') {
+                                        if (infoHTML) infoHTML += ' - ';
+                                        infoHTML += `${canto.tempo}`;
+                                    }
+                                    if (canto.download_link && canto.download_link !== '-') {
+                                        if (infoHTML) infoHTML += ' - ';
+                                        infoHTML += `<a href="${canto.download_link}" target="_blank">Scarica PDF</a>`;
+                                    }
+                                    if (canto.ascolta && canto.ascolta !== '-') {
+                                        if (infoHTML) infoHTML += ' - ';
+                                        infoHTML += `<a href="${canto.ascolta}" target="_blank">Ascolta</a>`;
+                                    }
+
+                                    infoCantoElement.innerHTML = infoHTML;
                                 }
 
                                 const testoElement = document.getElementById('testo-canto');
@@ -62,7 +79,9 @@
                     }
                 })
                 .catch(error => console.error('Errore nel caricamento del file JSON:', error));
-        });    </script>
+        });
+
+    </script>
 
     <style>
         .testo {

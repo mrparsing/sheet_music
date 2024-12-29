@@ -364,7 +364,10 @@ function inserisci_elemento_lista(numero, anno, tipologia) {
             li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&festivita=natale">Natale del Signore - Messa del giorno</a>`;
         } else if (numero === "Santo Stefano") {
             li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&festivita=natale">${numero}</a>`;
-        } else {
+        } else if (numero === "Maria Santissima Madre di Dio") {
+            li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&festivita=natale">${numero}</a>`;
+        }
+        else {
             li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=natale">${numero}</a>`;
         }
     } else if (numero === "Mercoledì delle Ceneri") {
