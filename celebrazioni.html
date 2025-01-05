@@ -483,7 +483,7 @@
 
             let jsonFile = "";
             if (festivita === "ordinario" && !numero.includes("Novena Immacolata")) {
-                jsonFile = `db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
+                jsonFile = `../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else if (festivita === "natale") {
                 if (numero === "Veglia di Natale") {
                     jsonFile = `db/tempi_liturgici/natale/veglia_natale.json`;
