@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/style_index.css">
-    <script src="../javascript/theme.js"></script>
-    <script src="../javascript/js_global_search.js"></script>
-    <script src="../javascript/javascript.js"></script>
+    <link rel="stylesheet" href="../../styles/style_index.css">
+    <script src="../../javascript/theme.js"></script>
+    <script src="../../javascript/js_global_search.js"></script>
+    <script src="../../javascript/javascript.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="canonical" href="${window.location.href}">
@@ -483,7 +483,7 @@
 
             let jsonFile = "";
             if (festivita === "ordinario" && !numero.includes("Novena Immacolata")) {
-                jsonFile = `../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
+                jsonFile = `../../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else if (festivita === "natale") {
                 if (numero === "Veglia di Natale") {
                     jsonFile = `db/tempi_liturgici/natale/veglia_natale.json`;
