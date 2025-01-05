@@ -38,6 +38,34 @@
             return { numero, anno, festivita };
         }
 
+        function estraiDatiDaUrl() {
+            const url = window.location.href;
+
+            // Regex aggiornata per gestire numeri che possono essere anche stringhe alfanumeriche
+            const regex = /celebrazione\/([\w]+)-[\w-]*tempo-([\w]+)-anno-([\w]+)/;
+            const match = url.match(regex);
+
+            if (match) {
+                const numero = match[1]; // Primo gruppo catturato: il numero (anche stringa alfanumerica)
+                const tempo = match[2];  // Secondo gruppo catturato: il tempo liturgico
+                const anno = match[3];   // Terzo gruppo catturato: l'anno
+
+                return { numero, tempo, anno };
+            } else {
+                console.error("URL non valido o non corrispondente al formato atteso.");
+                return null;
+            }
+        }
+
+        // Esempio di utilizzo:
+        const dati = estraiDatiDaUrl();
+
+        if (dati) {
+            console.log("Numero:", dati.numero); // "5"
+            console.log("Tempo:", dati.tempo);   // "ordinario"
+            console.log("Anno:", dati.anno);     // "A"
+        }
+
         function updateMetaTags(celebrationTitle, description, url, imageUrl) {
             // Aggiorna il titolo della pagina
             document.title = "Proposta canti " + celebrationTitle;
@@ -447,8 +475,9 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             // Estrai i parametri della query URL
-            const { numero, anno, festivita } = getQueryParams();
-            console.log(festivita, numero);
+            //const { numero, anno, festivita } = getQueryParams();
+            const dati = estraiDatiDaUrl();
+
             let jsonFile = "";
             if (festivita === "ordinario" && !numero.includes("Novena Immacolata")) {
                 jsonFile = `db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
@@ -475,7 +504,7 @@
             fetch(jsonFile)
                 .then(response => response.json())
                 .then(data => {
-                    populatePage(data, numero, anno, festivita); // Qui `numero` è già definito
+                    populatePage(data, dati.numero, dati.anno, dati.tempo); // Qui `numero` è già definito
                 })
                 .catch(error => {
                     console.error('Errore nel caricamento del JSON:', error);

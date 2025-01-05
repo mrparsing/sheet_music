@@ -18,6 +18,10 @@
       {
         "source": "/nav-bar/testo/**",
         "destination": "/nav-bar/testo.html"
+      },
+      {
+        "source": "/celebrazione/**",
+        "destination": "/celebrazioni.html"
       }
     ]
   }
