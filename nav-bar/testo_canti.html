@@ -39,6 +39,28 @@
                         data.canti.forEach(canto => {
                             if (canto.titolo.toLowerCase() === titolo.toLowerCase()) {
                                 document.getElementById('titolo').innerText = canto.titolo;
+                                document.title = canto.titolo;
+
+                                const metaDescription = document.createElement('meta');
+                                metaDescription.name = "description";
+                                metaDescription.content = `Leggi il testo completo del canto "${canto.titolo}". Perfetto per celebrazioni liturgiche e momenti di preghiera.`;
+                                document.head.appendChild(metaDescription);
+
+                                const structuredData = {
+                                    "@context": "https://schema.org",
+                                    "@type": "CreativeWork",
+                                    "name": canto.titolo,
+                                    "description": canto.testo.substring(0, 150) + "...",
+                                    "author": canto.autore || "Autore sconosciuto",
+                                    "genre": canto.tipologia || "Liturgico",
+                                    "url": window.location.href
+                                };
+
+                                const script = document.createElement('script');
+                                script.type = "application/ld+json";
+                                script.textContent = JSON.stringify(structuredData);
+                                document.head.appendChild(script);
+
 
                                 const infoCantoElement = document.getElementById('info-canto');
                                 if (infoCantoElement) {
