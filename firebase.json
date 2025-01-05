@@ -16,16 +16,8 @@
     ],
     "rewrites": [
       {
-        "source": "/xxxiii-domenica-ordinario-anno-b",
-        "destination": "/celebrazioni/33/B/ordinario"
-      },
-      {
-        "source": "/solennita-di-cristo-re-anno-b",
-        "destination": "/celebrazioni/Solennita-Cristo-Re/B/ordinario"
-      },
-      {
-        "source": "/canti/acclamate-al-signore",
-        "destination": "/nav-bar/testo_canti.html?titolo=Acclamate%20al%20Signore"
+        "source": "/nav-bar/testo/**",
+        "destination": "/nav-bar/testo.html"
       }
     ]
   }

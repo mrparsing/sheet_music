@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testo</title>
-    <script src="../javascript/javascript.js"></script>
-    <script src="../javascript/js_global_search.js"></script>
-    <link rel="stylesheet" href="../styles/style_index.css">
+    <script src="/js/javascript.js"></script>
+    <script src="/js/js_global_search.js"></script>
+    <link rel="stylesheet" href="/styles/style_index.css">
 
     <script>
         function getQueryParams() {
@@ -16,6 +16,25 @@
             const festivita = urlParams.get('festivita')
             return { titolo, festivita };
         }
+
+        function estraiTitolo() {
+            const url = window.location.href;
+
+            // Estrai la parte finale dell'URL (dopo l'ultimo '/')
+            const titolo = url.split('/').pop();
+
+            // Sostituisci i trattini con spazi e capitalizza la prima lettera di ogni parola
+            const titoloFormattato = titolo
+                .replace(/-/g, ' ') // Sostituisce i trattini con gli spazi
+                .split(' ') // Divide in parole
+                .map(parola => parola.charAt(0).toUpperCase() + parola.slice(1)) // Capitalizza la prima lettera di ogni parola
+                .join(' '); // Riassembla le parole in una stringa
+
+            return titoloFormattato;
+        }
+
+        // Esempio di utilizzo:
+        console.log(estraiTitolo()); // "Acclamate Al Signore"
 
         document.addEventListener('DOMContentLoaded', function () {
             const { titolo, festivita } = getQueryParams()
@@ -32,11 +51,12 @@
                 document.getElementById('titolo').innerText = titolo;
             }
 
-            fetch('../db/canti.json')
+            fetch('/db/canti.json')
                 .then(response => response.json())
                 .then(data => {
                     if (Array.isArray(data.canti)) {
                         data.canti.forEach(canto => {
+                            const titolo = estraiTitolo();
                             if (canto.titolo.toLowerCase() === titolo.toLowerCase()) {
                                 document.getElementById('titolo').innerText = canto.titolo;
                                 document.title = canto.titolo;
@@ -97,6 +117,7 @@
                             }
                         });
                     } else {
+                        console.log("ERRORE NEL CARICAMENTO DEL FILE JSON");
                         console.error('Il file JSON non è strutturato come previsto:', data);
                     }
                 })
