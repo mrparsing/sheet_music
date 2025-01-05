@@ -7,7 +7,7 @@
     <title>Testo</title>
     <script src="../javascript/javascript.js"></script>
     <script src="../javascript/js_global_search.js"></script>
-    <link rel="stylesheet" href="/styles/style_index.css">
+    <link rel="stylesheet" href="../styles/style_index.css">
 
     <script>
         function getQueryParams() {
@@ -51,7 +51,7 @@
                 document.getElementById('titolo').innerText = titolo;
             }
 
-            fetch('/db/canti.json')
+            fetch('../db/canti.json')
                 .then(response => response.json())
                 .then(data => {
                     if (Array.isArray(data.canti)) {
