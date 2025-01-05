@@ -477,6 +477,9 @@
             // Estrai i parametri della query URL
             //const { numero, anno, festivita } = getQueryParams();
             const dati = estraiDatiDaUrl();
+            let festivita = dati.tempo;
+            let numero = dati.numero;
+            let anno = dati.anno;
 
             let jsonFile = "";
             if (festivita === "ordinario" && !numero.includes("Novena Immacolata")) {
@@ -504,7 +507,7 @@
             fetch(jsonFile)
                 .then(response => response.json())
                 .then(data => {
-                    populatePage(data, dati.numero, dati.anno, dati.tempo); // Qui `numero` è già definito
+                    populatePage(data, numero, anno, tempo); // Qui `numero` è già definito
                 })
                 .catch(error => {
                     console.error('Errore nel caricamento del JSON:', error);
