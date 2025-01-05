@@ -340,13 +340,17 @@ function setNavBarTheme() {
     }
 }
 
+// DA AGGIORNARE MAN MANO
+
 function inserisci_elemento_lista(numero, anno, tipologia) {
     const ul = document.querySelector('.prossime-celebrazioni-div ul');
     const li = document.createElement('li');
 
     if (numero.includes("Novena Immacolata")) {
         console.log(numero);
-        li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=${tipologia}">${numero} - anno: ${anno}</a>`;
+        //li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=${tipologia}">${numero} - anno: ${anno}</a>`;
+        li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-tempo-celebrazioni fisse-anno-${anno}">${numero} - anno: ${anno}</a>`;
+
     }
     if (tipologia === "ordinario" && !numero.includes("Novena Immacolata")) {
         if (numero === "Solennità di Cristo Re") {
@@ -354,9 +358,7 @@ function inserisci_elemento_lista(numero, anno, tipologia) {
         } else if (numero === "Solennità di tutti i Santi") {
             li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=ordinario">${numero} - anno: ${anno}</a>`;
         } else {
-            //li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=ordinario">${convertiInRomano(numero)} domenica tempo ordinario - anno: ${anno}</a>`;
             li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-domenica-tempo-ordinario-anno-${anno}">${convertiInRomano(numero)} domenica tempo ordinario - anno: ${anno}</a>`;
-
         }
     } else if (tipologia === "avvento" && !numero.includes("Novena Immacolata")) {
         li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=avvento">${convertiInRomano(numero)} domenica tempo d'avvento - anno: ${anno}</a>`;

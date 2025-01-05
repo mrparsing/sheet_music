@@ -204,7 +204,8 @@
                             messa.title.includes("quaresima") ? "quaresima" : "";
 
                     // Imposta l'URL di destinazione per la riga
-                    const url = `../celebrazioni.html?numero=${messa.numero}&anno=${messa.anno}&festivita=${fest}`;
+                    //const url = `../celebrazioni.html?numero=${messa.numero}&anno=${messa.anno}&festivita=${fest}`;
+                    const url = `../proposta-canti/celebrazione/${messa.numero}-domenica-tempo-${fest}-anno-${messa.anno}`;
 
                     // Aggiungi l'evento di click alla riga per reindirizzare alla pagina
                     row.addEventListener('click', () => {

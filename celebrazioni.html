@@ -30,14 +30,6 @@
         }
     </style>
     <script>
-        function getQueryParams() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const numero = urlParams.get('numero');
-            const anno = urlParams.get('anno');
-            const festivita = urlParams.get('festivita');
-            return { numero, anno, festivita };
-        }
-
         function estraiDatiDaUrl() {
             const url = window.location.href;
 
@@ -486,22 +478,22 @@
                 jsonFile = `../../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else if (festivita === "natale") {
                 if (numero === "Veglia di Natale") {
-                    jsonFile = `db/tempi_liturgici/natale/veglia_natale.json`;
+                    jsonFile = `../../db/tempi_liturgici/natale/veglia_natale.json`;
                 } else if (numero === "Natale del Signore - Messa del giorno") {
-                    jsonFile = `db/tempi_liturgici/natale/natale.json`;
+                    jsonFile = `../../db/tempi_liturgici/natale/natale.json`;
                 } else if (numero === "Santo Stefano") {
-                    jsonFile = `db/tempi_liturgici/natale/santo_stefano.json`;
+                    jsonFile = `../../db/tempi_liturgici/natale/santo_stefano.json`;
                 } else if (numero === "Maria Santissima Madre di Dio") {
-                    jsonFile = `db/tempi_liturgici/natale/maria_santissima_madre_di_Dio.json`;
+                    jsonFile = `../../db/tempi_liturgici/natale/maria_santissima_madre_di_Dio.json`;
                 } else if (numero === "Epifania") {
-                    jsonFile = `db/tempi_liturgici/natale/epifania.json`;
+                    jsonFile = `../../db/tempi_liturgici/natale/epifania.json`;
                 }
             } else if (festivita === "avvento" && !numero.includes("Novena Immacolata")) {
-                jsonFile = `db/tempi_liturgici/avvento/celebrazioni_anno_${anno.toLowerCase()}.json`;
+                jsonFile = `../../db/tempi_liturgici/avvento/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else if (festivita === "quaresima") {
-                jsonFile = `db/tempi_liturgici/quaresima/celebrazioni_anno_${anno.toLowerCase()}.json`;
+                jsonFile = `../../db/tempi_liturgici/quaresima/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else {
-                jsonFile = `db/tempi_liturgici/celebrazioni_fisse/celebrazioni_fisse.json`;
+                jsonFile = `../../db/tempi_liturgici/celebrazioni_fisse/celebrazioni_fisse.json`;
             }
             console.log(jsonFile);
             fetch(jsonFile)
