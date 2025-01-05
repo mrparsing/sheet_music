@@ -294,13 +294,15 @@ const festivita = calcolaFestivita(oggi.getFullYear());
 const prox_festivita = festivita.find(f => new Date(f.data) >= oggi);
 console.log(festivita);
 function avvia_index() {
-    if (prox_festivita.tipologia === "natale" && oggi < new Date(oggi.getFullYear(), 11, 25)) {
+    /*if (prox_festivita.tipologia === "natale" && oggi < new Date(oggi.getFullYear(), 11, 25)) {
         setNavbarColor("avvento")
         localStorage.setItem("theme-navbar", "avvento")
     } else {
         setNavbarColor(prox_festivita.tipologia)
         localStorage.setItem("theme-navbar", prox_festivita.tipologia)
-    }
+    }*/
+    setNavbarColor(prox_festivita.tipologia)
+    localStorage.setItem("theme-navbar", prox_festivita.tipologia)
 
     setDarkTheme()
 
@@ -366,9 +368,8 @@ function inserisci_elemento_lista(numero, anno, tipologia) {
             li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&festivita=natale">${numero}</a>`;
         } else if (numero === "Maria Santissima Madre di Dio") {
             li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&festivita=natale">${numero}</a>`;
-        }
-        else {
-            li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=natale">${numero}</a>`;
+        } else if (numero === "Epifania") {
+            li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&festivita=natale">${numero}</a>`;
         }
     } else if (numero === "Mercoledì delle Ceneri") {
         li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=ceneri">${numero}</a>`;
@@ -398,7 +399,7 @@ function setNavbarColor(tipologia, page) {
                 table.style.backgroundColor = '#8A2BE2'; // Viola
                 break;
             case "natale":
-                table.style.backgroundColor = '#c5ac54'; // Viola
+                table.style.backgroundColor = '#c5ac54'; // Oro
                 break;
         }
     }
@@ -414,7 +415,7 @@ function setNavbarColor(tipologia, page) {
             navbar.style.backgroundColor = '#8A2BE2'; // Viola
             break;
         case "natale":
-            navbar.style.backgroundColor = '#c5ac54'; // Viola
+            navbar.style.backgroundColor = '#c5ac54'; // Oro
             break;
     }
 }

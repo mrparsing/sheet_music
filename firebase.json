@@ -22,6 +22,10 @@
       {
         "source": "/solennita-di-cristo-re-anno-b",
         "destination": "/celebrazioni/Solennita-Cristo-Re/B/ordinario"
+      },
+      {
+        "source": "/canti/acclamate-al-signore",
+        "destination": "/nav-bar/testo_canti.html?titolo=Acclamate%20al%20Signore"
       }
     ]
   }
