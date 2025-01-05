@@ -20,7 +20,7 @@
         "destination": "/nav-bar/testo.html"
       },
       {
-        "source": "/celebrazione/**",
+        "source": "/proposta-canti/celebrazione/**",
         "destination": "/celebrazioni.html"
       }
     ]
