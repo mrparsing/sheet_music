@@ -51,7 +51,7 @@
                 document.getElementById('titolo').innerText = titolo;
             }
 
-            fetch('../db/canti.json')
+            fetch('../../db/canti.json')
                 .then(response => response.json())
                 .then(data => {
                     if (Array.isArray(data.canti)) {
