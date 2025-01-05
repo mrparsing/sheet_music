@@ -355,7 +355,7 @@ function inserisci_elemento_lista(numero, anno, tipologia) {
             li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=ordinario">${numero} - anno: ${anno}</a>`;
         } else {
             //li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=ordinario">${convertiInRomano(numero)} domenica tempo ordinario - anno: ${anno}</a>`;
-            li.innerHTML = `<a href="celebrazione/${numero}-domenica-tempo-ordinario-anno-${anno}">${convertiInRomano(numero)} domenica tempo ordinario - anno: ${anno}</a>`;
+            li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-domenica-tempo-ordinario-anno-${anno}">${convertiInRomano(numero)} domenica tempo ordinario - anno: ${anno}</a>`;
 
         }
     } else if (tipologia === "avvento" && !numero.includes("Novena Immacolata")) {
