@@ -35,7 +35,7 @@
 
             // Regex aggiornata per gestire numeri che possono essere anche stringhe alfanumeriche
             const regex = /celebrazione\/([\w\s%]+)-[\w\s%-]*tempo-([\w]+)-anno-([\w]+)/;
-            const match = urlDecodificato.match(regex);
+            const match = url.match(regex);
 
             if (match) {
                 const numero = match[1]; // Primo gruppo catturato: il numero (anche stringa alfanumerica)
