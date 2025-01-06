@@ -98,9 +98,9 @@
                 link.textContent = celebrazione.title; // Imposta il titolo della celebrazione
                 // Collegamento dinamico alla pagina HTML con parametri della celebrazione
                 if (type === "ordinario") {
-                    link.href = `../../proposta-canti/celebrazione/${celebrazione.numero}-domenica-tempo-ordinario-anno${celebrazione.anno}`;
+                    link.href = `../../proposta-canti/celebrazione/${celebrazione.numero}-domenica-tempo-ordinario-anno-${celebrazione.anno}`;
                 } else if (type === "avvento") {
-                    link.href = `../../proposta-canti/celebrazione/${celebrazione.numero}-domenica-tempo-avvento-anno${celebrazione.anno}`;
+                    link.href = `../../proposta-canti/celebrazione/${celebrazione.numero}-domenica-tempo-avvento-anno-${celebrazione.anno}`;
                 }
                 link.className = 'celebrazione-link'; // Aggiungi una classe per styling, se necessario
 
