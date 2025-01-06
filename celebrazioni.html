@@ -33,7 +33,7 @@
         function estraiDatiDaUrl() {
             const url = window.location.href;
 
-            if (url.contains("%20")) {
+            if (url.includes("%20")) {
                 url = url.replace(/%20/g, " ");
             }
 
