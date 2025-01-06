@@ -30,7 +30,8 @@
         }
     </style>
     <script>
-        function estraiDatiDaUrl(url) {
+        function estraiDatiDaUrl() {
+            let url = window.location.href;
             // Sostituisci %20 con spazi, se necessario
             if (url.includes("%20")) {
                 url = url.replace(/%20/g, " ");
@@ -52,11 +53,7 @@
             }
         }
 
-        // Esempio di utilizzo
-        const url =
-            "https://cantusacri.web.app/proposta-canti/celebrazione/Solennita' di Cristo Re-domenica-tempo-ordinario-anno-B";
-
-        const dati = estraiDatiDaUrl(url);
+        const dati = estraiDatiDaUrl();
 
         if (dati) {
             console.log("Numero/Titolo:", dati.numero); // "Solennita' di Cristo Re"
