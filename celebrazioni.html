@@ -33,8 +33,14 @@
         function estraiDatiDaUrl() {
             const url = window.location.href;
 
+            if (url.contains("%20")) {
+                url = url.replace(/%20/g, " ");
+            }
+
+            console.log(url);
+
             // Regex aggiornata per gestire numeri che possono essere anche stringhe alfanumeriche
-            const regex = /celebrazione\/([\w\s%]+)-[\w\s%-]*tempo-([\w]+)-anno-([\w]+)/;
+            const regex = /celebrazione\/([\w]+)-[\w-]*tempo-([\w]+)-anno-([\w]+)/;
             const match = url.match(regex);
 
             if (match) {
