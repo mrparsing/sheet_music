@@ -30,24 +30,20 @@
         }
     </style>
     <script>
-        function estraiDatiDaUrl() {
-            let url = window.location.href;
-
+        function estraiDatiDaUrl(url) {
+            // Sostituisci %20 con spazi, se necessario
             if (url.includes("%20")) {
                 url = url.replace(/%20/g, " ");
             }
 
-
-            console.log(url);
-
-            // Regex aggiornata per gestire numeri che possono essere anche stringhe alfanumeriche
-            const regex = /celebrazione\/([\w]+)-[\w-]*tempo-([\w]+)-anno-([\w]+)/;
+            // Regex aggiornata per gestire anche l'apostrofo e altri caratteri speciali
+            const regex = /celebrazione\/([\w\s'À-ÿ]+)-[\w\s'-]*tempo-([\w]+)-anno-([\w]+)/;
             const match = url.match(regex);
 
             if (match) {
-                const numero = match[1]; // Primo gruppo catturato: il numero (anche stringa alfanumerica)
-                const tempo = match[2];  // Secondo gruppo catturato: il tempo liturgico
-                const anno = match[3];   // Terzo gruppo catturato: l'anno
+                const numero = match[1].trim(); // Primo gruppo catturato: il numero o titolo
+                const tempo = match[2];         // Secondo gruppo catturato: il tempo liturgico
+                const anno = match[3];          // Terzo gruppo catturato: l'anno
 
                 return { numero, tempo, anno };
             } else {
@@ -56,13 +52,16 @@
             }
         }
 
-        // Esempio di utilizzo:
-        const dati = estraiDatiDaUrl();
+        // Esempio di utilizzo
+        const url =
+            "https://cantusacri.web.app/proposta-canti/celebrazione/Solennita' di Cristo Re-domenica-tempo-ordinario-anno-B";
+
+        const dati = estraiDatiDaUrl(url);
 
         if (dati) {
-            console.log("Numero:", dati.numero); // "5"
-            console.log("Tempo:", dati.tempo);   // "ordinario"
-            console.log("Anno:", dati.anno);     // "A"
+            console.log("Numero/Titolo:", dati.numero); // "Solennita' di Cristo Re"
+            console.log("Tempo:", dati.tempo);         // "ordinario"
+            console.log("Anno:", dati.anno);           // "B"
         }
 
         function updateMetaTags(celebrationTitle, description, url, imageUrl) {
