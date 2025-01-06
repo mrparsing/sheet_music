@@ -81,7 +81,7 @@
         }
 
         // Funzione che genera la lista di titoli delle celebrazioni
-        function generaListaCelebrazioni(celebrazioni) {
+        function generaListaCelebrazioni(celebrazioni, type) {
             const lista = document.getElementById('list');
 
             // Pulisce la lista esistente
@@ -97,7 +97,11 @@
 
                 link.textContent = celebrazione.title; // Imposta il titolo della celebrazione
                 // Collegamento dinamico alla pagina HTML con parametri della celebrazione
-                link.href = `../../celebrazioni.html?numero=${celebrazione.numero}&anno=${celebrazione.anno}&festivita=ordinario`;
+                if (type === "ordinario") {
+                    link.href = `../../proposta-canti/celebrazione/${celebrazione.numero}-domenica-tempo-ordinario-anno${celebrazione.anno}`;
+                } else if (type === "avvento") {
+                    link.href = `../../proposta-canti/celebrazione/${celebrazione.numero}-domenica-tempo-avvento-anno${celebrazione.anno}`;
+                }
                 link.className = 'celebrazione-link'; // Aggiungi una classe per styling, se necessario
 
                 // Aggiungi il link al 'li'
@@ -119,7 +123,7 @@
             fetch(jsonFile_avvento)
                 .then(response => response.json()) // Converte la risposta in JSON
                 .then(data => {
-                    generaListaCelebrazioni(data.celebrazioni); // Passa i dati alla funzione che genera la lista
+                    generaListaCelebrazioni(data.celebrazioni, "avvento"); // Passa i dati alla funzione che genera la lista
                 })
                 .catch(error => {
                     console.error('Errore durante il caricamento dei dati:', error);
@@ -129,7 +133,7 @@
                 .then(response => response.json()) // Converte la risposta in JSON
                 .then(data => {
                     console.log(data);
-                    generaListaCelebrazioni(data.celebrazioni); // Passa i dati alla funzione che genera la lista
+                    generaListaCelebrazioni(data.celebrazioni, "ordinario"); // Passa i dati alla funzione che genera la lista
                 })
                 .catch(error => {
                     console.error('Errore durante il caricamento dei dati:', error);
