@@ -182,7 +182,6 @@
         }
 
         function download(data, numero, link_foglietto_messa) {
-            console.log("link", link_foglietto_messa);
             if (link_foglietto_messa) {
                 window.location.href = link_foglietto_messa;
             }
@@ -378,12 +377,11 @@
                     document.querySelector('#tropo-1').innerHTML = celebrazione.tropo_1;
                     document.querySelector('#tropo-2').innerHTML = celebrazione.tropo_2;
                     document.querySelector('#tropo-3').innerHTML = celebrazione.tropo_3;
+
+                    document.querySelector("#confesso").style.display = 'none';
                 } else {
                     document.getElementById('atto-penitenziale').style.display = 'none';
                     document.getElementById('atto-penitenziale-title').style.display = 'none';
-                    document.getElementById('tropo-1').style.display = 'none';
-                    document.getElementById('tropo-2').style.display = 'none';
-                    document.getElementById('tropo-3').style.display = 'none';
                 }
 
                 // PRIMA LETTURA
@@ -546,6 +544,9 @@
 
         <h2 id="atto-penitenziale-title">Atto Penitenziale</h2>
         <p id="atto-penitenziale"></p>
+
+        <h2 id="atto-penitenziale-title">Atto Penitenziale</h2>
+        <p id="confesso"></p>
 
         <p id="tropo-1"></p>
         <p id="tropo-2"></p>
