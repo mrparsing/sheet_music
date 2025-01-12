@@ -1,7 +1,7 @@
 {
     "celebrazioni": [
         {
-            "title": "I domenica tempo ordinario - C",
+            "title": "I domenica tempo ordinario - C - Battesimo del Signore",
             "numero": 1,
             "anno": "C",
             "colore": "#c5ac54",
@@ -17,6 +17,7 @@
             "seconda_lettura_testo": "<i>Dalla lettera di san Paolo apostolo a Tito<br>Tt 2,11-14;3,4-7</i><br><br>Figlio mio, è apparsa la grazia di Dio, che porta salvezza a tutti gli uomini e ci insegna a rinnegare l’empietà e i desideri mondani e a vivere in questo mondo con sobrietà, con giustizia e con pietà, nell’attesa della beata speranza e della manifestazione della gloria del nostro grande Dio e salvatore Gesù Cristo. Egli ha dato se stesso per noi, per riscattarci da ogni iniquità e formare per sé un popolo puro che gli appartenga, pieno di zelo per le opere buone. Ma quando apparvero la bontà di Dio, salvatore nostro,  e il suo amore per gli uomini, egli ci ha salvati, non per opere giuste da noi compiute, ma per la sua misericordia, con un’acqua che rigenera e rinnova nello Spirito Santo, che Dio ha effuso su di noi in abbondanza per mezzo di Gesù Cristo, salvatore nostro, affinché, giustificati per la sua grazia, diventassimo, nella speranza, eredi della vita eterna.<br><br>Parola di Dio.",
             "acclamazione_al_vangelo": "Alleluia, alleluia.<br><br>Viene colui che è più forte di me, disse Giovanni;<br>egli vi battezzerà in Spirito Santo e fuoco. (Cf. Lc 3,16)<br><br>Alleluia.",
             "vangelo": "<i>Dal Vangelo secondo Luca, Lc 3,15-16.21-22</i><br><br>In quel tempo, poiché il popolo era in attesa e tutti, riguardo a Giovanni, si domandavano in cuor loro se non fosse lui il Cristo, Giovanni rispose a tutti dicendo: «Io vi battezzo con acqua; ma viene colui che è più forte di me, a cui non sono degno di slegare i lacci dei sandali. Egli vi battezzerà in Spirito Santo e fuoco». Ed ecco, mentre tutto il popolo veniva battezzato e Gesù, ricevuto anche lui il battesimo, stava in preghiera, il cielo si aprì e discese sopra di lui lo Spirito Santo in forma corporea, come una colomba, e venne una voce dal cielo: «Tu sei il Figlio mio, l’amato: in te ho posto il mio compiacimento».<br><br>Parola del Signore.",
+            "canto_offertorio": "<a href='/../../nav-bar/testo/rallegrati-o-sion' target='_blank'>Rallegrati, o Sion</a>",
             "antifona_alla_comunione": "Questa è la testimonianza di Giovanni:<br>«Ho contemplato lo Spirito discendere e rimanere su di lui:<br>egli è il Figlio di Dio». (Cf. Gv 1,32.34)<br><br>*C<br><br>Giovanni disse:<br>«Io vi battezzo con acqua;<br>ma viene colui che è più forte di me.<br>Egli vi battezzerà in Spirito Santo e fuoco». (Lc 3,16)",
             "canto_comunione": "<a href='/../../nav-bar/testo/se-tu-conoscessi-il-dono-di-dio' target='_blank'>Se tu conoscessi il dono di Dio</a>"
         },
