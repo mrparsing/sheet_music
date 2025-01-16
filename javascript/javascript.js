@@ -246,6 +246,8 @@ function calcolaFestivita(anno) {
         festivita.push({ anno: tipologia_anno(anno, domenica), tipologia: "ordinario", numero: `${index + 1}`, data: domenica });
     });
 
+    festivita.push({ anno: tipologia_anno(anno, new Date(anno, 1, 2)), tipologia: "ordinario", numero: "Presentazione del Signore", data: new Date(anno, 1, 2) });
+
     // TEMPO QUARESIMALE
     // ------------------------------------------------------------------------------------------------------------------------------------
     festivita.push({ anno: tipologia_anno(anno, quaresima.inizioQuaresima), tipologia: "quaresima", numero: 'Mercoledì delle Ceneri', data: quaresima.inizioQuaresima });
@@ -357,6 +359,8 @@ function inserisci_elemento_lista(numero, anno, tipologia) {
             li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=ordinario">${numero} - anno: ${anno}</a>`;
         } else if (numero === "Solennità di tutti i Santi") {
             li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=ordinario">${numero} - anno: ${anno}</a>`;
+        } else if (numero === "Presentazione del Signore") {
+            li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-domenica-tempo-ordinario-anno-${anno}">Presentazione del Signore</a>`;
         } else {
             li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-domenica-tempo-ordinario-anno-${anno}">${convertiInRomano(numero)} domenica tempo ordinario - anno: ${anno}</a>`;
         }
