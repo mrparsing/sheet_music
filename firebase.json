@@ -26,6 +26,22 @@
       {
         "source": "/elenco-canti",
         "destination": "/nav-bar/elenco_canti.html"
+      },
+      {
+        "source": "/spartiti-salmi",
+        "destination": "/nav-bar/spartiti_salmi.html"
+      },
+      {
+        "source": "/anno-liturgico",
+        "destination": "/nav-bar/anno_liturgico.html"
+      },
+      {
+        "source": "/brani-eventi-speciali",
+        "destination": "/nav-bar/eventi_spciali.html"
+      },
+      {
+        "source": "/imp-supporto",
+        "destination": "/nav-bar/imp_supporto.html"
       }
     ]
   }
