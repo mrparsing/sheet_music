@@ -24,8 +24,8 @@
         "destination": "/celebrazioni.html"
       },
       {
-        "source": "nav-bar/elenco-canti.html",
-        "destination": "/elenco_canti.html"
+        "source": "elenco-canti/**",
+        "destination": "nav-bar/elenco_canti.html"
       }
     ]
   }
