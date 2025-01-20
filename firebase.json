@@ -45,7 +45,7 @@
       },
       {
         "source": "/salmi-anno-A",
-        "destination": "/nav-bar/salmi.html?anno=A"
+        "destination": "/nav-bar/salmi.html"
       },
       {
         "source": "/salmi-anno-B",
