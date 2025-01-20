@@ -69,9 +69,15 @@
         }
 
         function getQueryParams() {
-            const urlParams = new URLSearchParams(window.location.search);
-            console.log("CIAO", urlParams);
-            return urlParams.get('anno');
+            const url = window.location.href;
+            let anno;
+            // Estrarre tutto dopo "anno-"
+            const match = url.match(/anno-(.*)/);
+            if (match) {
+                anno = match[1];
+                console.log(match[1]); // Output: XXX
+            }
+            return anno;
         }
 
         function caricaSalmi(salmi) {

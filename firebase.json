@@ -49,19 +49,19 @@
       },
       {
         "source": "/salmi-anno-B",
-        "destination": "/nav-bar/salmi.html?anno=B"
+        "destination": "/nav-bar/salmi.html"
       },
       {
         "source": "/salmi-anno-C",
-        "destination": "/nav-bar/salmi.html?anno=C"
+        "destination": "/nav-bar/salmi.html"
       },
       {
         "source": "/salmi-altre-festivita",
-        "destination": "/nav-bar/salmi.html?anno=altre_festivita"
+        "destination": "/nav-bar/salmi.html"
       },
       {
         "source": "/salmi-eventi-speciali",
-        "destination": "/nav-bar/salmi.html?anno=eventi_speciali"
+        "destination": "/nav-bar/salmi.html"
       }
     ]
   }
