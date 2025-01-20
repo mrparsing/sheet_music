@@ -42,6 +42,26 @@
       {
         "source": "/imp-supporto",
         "destination": "/nav-bar/imp_supporto.html"
+      },
+      {
+        "source": "/salmi-anno-A",
+        "destination": "/nav-bar/salmi.html?anno=A"
+      },
+      {
+        "source": "/salmi-anno-B",
+        "destination": "/nav-bar/salmi.html?anno=B"
+      },
+      {
+        "source": "/salmi-anno-C",
+        "destination": "/nav-bar/salmi.html?anno=C"
+      },
+      {
+        "source": "/salmi-altre-festivita",
+        "destination": "/nav-bar/salmi.html?anno=altre_festivita"
+      },
+      {
+        "source": "/salmi-eventi-speciali",
+        "destination": "/nav-bar/salmi.html?anno=eventi_speciali"
       }
     ]
   }

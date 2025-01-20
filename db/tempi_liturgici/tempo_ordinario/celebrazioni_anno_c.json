@@ -27,7 +27,7 @@
             "anno": "C",
             "colore": "#c5ac54",
             "antifona_ingresso": "A te si prostri tutta la terra, o Dio. A te canti inni, canti al tuo nome, o Altissimo. (Cf. Sal 65,4)",
-            "canto_ingresso": "<a href='/../../nav-bar/testo/ti-esalto,-dio-mio-re' target='_blank'>Ti esalto, Dio mio Re</a>",
+            "canto_ingresso": "<a href='/../../canti/testo/ti-esalto,-dio-mio-re' target='_blank'>Ti esalto, Dio mio Re</a>",
             "atto_penitenziale": "Confesso a Dio onnipotente e a voi, fratelli e sorelle, che ho molto peccato in pensieri, parole, opere e omissioni, per mia colpa, mia colpa, mia grandissima colpa. E supplico la beata sempre vergine Maria, gli angeli, i santi e voi, fratelli e sorelle, di pregare per me il Signore Dio nostro.<br><br>Dio onnipotente abbia misericordia di noi, perdoni i nostri peccati e ci conduca alla vita eterna.<br><br>",
             "tropo_1": "Kyrie, eleison, <b>Kyrie, eleison</b>",
             "tropo_2": "Chiste, eleison, <b>Chiste, eleison</b>",
@@ -39,7 +39,7 @@
             "acclamazione_al_vangelo": "Alleluia, alleluia.<br><br>Dio ci ha chiamati mediante il Vangelo,<br>per entrare in possesso della gloria<br>del Signore nostro Gesù Cristo. (Cf. 2Ts 2,14)<br><br>Alleluia.",
             "vangelo": "<i>Dal Vangelo secondo Giovanni, Gv 2,1-11</i><br><br>In quel tempo, vi fu una festa di nozze a Cana di Galilea e c’era la madre di Gesù. Fu invitato alle nozze anche Gesù con i suoi discepoli. Venuto a mancare il vino, la madre di Gesù gli disse: «Non hanno vino». E Gesù le rispose: «Donna, che vuoi da me? Non è ancora giunta la mia ora». Sua madre disse ai servitori: «Qualsiasi cosa vi dica, fatela». Vi erano là sei anfore di pietra per la purificazione rituale dei Giudei, contenenti ciascuna da ottanta a centoventi litri. E Gesù disse loro: «Riempite d’acqua le anfore»; e le riempirono fino all’orlo. Disse loro di nuovo: «Ora prendetene e portatene a colui che dirige il banchetto». Ed essi gliene portarono. Come ebbe assaggiato l’acqua diventata vino, colui che dirigeva il banchetto – il quale non sapeva da dove venisse, ma lo sapevano i servitori che avevano preso l’acqua – chiamò lo sposo e gli disse: «Tutti mettono in tavola il vino buono all’inizio e, quando si è già bevuto molto, quello meno buono. Tu invece hai tenuto da parte il vino buono finora». Questo, a Cana di Galilea, fu l’inizio dei segni compiuti da Gesù; egli manifestò la sua gloria e i suoi discepoli credettero in lui.<br><br>Parola del Signore.",
             "antifona_alla_comunione": "Davanti a me tu prepari una mensa;<br>il mio calice trabocca. (Sal 22,5)<br><br>Oppure:<br><br>Abbiamo conosciuto e creduto<br>l'amore che Dio ha in noi. (1Gv 4,16)<br><br>*C<br><br>A Cana di Galilea Gesù manifestò la sua gloria<br>e i suoi discepoli credettero in lui. (Gv 2,11)",
-            "canto_comunione": "<a href='/../../nav-bar/testo/il-signore-è-il-mio-pastore' target='_blank'>Il Signore è il mio Pastore</a>"
+            "canto_comunione": "<a href='/../../canti/testo/il-signore-è-il-mio-pastore' target='_blank'>Il Signore è il mio Pastore</a>"
         },
         {
             "title": "III domenica tempo ordinario - C",
@@ -48,7 +48,7 @@
             "colore": "#2a9a5c",
             "link_foglietto_messa": "https://mrparsing.github.io/foglietti_messa/ANNO%20C/III%20Domenica%20del%20tempo%20ordinario:C.pdf",
             "antifona_ingresso": "Cantate al Signore un canto nuovo, cantate al Signore, uomini di tutta la terra. Maestà e onore sono davanti a lui, forza e splendore nel suo santuario. (Sal 95,1.6)",
-            "canto_ingresso": "<a href='/../../nav-bar/testo/cantate-al-signore' target='_blank'>Cantate al Signore</a>",
+            "canto_ingresso": "<a href='/../../canti/testo/cantate-al-signore' target='_blank'>Cantate al Signore</a>",
             "atto_penitenziale": "Gesù Cristo, il giusto, intercede per noi e ci riconcilia con il Padre: per accostarci degnamente alla mensa del Signore, invochiamolo con cuore pentito.<br><br>",
             "tropo_1": "Signore, che alla donna peccatrice hai donato la tua misericordia, Kyrie, eleison, <b>Kyrie, eleison</b>",
             "tropo_2": "Cristo, che al ladrone pentito hai promesso il paradiso, Chiste, eleison, <b>Chiste, eleison</b>",
