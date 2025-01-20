@@ -16,7 +16,7 @@
     ],
     "rewrites": [
       {
-        "source": "/nav-bar/testo/**",
+        "source": "/canti/testo/**",
         "destination": "/nav-bar/testo.html"
       },
       {

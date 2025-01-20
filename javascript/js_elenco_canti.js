@@ -47,7 +47,7 @@ function carica_canti(page) {
                         linksDiv.appendChild(scaricaLink);
 
                         const testoLink = document.createElement('a');
-                        testoLink.href = `testo/${canto.url_titolo}`;
+                        testoLink.href = `canti/testo/${canto.url_titolo}`;
                         testoLink.className = 'testo-button';
                         testoLink.textContent = 'Testo';
 
@@ -90,7 +90,7 @@ function carica_canti(page) {
                         linksDiv.appendChild(scaricaLink);
 
                         const testoLink = document.createElement('a');
-                        testoLink.href = `testo/${canto.url_titolo}`;
+                        testoLink.href = `canti/testo/${canto.url_titolo}`;
                         testoLink.className = 'testo-button';
                         testoLink.textContent = 'Testo';
 
@@ -134,7 +134,7 @@ function carica_canti(page) {
 
                         const testoLink = document.createElement('a');
                         //testoLink.href = `testo_canti.html?titolo=${encodeURIComponent(canto.titolo)}`;
-                        testoLink.href = `testo/${canto.url_titolo}`;
+                        testoLink.href = `canti/testo/${canto.url_titolo}`;
 
                         testoLink.className = 'testo-button';
                         testoLink.textContent = 'Testo';
