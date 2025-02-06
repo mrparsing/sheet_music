@@ -89,7 +89,7 @@
             "tipologia": "Alleluia",
             "ascolta": "https://www.youtube.com/watch?v=BKdNqlnLmjY",
             "download_link": "../../db/canti/alleluia_cantico_agnello.pdf",
-            "testo": "<b>Alleluia, alleluia,<br>alleluia, alleluia</b>﻿﻿﻿<br><br>Celebrerò il Signore, perché è buono;<br>perché eterna è la sua misericordia;<br>mia forza e mio canto è il Signore,<br>egli è stato la mia salvezza.<br><br>﻿﻿﻿Questo è il giorno che ha fatto il Signore:<br>rallegriamoci ed esultiamo.<br>Dona, Signore, la tua salvezza,<br>dona, Signore, la tua vittoria.<br><br>Salvezza, gloria e potenza sono del nostro Dio;<br>veri e giusti sono i suoi giudizi.<br>Lodate il nostro Dio, voi tutti suoi servi,<br>voi che lo temete, piccoli e grandi.<br><br>Ha preso possesso del suo regno il Signore,<br>il nostro Dio l'Onnipotente.<br>Rallegriamoci ed esultiamo, rendiamo a lui gloria.<br>Sono giunte le nozze dell'Agnello,<br>la sua sposa è pronta.<br><br>Sia gloria al Padre, sia gloria al Figlio<br>e allo Spirito Santo, <br>com'era nel principio, ora e sempre<br>e nei secoli dei secoli. Amen.",
+            "testo": "<b>Alleluia, alleluia,<br>alleluia, alleluia</b><br><br>Celebrerò il Signore, perché è buono;<br>perché eterna è la sua misericordia;<br>mia forza e mio canto è il Signore,<br>egli è stato la mia salvezza.<br><br>﻿﻿﻿Questo è il giorno che ha fatto il Signore:<br>rallegriamoci ed esultiamo.<br>Dona, Signore, la tua salvezza,<br>dona, Signore, la tua vittoria.<br><br>Salvezza, gloria e potenza sono del nostro Dio;<br>veri e giusti sono i suoi giudizi.<br>Lodate il nostro Dio, voi tutti suoi servi,<br>voi che lo temete, piccoli e grandi.<br><br>Ha preso possesso del suo regno il Signore,<br>il nostro Dio l'Onnipotente.<br>Rallegriamoci ed esultiamo, rendiamo a lui gloria.<br>Sono giunte le nozze dell'Agnello,<br>la sua sposa è pronta.<br><br>Sia gloria al Padre, sia gloria al Figlio<br>e allo Spirito Santo, <br>com'era nel principio, ora e sempre<br>e nei secoli dei secoli. Amen.",
             "matrimonio": true
         },
         {
@@ -179,8 +179,8 @@
             "tipologia": "Comunione",
             "tempo": "Quaresima",
             "ascolta": "https://www.youtube.com/watch?v=9kK2vhBTZGs",
-            "download_link": "download13.html",
-            "testo": ""
+            "download_link": "-",
+            "testo": "R. Non di solo pane vive l'uomo<br>Ma di ogni parola che viene da Dio<br>T'ha nutrito di manna nel deserto<br>Il tuo Signore<br><br>Ricordati di tutto il cammino<br>Che il tuo Dio ti ha fatto percorrere<br>Per 40 anni nel deserto<br>Per metterti alla prova<br>Per metterti alla prova. R.<br><br>Comprendi dunque nel tuo cuore<br>Riconosci che il tuo Signore<br>Corregge come un padre i suoi figli<br>Li punisce con amore<br>Con la misericordia. R.<br><br>"
         },
         {
             "url_titolo": "miserere",
@@ -189,8 +189,8 @@
             "tipologia": "Comunione",
             "tempo": "Quaresima",
             "ascolta": "https://www.youtube.com/watch?v=S8u2-oCmhX8",
-            "download_link": "download14.html",
-            "testo": ""
+            "download_link": "-",
+            "testo": "R. Miserere mei, Domine. Miserere mei, Domine.<br><br>1. Pietà di me, o Dio, per la Tua misericordia, nel Tuo grande amore cancella il mio peccato. Lavami da tutte le colpe e dal mio peccato mondami. La mia colpa conosco, dinanzi ho il mio peccato. R.<br><br>2. Contro Te solo ho peccato, ciò che male io l'ho fatto; è giusta la Tua parola e retto è il Tuo giudizio. Nella colpa son generato, nel peccato concepito. Ma Tu vuoi un cuore sincero, sapienza Tu mi insegni. R.<br><br>3. Purificami con issopo e sarò da Te mondato, lavami e sarò più bianco della neve. Fammi sentire la gioia e dammi la letizia, esulteranno le ossa che Tu mi hai spezzato. R.<br><br>4. Dai miei peccati distoglimi e cancella le mie colpe. Crea in me un cuore puro, rinnova in me lo spirito. Non mi respingere, o Dio, e non togliermi il Tuo spirito. Rendimi la Tua gioia, sostieni la mia vita. R.<br><br>5. Insegnerò agli erranti le vie del Tuo amore e torneranno con gioia a Te i peccatori. Liberami dal sangue, o Dio, Signore di salvezza. E la mia lingua esalti la Tua giustizia. R.<br><br>6. Apri le mia labbra, Signore, proclamino la lode, perché il sacrificio, l'offerta non gradisci. Uno spirito contrito a Dio è sacrificio. Un cuore affranto e umiliato, o Dio, Tu non disprezzi. R.<br><br>7. Nel Tuo grande amore fa' grazia a Sion, ed innalza le mura di Gerusalemme. Accoglierai il sacrificio, preghiera ed olocausto, allora sopra il Tuo altare le offerte saliranno. R."
         },
         {
             "url_titolo": "chi-mi-seguirà",
@@ -200,7 +200,7 @@
             "tempo": "Quaresima",
             "ascolta": "https://www.youtube.com/watch?v=em0HgKY05_o",
             "download_link": "../../db/canti/chi_mi_seguira.pdf",
-            "testo": ""
+            "testo": "Chi mi seguirà<br>nel cammino della Pasqua?<br>Chi mi seguirà<br>sulla strada del regno<br>del Padre mio?<br>Chi verrà con me<br>sarà tra i miei amici:<br>con Lui io farò la mia Pasqua. R.<br><br>R. Noi ti seguiremo, Signore,<br>sulla tua parola.<br> Guida i nostri passi, Signore,<br>con la tua parola:<br>noi verremo con te.<br><br>2. Chi mi seguirà<br>nel cammino della croce?<br>Chi mi seguirà<br>sulla via della gloria<br>del Padre mio?<br>Chi verrà con me<br>sarà tra i miei discepoli:<br>con lui io farò la mia Pasqua. R.<br><br>3. Chi mi seguirà<br>nel cammino della vita?<br>Chi mi seguirà<br>sul sentiero della casa<br>del Padre mio?<br>Chi verrà con me<br>sarà tra i miei fratelli:<br>con lui io farò la mia Pasqua. R."
         },
         {
             "url_titolo": "o-signore-nostro-dio",
@@ -210,7 +210,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=SKrRIFda5mo",
             "download_link": "../../db/canti/o_signore_nostro_dio.pdf",
-            "testo": ""
+            "testo": "<b>O SIGNORE NOSTRO DIO<br>QUANT'È GRANDE IL TUO NOME SULLA TERRA,<br>SOPRA I CIELI S'INNALZA, S'INNALZA,<br>LA TUA MAGNIFICENZA.</b><br><br>Sopra i cieli s'innalza <br> la tua magnificenza<br>per bocca dei bimbi e dei lattanti.<br>Affermi la tua potenza<br>contro i tuoi avversari<br>per far tacere i tuoi nemici. RIT.<br><br>Ecco il cielo <br>creato dalle tue dita,<br>La luna e le stelle che ha fissate.<br>Che cosa è mai l'uomo <br>Perché te ne ricordi,<br>ti curi del figlio dell'uomo? RIT.<br><br>Poco meno degli angeli<br>Tu lo hai creato,<br>di gloria e d'onore coronato.<br>Hai dato a lui il potere<br>sulle opere tue,<br>tutto hai posto ai suoi piedi. RIT.<br><br>Tutti i greggi e gli armenti<br>hai posto ai suoi piedi<br>e tutte le bestie dei campi,<br>gli uccelli tutti del cielo<br>ed ogni pesce del mare<br>che corre per le vie del mare. RIT."
         },
         {
             "url_titolo": "chi-ci-separerà",
@@ -220,7 +220,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=U9CSP1gXXGM",
             "download_link": "../../db/canti/chi_ci_separera.pdf",
-            "testo": ""
+            "testo": "Chi ci separerà<br>Dal suo amore?<br>La tribolazione<br>Forse la spada?<br>Né morte o vita<br>Ci separerà<br>Dall'amore in Cristo<br>Signore<br><br>Chi ci separerà<br>Dalla sua pace?<br>La persecuzione<br>Forse il dolore<br>Nessun potere<br>Ci separerà<br>Da colui che è morto<br>Per noi<br><br>Chi ci separerà<br>Dalla sua gioia?<br>Chi potrà strapparci<br>Il suo perdono?<br>Nessuno al mondo<br>Ci allontanerà<br>Dalla vita in Cristo<br>Signore."
         },
         {
             "url_titolo": "alto-e-glorio-dio",
@@ -230,7 +230,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=ABbrXiYkKsQ",
             "download_link": "../../db/canti/alto_e_glorioso_dio.pdf",
-            "testo": "",
+            "testo": "Alto e glorioso Dio<br>Illumina il cuore mio<br>Dammi fede retta, speranza certa<br>Carità perfetta<br>Dammi umiltà profonda<br>Dammi senno e cognoscimento<br>Che io possa sempre servire<br>Con gioia i tuoi comandamenti.<br><br>Rapisca, ti prego, Signore<br>L'ardente e dolce forza del tuo amore<br>La mente mia da tutte le cose<br>Perché io muoia per amor tuo<br>Come tu moristi per amor dell'amor mio, dell'amor mio.<br><br>Alto e glorioso Dio<br>Illumina il cuore mio<br>Dammi fede retta, speranza certa<br>Carità perfetta<br>Dammi umiltà profonda<br>Dammi senno e cognoscimento<br>Che io possa servire (che io possa sempre servire)<br>Con gioia i tuoi comandamenti.",
             "matrimonio": true
         },
         {
@@ -241,7 +241,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=EWoNIf476Qc",
             "download_link": "../../db/canti/lodi_all_altissimo.pdf",
-            "testo": "",
+            "testo": "Tu sei Santo Signore Dio,<br>Tu sei forte, Tu sei grande,<br>Tu sei l'Altissimo l'Onnipotente,<br>Tu Padre Santo, Re del cielo.<br><br>Tu sei trino, uno Signore,<br>Tu sei il bene, tutto il bene,<br>Tu sei l'Amore, Tu sei il vero,<br>Tu sei umiltà, Tu sei sapienza.<br><br>Tu sei bellezza, Tu sei la pace,<br>la sicurezza il gaudio la letizia,<br>Tu sei speranza, Tu sei giustizia,<br>Tu temperanza e ogni ricchezza.<br><br>Tu sei il Custode, Tu sei mitezza,<br>Tu sei rifugio, Tu sei fortezza,<br>Tu carità, fede e speranza,<br>Tu sei tutta la nostra dolcezza.<br><br>Tu sei la Vita eterno gaudio<br>Signore grande Dio ammirabile,<br>Onnipotente o Creatore<br>o Salvatore di misericordia.",
             "matrimonio": true
         },
         {
@@ -274,7 +274,7 @@
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=aC4c4ENu8lg",
             "download_link": "../../db/canti/cantate_al_signore.pdf",
-            "testo": "",
+            "testo": "<b>RIT. CANTATE AL SIGNORE, ALLELUIA,<br>BENEDITE IL SUO NOME, ALLELUIA.<br>CANTATE AL SIGNORE, ALLELUIA,<br>CON INNI DI LODE, ALLELUIA.</b><br><br>Cantate al Signore un canto nuovo,<br>da tutta la terra cantate a lui,<br>benedite per sempre il suo nome, <br>narrate alle genti la sua gloria. RIT.<br><br>Dio regna glorioso sulla terra,<br>terribile e degno di ogni lode,<br>date a lui la gloria del suo nome,<br>prostratevi alla sua maestà. RIT.<br><br>Gioiscano i cieli e la terra<br>davanti al Signore che viene,<br>egli giudica il mondo con giustizia<br>e con verità tutte le genti. RIT.",
             "matrimonio": true
         },
         {
