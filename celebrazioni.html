@@ -33,15 +33,10 @@
         function estraiDatiDaUrl() {
             let url = window.location.href;
             if (url.includes("ceneri")) {
-                const regex = /celebrazione\/([\wÀ-ÿ\s'-]+)-anno-([\w]+)/;
-                const match = url.match(regex);
-
-                if (match) {
-                    console.log("Celebrazione:", match[1]);
-                    console.log("Anno:", match[2]);
-                } else {
-                    console.log("Nessuna corrispondenza trovata.");
-                }
+                const numero = "Mercoledì delle ceneri";
+                const tempo = "quaresima"
+                const anno = "NA"
+                return { numero, tempo, anno }
             }
             // Sostituisci %20 con spazi, se necessario
             if (url.includes("%20")) {
