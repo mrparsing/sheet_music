@@ -33,6 +33,7 @@
         function estraiDatiDaUrl() {
             let url = window.location.href;
             if (url.includes("ceneri")) {
+                const regex = /celebrazione\/([\wÀ-ÿ\s'-]+)-anno-([\w]+)/;
                 const match = url.match(regex);
 
                 if (match) {
