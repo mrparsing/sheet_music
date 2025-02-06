@@ -32,6 +32,16 @@
     <script>
         function estraiDatiDaUrl() {
             let url = window.location.href;
+            if (url.includes("ceneri")) {
+                const match = url.match(regex);
+
+                if (match) {
+                    console.log("Celebrazione:", match[1]);
+                    console.log("Anno:", match[2]);
+                } else {
+                    console.log("Nessuna corrispondenza trovata.");
+                }
+            }
             // Sostituisci %20 con spazi, se necessario
             if (url.includes("%20")) {
                 url = url.replace(/%20/g, " ");
