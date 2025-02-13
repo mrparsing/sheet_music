@@ -23,7 +23,7 @@ async function searchCanti(event, page) {
                 linkRisultati = "../../../nav-bar/risultati.html";
             } else {
                 jsonFile = "../db/salmi/elenco_salmi.json";
-                linkRisultati = "risultati.html";
+                linkRisultati = "nav-bar/risultati.html";
             }
 
             try {
@@ -154,7 +154,7 @@ async function searchCanti(event, page) {
                 linkRisultati = "../../../nav-bar/risultati.html";
             } else {
                 jsonFile = "../db/tempi_liturgici/celebrazioni_fisse/celebrazioni_fisse.json";
-                linkRisultati = "risultati.html";
+                linkRisultati = "nav-bar/risultati.html";
             }
 
             let arabicNumbers = input.match(/\b(\d+)\b/g); // Trova i numeri arabi nell'input
