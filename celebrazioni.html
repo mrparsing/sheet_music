@@ -33,9 +33,9 @@
         function estraiDatiDaUrl() {
             let url = window.location.href;
             if (url.includes("ceneri")) {
-                const regex = /-anno-([\w]+)/;       
+                const regex = /-anno-([\w]+)/;
                 const match = url.match(regex);
-         
+
                 const numero = "Mercoledì delle ceneri";
                 const tempo = "quaresima"
                 const anno = match[1];
@@ -290,7 +290,12 @@
                     celebrationTitle = isNumber
                         ? `${convertiInRomano(numero)} Domenica d'Avvento - Anno ${anno}`
                         : `${numero} - Anno ${anno}`;
-                } else {
+                } else if (festivita === "quaresima") {
+                    celebrationTitle = isNumber
+                        ? `${convertiInRomano(numero)} Domenica di Quaresima - Anno ${anno}`
+                        : `${numero} - Anno ${anno}`;
+                }
+                else {
                     isNumber = !isNaN(Number(numero));
                     celebrationTitle = isNumber
                         ? `${convertiInRomano(numero)} Domenica del tempo ordinario - Anno ${anno}`
