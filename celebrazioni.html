@@ -285,6 +285,7 @@
                 // SI DEVONO AGGIUNGERE ANCHE I CASI DEGLI ALTRI TEMPI
                 let isNumber;
                 let celebrationTitle;
+                console.log("ciao", festivita);
                 if (festivita === "avvento") {
                     isNumber = !isNaN(Number(numero));
                     celebrationTitle = isNumber
@@ -325,6 +326,15 @@
                     document.head.appendChild(metaDescription);
 
                     document.getElementById('title').innerHTML = `${convertiInRomano(numero)} DOMENICA D'AVVENTO - ANNO ${anno}`;
+                } else if (typeof Number(numero) === 'number' && !isNaN(Number(numero)) && festivita === "quaresima") {
+                    document.title = `Proposta Canti - ${convertiInRomano(numero)} DOMENICA DI QUARESIMA - ANNO ${anno}`;
+                    const metaDescription = document.createElement('meta');
+                    metaDescription.name = "description";
+                    metaDescription.content = `Scopri la proposta canti per la ${convertiInRomano(numero)} domenica d'avvento - ${anno}. Suggerimenti per Ingresso, Offertorio, Comunione e canto finale.`;
+                    document.head.appendChild(metaDescription);
+
+                    document.getElementById('title').innerHTML = `${convertiInRomano(numero)} DOMENICA DI QUARESIMA - ANNO ${anno}`;
+
                 }
                 else {
                     let metaDescription;
