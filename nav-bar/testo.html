@@ -17,7 +17,7 @@
             return { titolo, festivita };
         }
 
-        function estraiTitolo() {
+        /*function estraiTitolo() {
             const url = window.location.href;
 
             // Estrai la parte finale dell'URL (dopo l'ultimo '/')
@@ -31,10 +31,14 @@
                 .join(' '); // Riassembla le parole in una stringa
 
             return titoloFormattato;
+        }*/
+
+        function estraiParteDopoTesto() {
+            const url = window.location.href;
+            const match = url.match(/testo\/(.+)/);
+            return match ? match[1] : null;
         }
 
-        // Esempio di utilizzo:
-        console.log(estraiTitolo()); // "Acclamate Al Signore"
 
         document.addEventListener('DOMContentLoaded', function () {
             const { titolo, festivita } = getQueryParams()
@@ -56,8 +60,8 @@
                 .then(data => {
                     if (Array.isArray(data.canti)) {
                         data.canti.forEach(canto => {
-                            const titolo = estraiTitolo();
-                            if (canto.titolo.toLowerCase() === titolo.toLowerCase()) {
+                            const titolo = estraiParteDopoTesto();
+                            if (canto.url_titolo.toLowerCase() === titolo.toLowerCase()) {
                                 document.getElementById('titolo').innerText = canto.titolo;
                                 document.title = canto.titolo;
 
