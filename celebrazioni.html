@@ -519,7 +519,10 @@
                 jsonFile = `../../db/tempi_liturgici/avvento/celebrazioni_anno_${anno.toLowerCase()}.json`;
             } else if (festivita === "quaresima") {
                 jsonFile = `../../db/tempi_liturgici/quaresima/celebrazioni_anno_${anno.toLowerCase()}.json`;
-            } else {
+            } else if (festivita === "pasqua") {
+                // ...
+            }
+             else {
                 jsonFile = `../../db/tempi_liturgici/celebrazioni_fisse/celebrazioni_fisse.json`;
             }
             console.log(jsonFile);
