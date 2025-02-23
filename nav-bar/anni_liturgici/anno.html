@@ -101,6 +101,8 @@
                     link.href = `../../proposta-canti/celebrazione/${celebrazione.numero}-domenica-tempo-ordinario-anno-${celebrazione.anno}`;
                 } else if (type === "avvento") {
                     link.href = `../../proposta-canti/celebrazione/${celebrazione.numero}-domenica-tempo-avvento-anno-${celebrazione.anno}`;
+                } else if (type === "quaresima") {
+                    link.href = `../../proposta-canti/celebrazione/${celebrazione.numero}-domenica-tempo-quaresima-anno-${celebrazione.anno}`;
                 }
                 link.className = 'celebrazione-link'; // Aggiungi una classe per styling, se necessario
 
@@ -118,6 +120,7 @@
             const anno = getQueryParams();
             const jsonFile_ordinario = `../../db/tempi_liturgici/tempo_ordinario/celebrazioni_anno_${anno.toLowerCase()}.json`;
             const jsonFile_avvento = `../../db/tempi_liturgici/avvento/celebrazioni_anno_${anno.toLowerCase()}.json`;
+            const jsonFile_quaresima = `../../db/tempi_liturgici/quaresima/celebrazioni_anno_${anno.toLowerCase()}.json`;
 
 
             fetch(jsonFile_avvento)
