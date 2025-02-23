@@ -43,7 +43,8 @@
         </div>
 
         <div class="main-content" id="main-content">
-            <input type="text" id="searchInput" placeholder="Cerca celebrazioni..." onkeyup="filter_search_bar()" style="margin-top: 100px;">
+            <input type="text" id="searchInput" placeholder="Cerca celebrazioni..." onkeyup="filter_search_bar()"
+                style="margin-top: 120px;">
 
             <ul id="list">
                 <!-- Gli elementi verranno generati dinamicamente qui -->
@@ -103,6 +104,7 @@
                     link.href = `../../proposta-canti/celebrazione/${celebrazione.numero}-domenica-tempo-avvento-anno-${celebrazione.anno}`;
                 } else if (type === "quaresima") {
                     link.href = `../../proposta-canti/celebrazione/${celebrazione.numero}-domenica-tempo-quaresima-anno-${celebrazione.anno}`;
+                    console.log("QUARESIMA");
                 }
                 link.className = 'celebrazione-link'; // Aggiungi una classe per styling, se necessario
 
@@ -135,8 +137,16 @@
             fetch(jsonFile_ordinario)
                 .then(response => response.json()) // Converte la risposta in JSON
                 .then(data => {
-                    console.log(data);
                     generaListaCelebrazioni(data.celebrazioni, "ordinario"); // Passa i dati alla funzione che genera la lista
+                })
+                .catch(error => {
+                    console.error('Errore durante il caricamento dei dati:', error);
+                });
+
+            fetch(jsonFile_quaresima)
+                .then(response => response.json()) // Converte la risposta in JSON
+                .then(data => {
+                    generaListaCelebrazioni(data.celebrazioni, "quaresima"); // Passa i dati alla funzione che genera la lista
                 })
                 .catch(error => {
                     console.error('Errore durante il caricamento dei dati:', error);
