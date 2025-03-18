@@ -388,7 +388,13 @@ function inserisci_elemento_lista(numero, anno, tipologia) {
             li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-domenica-tempo-quaresima-anno-${anno}">${convertiInRomano(numero)} domenica tempo di quaresima - anno: ${anno}</a>`;
         }
     } else if (tipologia === "pasqua") {
-        li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=pasqua">${numero}</a>`;
+        if (numero === "Giovedì Santo") {
+            li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-tempo-pasqua-anno-${anno}">${numero}</a>`;
+        } else if (numero === "Venerdì Santo") {
+            li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-tempo-pasqua-anno-${anno}">${numero}</a>`;
+        } else if (numero === "Sabato Santo") {
+            li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-tempo-pasqua-anno-${anno}">${numero}</a>`;
+        }
     } else if (tipologia === "immacolata") {
         li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&festivita=immacolata">${numero}</a>`;
     }
