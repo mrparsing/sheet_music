@@ -382,9 +382,10 @@ function inserisci_elemento_lista(numero, anno, tipologia) {
     } else if (numero === "Mercoledì delle Ceneri") {
         li.innerHTML = `<a href="proposta-canti/celebrazione/mercoledì-delle-ceneri-anno-${anno}">Mercoledì delle ceneri</a>`;
     } else if (tipologia === "quaresima") {
-        li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-domenica-tempo-quaresima-anno-${anno}">${convertiInRomano(numero)} domenica tempo di quaresima - anno: ${anno}</a>`;
-        if (numero === "Domenica delle palme") {
+        if (numero === "Domenica delle Palme") {
             li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-anno-${anno}">${convertiInRomano(numero)} - anno: ${anno}</a>`;
+        } else {
+            li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-domenica-tempo-quaresima-anno-${anno}">${convertiInRomano(numero)} domenica tempo di quaresima - anno: ${anno}</a>`;
         }
     } else if (tipologia === "pasqua") {
         li.innerHTML = `<a href="celebrazioni.html?numero=${numero}&anno=${anno}&festivita=pasqua">${numero}</a>`;
