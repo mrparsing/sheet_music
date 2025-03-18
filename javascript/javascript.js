@@ -383,7 +383,7 @@ function inserisci_elemento_lista(numero, anno, tipologia) {
         li.innerHTML = `<a href="proposta-canti/celebrazione/mercoledì-delle-ceneri-anno-${anno}">Mercoledì delle ceneri</a>`;
     } else if (tipologia === "quaresima") {
         if (numero === "Domenica delle Palme") {
-            li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-anno-${anno}">${numero} - anno: ${anno}</a>`;
+            li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-domenica-tempo-quaresima-anno-${anno}">${numero} - anno: ${anno}</a>`;
         } else {
             li.innerHTML = `<a href="proposta-canti/celebrazione/${numero}-domenica-tempo-quaresima-anno-${anno}">${convertiInRomano(numero)} domenica tempo di quaresima - anno: ${anno}</a>`;
         }
