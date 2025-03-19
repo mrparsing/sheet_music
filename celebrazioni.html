@@ -42,20 +42,14 @@
                 const anno = match[1];
                 return { numero, tempo, anno }
             } else if (url.includes("Gioved")) {
-                const regex = /-anno-([\w]+)/;
-                const match = url.match(regex);
-
                 const numero = "Giovedì Santo"
                 const tempo = "pasqua"
-                const anno = match[1];
+                const anno = "-"
                 return { numero, tempo, anno }
             } else if (url.includes("Venerd")) {
-                const regex = /-anno-([\w]+)/;
-                const match = url.match(regex);
-
                 const numero = "Venerdì Santo"
                 const tempo = "pasqua"
-                const anno = match[1];
+                const anno = "-"
                 return { numero, tempo, anno }
             }
             // Sostituisci %20 con spazi, se necessario
@@ -303,7 +297,6 @@
                 // SI DEVONO AGGIUNGERE ANCHE I CASI DEGLI ALTRI TEMPI
                 let isNumber;
                 let celebrationTitle;
-                console.log("ciao", festivita);
                 if (festivita === "avvento") {
                     isNumber = !isNaN(Number(numero));
                     celebrationTitle = isNumber
