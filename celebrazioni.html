@@ -32,6 +32,7 @@
     <script>
         function estraiDatiDaUrl() {
             let url = window.location.href;
+            console.log(url);
             if (url.includes("ceneri")) {
                 const regex = /-anno-([\w]+)/;
                 const match = url.match(regex);
