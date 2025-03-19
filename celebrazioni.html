@@ -41,6 +41,7 @@
                 const anno = match[1];
                 return { numero, tempo, anno }
             } else if (url.includes("Giovedì")) {
+                console.log("CIAOO");
                 const regex = /-anno-([\w]+)/;
                 const match = url.match(regex);
 
@@ -53,6 +54,7 @@
             if (url.includes("%20")) {
                 url = url.replace(/%20/g, " ");
             }
+            console.log("SJSD");
 
             // Regex aggiornata per gestire anche l'apostrofo e altri caratteri speciali
             const regex = /celebrazione\/([\w\s'À-ÿ]+)-[\w\s'-]*tempo-([\w]+)-anno-([\w]+)/;
