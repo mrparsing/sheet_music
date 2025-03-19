@@ -56,7 +56,6 @@
             if (url.includes("%20")) {
                 url = url.replace(/%20/g, " ");
             }
-            console.log("SJSD");
 
             // Regex aggiornata per gestire anche l'apostrofo e altri caratteri speciali
             const regex = /celebrazione\/([\w\s'À-ÿ]+)-[\w\s'-]*tempo-([\w]+)-anno-([\w]+)/;
@@ -387,8 +386,11 @@
                 }
 
                 // ANTIFONA D'INGRESSO
-
                 document.querySelector('#antifona-ingresso').innerHTML = celebrazione.antifona_ingresso;
+
+                if (numero === "Venerdì Santo") {
+                    document.querySelector('#title-antifona-ingresso').style.display = 'none';
+                }
 
                 // CANTO D'INGRESSO
 
@@ -575,7 +577,7 @@
         <h2><button id="toggleButton1">> Novena del mattino (clicca per mostrare)</button></h2>
         <p id="novena_mattino" class="hidden"></p>
 
-        <h2>Antifona d'ingresso</h2>
+        <h2 id="title-antifona-ingresso">Antifona d'ingresso</h2>
         <p id="antifona-ingresso"></p>
 
         <h3 id="canto-ingresso">Canto d'ingresso</h3>
