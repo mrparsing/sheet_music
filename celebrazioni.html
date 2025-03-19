@@ -40,6 +40,14 @@
                 const tempo = "quaresima"
                 const anno = match[1];
                 return { numero, tempo, anno }
+            } else if (url.includes("Giovedì")) {
+                const regex = /-anno-([\w]+)/;
+                const match = url.match(regex);
+
+                const numero = "Giovedì Santo"
+                const tempo = "pasqua"
+                const anno = match[1];
+                return { numero, tempo, anno }
             }
             // Sostituisci %20 con spazi, se necessario
             if (url.includes("%20")) {
