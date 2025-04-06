@@ -27,4 +27,4 @@ jobs:
        - name: Deploy to Firebase Hosting
          env:
            FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-         run: firebase deploy --only hosting
+         run: NODE_OPTIONS="--max_old_space_size=4096" firebase deploy --only hosting
