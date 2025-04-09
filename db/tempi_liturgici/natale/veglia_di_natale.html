@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../styles/style_index.css">
+
+    <script src="../../../javascript/js_global_search.js"></script>
+    <script src="../../../javascript/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="canonical" href="${window.location.href}">
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #toggleButton1,
+        #toggleButton2 {
+            background-color: transparent;
+            border: transparent;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2196F3;
+        }
+    </style>
+    <script>
+        function updateMetaTags(celebrationTitle, description, url, imageUrl) {
+            // Aggiorna il titolo della pagina
+            document.title = "Proposta canti " + celebrationTitle;
+            // Aggiorna i meta tag esistenti
+
+            const metaTags = {
+                "description": description,
+                "og:title": "Proposta canti " + celebrationTitle,
+                "og:description": description,
+                "og:url": url,
+                "og:image": imageUrl
+            };
+
+            for (const [name, content] of Object.entries(metaTags)) {
+                let metaTag = document.querySelector(`meta[name="${name}"]`) || document.querySelector(`meta[property="${name}"]`);
+                if (!metaTag) {
+                    metaTag = document.createElement('meta');
+                    if (name.startsWith("og:")) {
+                        metaTag.setAttribute("property", name);
+                    } else {
+                        metaTag.setAttribute("name", name);
+                    }
+                    document.head.appendChild(metaTag);
+                }
+                metaTag.setAttribute("content", content);
+            }
+        }
+
+        function updateStructuredData(celebrationTitle, description, url) {
+            // Rimuove dati strutturati esistenti
+            const existingScript = document.querySelector('script[type="application/ld+json"]');
+            if (existingScript) {
+                existingScript.remove();
+            }
+
+            // Aggiunge nuovi dati strutturati
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            const structuredData = {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": celebrationTitle,
+                "description": description,
+                "url": url
+            };
+            script.textContent = JSON.stringify(structuredData);
+            document.head.appendChild(script);
+        }
+
+        function download(data, numero, link_foglietto_messa) {
+            if (link_foglietto_messa) {
+                window.location.href = link_foglietto_messa;
+            }
+        }
+
+        function populatePage(data, numero, anno, festivita) {
+            const celebrazione = data.celebrazioni.find(celebra => celebra.numero == "Veglia di Natale");
+            document.getElementById('download').addEventListener('click', () => download(data, "Veglia di Natale", celebrazione.link_foglietto_messa));
+
+            let number_cast = Number(numero)
+
+            if (celebrazione) {
+                const description = `Proposta di canti per la Veglia di Natale. Scopri testi e canti per la celebrazione.`;
+                const url = window.location.href;
+                const imageUrl = '../../../styles/img/sfondo.png';
+
+                // Aggiorna i meta tag e i dati strutturati
+                updateMetaTags("Veglia di Natale", description, url, imageUrl);
+                updateStructuredData("Veglia di Natale", description, url);
+
+                document.title = `Proposta Canti - ${numero}`;
+                metaDescription = document.createElement('meta');
+                metaDescription.name = "description";
+                metaDescription.content = `Scopri la proposta canti per ${numero}. Suggerimenti per Ingresso, Offertorio, Comunione e canto finale.`;
+                document.getElementById('title').innerHTML = `${numero}`;
+
+                document.head.appendChild(metaDescription);
+
+                document.querySelector("#myNavbar").setAttribute("style", `background-color: ${celebrazione.colore};`);
+
+                // ANTIFONA D'INGRESSO
+
+                document.querySelector('#antifona-ingresso').innerHTML = celebrazione.antifona_ingresso;
+
+                // SALMO INVITATORIO
+
+                document.querySelector('#salmo-invitatorio').innerHTML = celebrazione.salmo_invitatorio;
+
+                // INNO
+
+                document.querySelector('#inno').innerHTML = celebrazione.inno;
+
+                // SALMO 2
+
+                document.querySelector('#salmo-2').innerHTML = celebrazione.salmo_2;
+
+                // SALMO 18
+
+                document.querySelector('#salmo-18').innerHTML = celebrazione.salmo_18;
+
+                // SALMO 95
+
+                document.querySelector('#salmo-95').innerHTML = celebrazione.salmo_95;
+
+                // PRIMA LETTURA
+
+                document.querySelector('#prima-lettura').innerHTML = celebrazione.prima_lettura_testo;
+
+                // SECONDA LETTURA
+
+                document.querySelector('#seconda-lettura').innerHTML = celebrazione.seconda_lettura_testo;
+
+                // TERZA LETTURA
+
+                document.querySelector('#terza-lettura').innerHTML = celebrazione.terza_lettura_testo;
+
+                // Martirologio di Natale
+
+                document.querySelector('#martirologio-di-natale').innerHTML = celebrazione.martirologio_di_natale;
+
+                // GLORIA
+
+                document.querySelector('#gloria').innerHTML = celebrazione.gloria;
+
+                // COLLETTA
+
+                document.querySelector('#colletta').innerHTML = celebrazione.colletta;
+
+                // ACCLAMAZIONE AL VANGELO
+
+                document.querySelector('#acclamazione-al-vangelo').innerHTML = celebrazione.acclamazione_al_vangelo;
+
+                // VANGELO
+
+                document.querySelector('#vangelo').innerHTML = celebrazione.vangelo;
+
+                // PREGHIERA SULLE OFFERTE
+
+                document.querySelector('#preghiera-sulle-offerte').innerHTML = celebrazione.preghiera_sulle_offerte;
+
+                // ANTIFONA ALLA COMUNIONE
+
+                document.querySelector('#antifona-alla-comunione').innerHTML = celebrazione.antifona_alla_comunione;
+                
+            } else {
+                document.body.innerHTML = `<p class="error">Errore: Celebrazione non trovata per numero ${numero} e anno ${anno}.</p>`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch("veglia_natale.json")
+                .then(response => response.json())
+                .then(data => {
+                    populatePage(data, "Veglia di Natale");
+                })
+                .catch(error => {
+                    console.error('Errore nel caricamento del JSON:', error);
+                    //window.location.href = "404.html"
+                });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="navbar" id="myNavbar">
+        <h1>Liturgia</h1>
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <div class="navbar-buttons">
+            <button onclick="location.href='../../../index.html'">Home</button>
+            <button onclick="location.href='../../../nav-bar/elenco_canti.html'">Elenco canti</button>
+            <button onclick="location.href='../../../nav-bar/spartiti_salmi.html'">Spartiti salmi</button>
+            <button onclick="location.href='../../../nav-bar/anno_liturgico.html'">Anni liturgici</button>
+            <button onclick="location.href='../../../nav-bar/salmi_eventi_speciali.html'">Eventi speciali</button>
+            <button onclick="location.href='../../../nav-bar/imp_supporto.html'">Impostazioni/Supporto</button>
+        </div>
+        <div class="inputs">
+            <input type="text" id="global_search" onkeyup="searchCanti(event, 'natale')"
+                oninput="suggestions(event, 'natale')" placeholder="Cerca..." autocomplete="off">
+            <div id="suggestions" class="suggestions-container"></div>
+        </div>
+    </div>
+        <button id="download">Scarica in pdf</button>
+
+    <div class="responsive-container">
+        <h1 id="title"></h1>
+
+        <p id="antifona-ingresso"></p>
+
+        <h3>Salmo invitatorio</h3>
+        <p id="salmo-invitatorio"></p>
+
+        <h3>Inno</h3>
+        <p id="inno"></p>
+
+        <h3>Salmo 2</h3>
+        <p id="salmo-2"></p>
+
+        <h3>Salmo 18</h3>
+        <p id="salmo-18"></p>
+
+        <h3>Salmo 95</h3>
+        <p id="salmo-95"></p>
+
+        <h3>Prima lettura</h3>
+        <p id="prima-lettura"></p>
+
+        <h3>Seconda lettura</h3>
+        <p id="seconda-lettura"></p>
+
+        <h3>Terza lettura</h3>
+        <p id="terza-lettura"></p>
+
+        <h3>Martirologio di Natale</h3>
+        <p id="martirologio-di-natale"></p>
+
+        <h3>Gloria</h3>
+        <p id="gloria"></p>
+
+        <h3>Colletta</h3>
+        <p id="colletta"></p>
+
+        <h3>Canto al Vangelo</h3>
+        <p id="acclamazione-al-vangelo"></p>
+
+        <h3>Vangelo</h3>
+        <p id="vangelo"></p>
+
+        <h3>Preghiera sulle offerte</h3>
+        <p id="preghiera-sulle-offerte"></p>
+
+        <h3>Antifona alla comunione</h3>
+        <p id="antifona-alla-comunione"></p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('myNavbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
