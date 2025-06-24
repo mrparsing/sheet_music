@@ -27,170 +27,645 @@
     <meta property="og:type" content="website">
 
     <meta name="google-site-verification" content="F-tZrF53BS0YnRte71tcyRU3MdrqNGQIyUUFKWfzRHg" />
-    <script src="javascript/javascript.js"></script>
-    <script src="javascript/js_global_search.js"></script>
-    <link rel="stylesheet" href="styles/style_index.css">
-    <link rel="manifest" href="manifest.json">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2J3NXSXK3Y"></script>
 
-    <script>
-        const currentVersion = '1.0.1';
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            avvia_index();
+        :root {
+            --primary-bg: #fafafa;
+            --secondary-bg: #ffffff;
+            --accent-color: #007aff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --border-color: #d2d2d7;
+            --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.12);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
 
-            const savedVersion = localStorage.getItem('appVersion');
-            if (savedVersion !== currentVersion) {
-                showUpdateBanner(); // Mostra il banner solo se la versione è cambiata
-                localStorage.setItem('appVersion', currentVersion);
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 0 40px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .navbar h1 {
+            font-size: 28px;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .navbar-buttons {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .navbar-buttons button {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .navbar-buttons button:hover {
+            background: rgba(0, 122, 255, 0.1);
+            color: var(--accent-color);
+            transform: translateY(-1px);
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        #global_search {
+            background: rgba(142, 142, 147, 0.12);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 20px 12px 45px;
+            font-size: 16px;
+            width: 300px;
+            transition: all 0.3s ease;
+            color: var(--text-primary);
+        }
+
+        #global_search:focus {
+            outline: none;
+            background: var(--secondary-bg);
+            box-shadow: 0 0 0 2px var(--accent-color);
+            width: 350px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 18px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 120px 40px 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .content-section {
+            background: var(--secondary-bg);
+            border-radius: 24px;
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .content-section:hover {
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-4px);
+        }
+
+        .content-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .content-section p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .content-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-text {
+            color: var(--text-primary);
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent-color), #5856d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Celebrations Section */
+        .celebrations-section {
+            background: var(--secondary-bg);
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+        }
+
+        .celebrations-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        #celebrazioneList {
+            list-style: none;
+            display: grid;
+            gap: 20px;
+        }
+
+        .celebration-item {
+            background: rgba(0, 122, 255, 0.05);
+            border-left: 4px solid var(--accent-color);
+            padding: 24px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .celebration-item:hover {
+            background: rgba(0, 122, 255, 0.1);
+            transform: translateX(8px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .celebration-date {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .celebration-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .celebration-description {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 80px;
+        }
+
+        .feature-card {
+            background: var(--secondary-bg);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 24px;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 20px;
+                height: 70px;
             }
 
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.addEventListener('message', function (event) {
-                    if (event.data.type === 'UPDATE_AVAILABLE') {
-                        showUpdateBanner(); // Mostra il banner quando un aggiornamento è disponibile
-                    }
-                });
+            .navbar h1 {
+                font-size: 24px;
             }
-        });
 
-        function showUpdateBanner() {
-            const updateBanner = document.getElementById('updateBanner');
-            if (updateBanner) {
-                updateBanner.classList.add('show'); // Aggiungi la classe per l'animazione
-                document.getElementById('closeBanner').onclick = function () {
-                    updateBanner.classList.remove('show'); // Rimuovi la classe per chiudere l'alert
-                };
+            .navbar-buttons {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            #global_search {
+                width: 200px;
+            }
+
+            #global_search:focus {
+                width: 220px;
+            }
+
+            .hero {
+                margin-top: 70px;
+                padding: 80px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero .subtitle {
+                font-size: 20px;
+            }
+
+            .main-content {
+                padding: 60px 20px;
+            }
+
+            .content-section {
+                padding: 40px 30px;
+                border-radius: 20px;
+            }
+
+            .content-section h2 {
+                font-size: 28px;
+            }
+
+            .celebrations-section {
+                padding: 40px 30px;
+            }
+
+            .celebrations-section h2 {
+                font-size: 28px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-top: 60px;
+            }
+
+            .feature-card {
+                padding: 30px 20px;
             }
         }
 
-        // Registrazione del Service Worker
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('sw.js').then(function (registration) {
-                    console.log('ServiceWorker registrato con successo:', registration);
-
-                    registration.onupdatefound = function () {
-                        const newWorker = registration.installing;
-                        newWorker.onstatechange = function () {
-                            if (newWorker.state === 'installed') {
-                                if (navigator.serviceWorker.controller) {
-                                    newWorker.postMessage({ type: 'UPDATE_AVAILABLE' });
-                                }
-                            }
-                        };
-                    };
-
-                    // Controlla aggiornamenti ogni 10 secondi
-                    setInterval(() => {
-                        registration.update().then(() => {
-                            if (registration.waiting) {
-                                registration.waiting.postMessage({ type: 'UPDATE_AVAILABLE' });
-                            }
-                        });
-                    }, 10000);
-                }).catch(function (error) {
-                    console.error('Registrazione del ServiceWorker fallita:', error);
-                });
-            });
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        // Inizializzazione di Google Analytics
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-2J3NXSXK3Y');
-    </script>
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Loading Animation */
+        .loading {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="main-container">
+    <nav class="navbar" id="myNavbar">
+        <h1>Canti e Liturgia</h1>
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <div class="navbar-buttons">
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='elenco-canti'">Elenco canti</button>
+            <button onclick="location.href='spartiti-salmi'">Spartiti salmi</button>
+            <button onclick="location.href='anno-liturgico'">Anno liturgico</button>
+            <button onclick="location.href='brani-eventi-speciali'">Eventi speciali</button>
+            <button onclick="location.href='imp-supporto'">Impostazioni/Supporto</button>
+        </div>
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="global_search" placeholder="Cerca canti, salmi, celebrazioni..." autocomplete="off">
+            <div id="suggestions" class="suggestions-container"></div>
+        </div>
+    </nav>
 
-        <div class="navbar" id="myNavbar">
-            <h1>Canti e Liturgia</h1>
-            <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-            <div class="navbar-buttons">
-                <button onclick="location.href='index.html'">Home</button>
-                <button onclick="location.href='elenco-canti'">Elenco canti</button>
-                <button onclick="location.href='spartiti-salmi'">Spartiti salmi</button>
-                <button onclick="location.href='anno-liturgico'">Anno liturgico</button>
-                <button onclick="location.href='brani-eventi-speciali'">Eventi speciali</button>
-                <button onclick="location.href='imp-supporto'">Impostazioni/Supporto</button>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Proposta Canti Liturgici</h1>
+            <p class="subtitle">La guida definitiva per scegliere i canti liturgici ideali per ogni celebrazione dell'anno.</p>
+            <a href="#main-content" class="cta-button">
+                <span>Scopri di più</span>
+                <span>↓</span>
+            </a>
+        </div>
+    </section>
+
+    <main class="main-content" id="main-content">
+        <section class="content-section loading">
+            <h2>La tua guida musicale liturgica</h2>
+            <p>
+                Proposta canti liturgici per ogni domenica dell'anno. Questa proposta di canti vuole essere una
+                traccia offerta a tutti gli animatori liturgico-musicali per la scelta delle parti canore per 
+                l'<span class="highlight-text">Ingresso</span>, l'<span class="highlight-text">Offertorio</span>, 
+                la <span class="highlight-text">Comunione</span> e il <span class="highlight-text">Congedo</span>, 
+                in modo che siano pertinenti ai testi proposti dal Messale e alla Parola di Dio proclamata.
+            </p>
+            <p>
+                Il sito fornisce suggerimenti sui canti da proporre per le varie domeniche e festività dell'anno
+                liturgico, rispettando le stagioni liturgiche come l'<span class="highlight-text">Avvento</span>, 
+                il <span class="highlight-text">Natale</span>, la <span class="highlight-text">Quaresima</span> 
+                e il <span class="highlight-text">Tempo Ordinario</span>. Grazie a questo strumento, sarà possibile 
+                pianificare con maggiore facilità i canti più appropriati per la celebrazione eucaristica.
+            </p>
+            <p>
+                Inoltre, sul sito è possibile trovare un <span class="highlight-text">elenco dettagliato dei canti</span> 
+                suggeriti, <span class="highlight-text">spartiti per i salmi responsoriali</span> e materiale per
+                <span class="highlight-text">eventi liturgici speciali</span>. Questo servizio è utile sia per i 
+                musicisti che per i responsabili della liturgia, fornendo una guida rapida e facile da utilizzare 
+                per preparare le celebrazioni in modo adeguato e spiritualmente coinvolgente.
+            </p>
+        </section>
+
+        <section class="celebrations-section loading">
+            <h2>Prossime Celebrazioni</h2>
+            <ul id="celebrazioneList">
+                <!-- Le celebrazioni verranno aggiunte qui -->
+            </ul>
+        </section>
+
+        <div class="features-grid">
+            <div class="feature-card loading">
+                <div class="feature-icon">📚</div>
+                <h3>Elenco Completo</h3>
+                <p>Accedi a un database completo di canti liturgici organizzati per tempo liturgico e occasione.</p>
             </div>
-            <div class="inputs">
-                <input type="text" id="global_search" onkeyup="searchCanti(event, 'index')"
-                    oninput="suggestions(event, 'index')" placeholder="Cerca..." autocomplete="off">
-                <div id="suggestions" class="suggestions-container"></div>
+            <div class="feature-card loading">
+                <div class="feature-icon">🎼</div>
+                <h3>Spartiti Disponibili</h3>
+                <p>Scarica spartiti per salmi responsoriali e canti, pronti per cori e musicisti.</p>
+            </div>
+            <div class="feature-card loading">
+                <div class="feature-icon">📅</div>
+                <h3>Calendario Liturgico</h3>
+                <p>Segui il calendario liturgico con suggerimenti personalizzati per ogni celebrazione.</p>
             </div>
         </div>
-        <div class="header">
-            <div class="header-content">
-                <h1>Proposta Canti Liturgici</h1>
-                <p class="subtitle">Guida per scegliere i canti liturgici ideali per ogni celebrazione.</p>
-            </div>
-        </div>
+    </main>
 
-        <div class="main-content" id="main-content">
-            <div class="slogan-div">
-                <p>Proposta canti liturgici per ogni domenica dell'anno. Questa proposta di canti vuole essere una
-                    traccia offerta a tutti gli
-                    animatori liturgico-musicali per la scelta delle parti canore per l’Ingresso, l’Offertorio, la
-                    Comunione e il
-                    Congedo, in modo che siano pertinenti ai testi proposti dal Messale e alla Parola di Dio proclamata.
-                </p>
-                <p>Il sito fornisce suggerimenti sui canti da proporre per le varie domeniche e festività dell’anno
-                    liturgico, rispettando le stagioni liturgiche come l’<b>Avvento</b>, il <b>Natale</b>, la
-                    <b>Quaresima</b> e il <b>Tempo Ordinario</b>. Grazie a questo strumento, sarà possibile pianificare
-                    con maggiore facilità i canti più appropriati per la celebrazione eucaristica, tenendo conto delle
-                    letture del giorno, dei temi liturgici e della tradizione musicale religiosa.
-                </p>
+    <script>
+        // Smooth scrolling for CTA button
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#main-content').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
 
-                <p>Inoltre, sul sito è possibile trovare un <b>elenco dettagliato dei canti</b> suggeriti,
-                    <b>spartiti per i salmi responsoriali</b> e materiale per
-                    <b>eventi liturgici speciali</b>. Questo servizio è utile sia per i musicisti che per i
-                    responsabili della liturgia, fornendo una guida rapida
-                    e facile da utilizzare per preparare le celebrazioni in modo adeguato e spiritualmente
-                    coinvolgente.
-                </p>
+        // Loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const loadingElements = document.querySelectorAll('.loading');
+                loadingElements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('loaded');
+                        el.classList.remove('loading');
+                    }, index * 200);
+                });
+            }, 300);
 
+            // Mock data for celebrations
+            const celebrations = [
+                {
+                    date: "Domenica 30 Giugno",
+                    title: "XIII Domenica del Tempo Ordinario",
+                    description: "Canti suggeriti per la liturgia domenicale"
+                },
+                {
+                    date: "Domenica 7 Luglio", 
+                    title: "XIV Domenica del Tempo Ordinario",
+                    description: "Proposte musicali per la celebrazione"
+                },
+                {
+                    date: "Domenica 14 Luglio",
+                    title: "XV Domenica del Tempo Ordinario", 
+                    description: "Selezione di canti liturgici appropriati"
+                }
+            ];
 
-            </div>
+            const celebrationList = document.getElementById('celebrazioneList');
+            celebrations.forEach(celebration => {
+                const li = document.createElement('li');
+                li.className = 'celebration-item';
+                li.innerHTML = `
+                    <div class="celebration-date">${celebration.date}</div>
+                    <div class="celebration-title">${celebration.title}</div>
+                    <div class="celebration-description">${celebration.description}</div>
+                `;
+                celebrationList.appendChild(li);
+            });
+        });
 
-            <div class="prossime-celebrazioni-div">
-                <h2>Prossime celebrazioni</h2>
-                <ul id="celebrazioneList">
-                    <!-- Le celebrazioni verranno aggiunte qui -->
-                </ul>
-            </div>
-        </div>
-    </div>
-</body>
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+        // Toggle menu for mobile
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar-buttons');
+            navbar.style.display = navbar.style.display === 'flex' ? 'none' : 'flex';
+        }
 
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-        apiKey: "AIzaSyCaBcrvK2Yf7dULDKaB2Zuxp2DH1ZVeeLo",
-        authDomain: "cantusacri.firebaseapp.com",
-        projectId: "cantusacri",
-        storageBucket: "cantusacri.firebasestorage.app",
-        messagingSenderId: "137933903515",
-        appId: "1:137933903515:web:5c7f3fa951c19a0bdf983e",
-        measurementId: "G-W9F8MB0G57"
-    };
+        // Search functionality placeholder
+        function searchCanti(event, context) {
+            // Placeholder for search functionality
+            console.log('Search:', event.target.value);
+        }
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-</script>
+        function suggestions(event, context) {
+            // Placeholder for suggestions
+            console.log('Suggestions:', event.target.value);
+        }
 
-<!-- Schema.org for rich snippets -->
-<script type="application/ld+json">
+        // Navbar scroll effect
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
+
+    <!-- Schema.org for rich snippets -->
+    <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "WebPage",

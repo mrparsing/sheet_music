@@ -150,7 +150,7 @@
             "tempo": "Quaresima",
             "ascolta": "",
             "download_link": "",
-            "testo": ""
+            "testo": "<b>R. Rallegrati Gerusalemme<br>e voi tutti che l'amate riunitevi<br>esultate e gioite<br>voi che eravate nella tristezza<br><br></b>1. Quale gioia quando mi dissero<br>andremo alla casa del Signore<br>ed ora i nostri piedi si fermano<br>alle tue porte, Gerusalemme<br>2. Domandate per lei la pace<br>sia pace a coloro che ti amano<br>sia pace sulle tue mura, <br>nei baluardi, Gerusalemme<br>Per gli amici e per i fratelli<br>dirò con gioia: su di te sia pace<br>il bene chiederò per la casa<br>del Signore nostro Dio.<br>"
         },
         {
             "url_titolo": "alleluia,-tu-sei-pietro",
@@ -565,7 +565,7 @@
             "titolo": "Hosanna",
             "autore": "Marco Frisina",
             "tipologia": "Ingresso",
-            "tempo": "Pasqua",
+            "tempo": "Quaresima",
             "ascolta": "https://www.youtube.com/watch?v=qTIovLZjjyQ",
             "download_link": "../../db/canti/Hosanna.pdf",
             "testo": ""
