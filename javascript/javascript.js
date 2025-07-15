@@ -105,13 +105,13 @@ function calcolaTempoOrdinario(anno) {
 
     // Prima parte del Tempo Ordinario
     const inizioTempoOrdinario1 = new Date(battesimoDelSignore);
-    inizioTempoOrdinario1.setDate(battesimoDelSignore.getDate() + 1);
+    inizioTempoOrdinario1.setDate(battesimoDelSignore.getDate());
     const fineTempoOrdinario1 = new Date(mercolediCeneri);
     fineTempoOrdinario1.setDate(mercolediCeneri.getDate() - 1);
 
     // Seconda parte del Tempo Ordinario
-    const inizioTempoOrdinario2 = new Date(pentecoste);
-    inizioTempoOrdinario2.setDate(pentecoste.getDate() + 1);
+    const inizioTempoOrdinario2 = new Date(pentecoste );
+    inizioTempoOrdinario2.setDate(pentecoste.getDate() - 7);
     const fineTempoOrdinario2 = cristoRe;
 
     return {
@@ -311,6 +311,7 @@ function avvia_index() {
     const prox_celebrazioni = [];
 
     for (const festivitaItem of festivita) {
+        console.log(festivitaItem.data >= oggi, festivitaItem.data, oggi);
         if (festivitaItem.data >= oggi) {
             prox_celebrazioni.push(festivitaItem);
             if (prox_celebrazioni.length === 7) {
