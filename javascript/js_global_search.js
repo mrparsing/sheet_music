@@ -21,6 +21,9 @@ async function searchCanti(event, page) {
             } else if (page === "natale") {
                 jsonFile = "../../salmi/elenco_salmi.json";
                 linkRisultati = "../../../nav-bar/risultati.html";
+            } else if (page === "risultati") {
+                jsonFile = "../db/salmi/elenco_salmi.json";
+                linkRisultati = "../../nav-bar/risultati.html";
             } else {
                 jsonFile = "../db/salmi/elenco_salmi.json";
                 linkRisultati = "nav-bar/risultati.html";
