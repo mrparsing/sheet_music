@@ -109,8 +109,18 @@
             "tipologia": "Offertorio",
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=mbaza6xCOGg",
-            "download_link": "-",
+            "download_link": "../../db/canti/Ecco Signore.pdf",
             "testo": "<b>Ecco, Signore, l'offerta che piace a Te<br>Ecco la nostra vita, la vita che hai dato a noi.<br>È il nostro dono per Te.</b><br><br>Tu non hai gradito né oro né argento<br>Un cuore ci hai donato per poterti amare<br><br>E se per amore nel mondo soffriremo<br>Signore, questo è il dono che vorremmo offrirti<br><br>"
+        },
+        {
+            "url_titolo": "ravviva-il-dono",
+            "titolo": "Ravviva il dono",
+            "autore": "Giuseppe Liberto",
+            "tipologia": "Offertorio",
+            "tempo": "Qualsiasi",
+            "ascolta": "",
+            "download_link": "../../db/canti/Ravviva il dono.pdf",
+            "testo": ""
         },
         {
             "url_titolo": "ecco-il-mio-servo",
@@ -125,7 +135,7 @@
         {
             "url_titolo": "se-tu-conoscessi-il-dono-di-dio",
             "titolo": "Se tu conoscessi il dono di Dio",
-            "autore": "Giuseppe Libero",
+            "autore": "Giuseppe Liberto",
             "tipologia": "Comunione",
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=dP9BGGXwhEU",
@@ -135,7 +145,7 @@
         {
             "url_titolo": "rallgrati-o-sion",
             "titolo": "Rallegrati, o Sion",
-            "autore": "Giuseppe Libero",
+            "autore": "Giuseppe Liberto",
             "tipologia": "Ingresso, Offertorio",
             "tempo": "Quaresima",
             "ascolta": "https://www.youtube.com/watch?v=JUs2S3TkHxg",
@@ -155,7 +165,7 @@
         {
             "url_titolo": "alleluia,-tu-sei-pietro",
             "titolo": "Alleluia, Tu sei Pietro",
-            "autore": "Giuseppe Libero",
+            "autore": "Giuseppe Liberto",
             "tipologia": "Alleluia",
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=tyeSixss7U4&t=58s",
@@ -521,6 +531,16 @@
             "testo": "O Sion, loda il salvatore<br>E canta con gioia il tuo pastore<br>Con forza e giubilo cantiamo a lui<br>A cristo redentore delle genti<br>Che dona al mondo il suo corpo<br>E salva ogni uomo col suo sangue<br><br>O pane vivo che dai vita<br>Sei dono d'amore alla tua chiesa<br>Riuniti insieme nella cena<br>Donasti agli apostoli il tuo corpo<br>Il memoriale rinnoviamo<br>E riceviamo il tuo dono di grazia<br><br>Sei nuova pasqua, nuova legge<br>Che compie gli antichi misteri<br>La realtà disperde l'ombra<br>La luce ormai rischiara ogni tenebra<br>Si svela il segno dell'amore<br>Rifulge il mistero di salvezza<br><br>Al tuo comando obbedienti<br>Il pane e il vino consacriamo<br>Per noi certezza è nella fede<br>Il pane si trasforma in vera carne<br>Il vino è cambiato in sangue<br>Non vedi, ma la fede ti conferma<br><br>Mistero di realtà sublimi<br>Nel segno che appare si nasconde<br>Tu mangi carne, bevi sangue<br>Ma Cristo è presente in ogni specie<br>Non si divide nè si spezza<br>è tutto nell'intero e nel frammento<br><br>O Buon Pastore, vero pane<br>Gesù pietà della tua Chiesa<br>Difendi e nutri i tuoi fratelli<br>E guidali alla terra dei viventi<br>Sedendo a mensa nel tuo cielo<br>Godremo della gioia dei tuoi santi<br>Amen<br>Amen"
         },
         {
+            "url_titolo": "vidi-la-nuova-gerusalemme",
+            "titolo": "Vidi la nuova Gerusalemme",
+            "autore": "Marco Frisina",
+            "tipologia": "Ingresso",
+            "tempo": "Qualsiasi",
+            "ascolta": "",
+            "download_link": "../../db/canti/Vidi la nuova Gerusalemme.pdf",
+            "testo": ""
+        },
+        {
             "url_titolo": "e-asceso-alla-gloria",
             "titolo": "E' asceso alla gloria",
             "autore": "Coro Rabbuini",
@@ -571,6 +591,16 @@
             "testo": "Osanna, osanna nell'alto dei cieli,<br>osanna, osanna al Re che viene,<br>sia lode onore e gloria a Cristo Salvator.<br><br>1. Rallegrati esulta figlia di Sion,<br>ecco a te viene il tuo Re.<br><br>Osanna, osanna nell'alto dei cieli...<br><br>2. Ti lodano gli angeli nell'alto dei cieli<br>la terra tutta canta a Te.<br><br>Osanna, osanna nell'alto dei cieli...<br><br>3. Tu avanzi glorioso incontro alla morte,<br>o Salvatore, sia gloria a Te.<br><br>Osanna, osanna nell'alto dei cieli..."
         },
         {
+            "url_titolo": "a-te-offriro",
+            "titolo": "A Te offrirò",
+            "autore": "Salvatore Vivona",
+            "tipologia": "Offertorio",
+            "tempo": "Qualsiasi",
+            "ascolta": "",
+            "download_link": "../../db/canti/A Te offrirò.pdf",
+            "testo": ""
+        },
+        {
             "url_titolo": "o-dio-tu-sei-il-mio-dio",
             "titolo": "O Dio, Tu sei il mio Dio",
             "autore": "Marco Frisina",
@@ -593,7 +623,7 @@
         {
             "url_titolo": "minvochera-e-io-lo-esaudiro",
             "titolo": "M'invochera' e io lo esaudiro'",
-            "autore": "Giuseppe Libero",
+            "autore": "Giuseppe Liberto",
             "tipologia": "Ingresso",
             "tempo": "Quaresima",
             "ascolta": "https://www.youtube.com/watch?v=pqILoVS1PJA",
@@ -703,7 +733,7 @@
         {
             "url_titolo": "all-agnello-che-e-stato-immolato",
             "titolo": "All'agnello che è stato immolato",
-            "autore": "Giuseppe Libero",
+            "autore": "Giuseppe Liberto",
             "tipologia": "Offertorio, Comunione",
             "tempo": "Qualsiasi",
             "ascolta": "-",
@@ -713,7 +743,7 @@
         {
             "url_titolo": "signore-mostrami-il-tuo-volto",
             "titolo": "Signore mostrami il tuo volto",
-            "autore": "Giuseppe Libero",
+            "autore": "Giuseppe Liberto",
             "tipologia": "Ingresso",
             "tempo": "Quaresima",
             "ascolta": "https://www.youtube.com/watch?v=YdUWuFjMYzs",
@@ -873,7 +903,7 @@
         {
             "url_titolo": "cielo-nuovo",
             "titolo": "Cielo nuovo",
-            "autore": "Giuseppe Libero",
+            "autore": "Giuseppe Liberto",
             "tipologia": "Offertorio, Finale",
             "tempo": "Qualsiasi",
             "ascolta": "https://www.youtube.com/watch?v=NXMC6h-aFkI",
