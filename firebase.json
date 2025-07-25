@@ -65,6 +65,10 @@
       {
         "source": "/salmi-eventi-speciali",
         "destination": "/nav-bar/salmi.html"
+      },
+      {
+        "source": "/risultato",
+        "destination": "/nav-bar/risultati.html"
       }
     ]
   }

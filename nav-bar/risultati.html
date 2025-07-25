@@ -285,7 +285,7 @@
         <td>${canto.tempo}</td>
         <td>${isAscolta ? `<a href="${canto.ascolta}">Ascolta</a>` : "Non disponibile"}</td>
         <td>${isDownloadLink ? `<a href="${canto.download_link}">Download</a>` : "Spartito non disponibile"}</td>
-        <td>${isTesto ? `<a href="/nav-bar/testo/${canto.titolo}">Testo</a>` : "Testo non disponibile"}</td>
+        <td>${isTesto ? `<a href="/canti/testo/${canto.url_titolo}">Testo</a>` : "Testo non disponibile"}</td>
     `;
                 })
             }
